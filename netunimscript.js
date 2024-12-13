@@ -54,9 +54,6 @@ var rashit;
 
 
 
-function bring(){
-
-
 
 
 function bring(){

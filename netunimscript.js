@@ -27732,10 +27732,10 @@ let optionCollection = [];
         }
       }
       optionCollection.sort((a, b) => b.tesuam - a.tesuam);
-      console.log(optionCollection.length);
+    
       if(optionCollection.length!==0){
       for(let r=0;r<=Math.min(optionCollection.length-1,2);r++){
-               console.log(optionCollection[r].shemkupa + ":" + optionCollection[r].tesuam);
+               alert(optionCollection[r].shemkupa + ":" + optionCollection[r].tesuam);
       } 
     
     }

@@ -1,7 +1,3 @@
-
-
-
-  
 const mozar=["קרנות השתלמות","תגמולים ואישית לפיצויים","קופת גמל להשקעה",
     "קופת גמל להשקעה - חסכון לילד","מרכזית לפיצויים"];
 
@@ -54,8 +50,6 @@ var rashit;
 
 
 
-
-
 function bring(){
  fetch('kupotKlali.xml')
     .then(response => response.text()) // מקבל את תוכן הקובץ כטקסט
@@ -104,40 +98,4 @@ let optionCollection = [];
     })
     .catch(error => console.error('Error:', error));
     
-
-
-
-
-
-// פונקציה שמבצעת את המיון
-function sortByTSUA() {
-  // המרת ה-XML לאובייקט
-  const parser = new DOMParser();
-const xmlDoc = parser.parseFromString(xmlData, "application/xml");
-  
-  
-
-  // שליפת כל השורות ב-XML
-  const rows = xmlDoc.getElementsByTagName("Row");
-
-  // יצירת מערך תוצאות
-  const results = [];
-
-  // עבור כל שורה, שלוף את ה-ID ואת התשואה
-  for (let i = 0; i < rows.length; i++) {
-    const row = rows[i];
-    const id = row.getElementsByTagName("ID")[0].textContent;
-    const tsuaMemuzaat = row.getElementsByTagName("TSUA_MITZTABERET_LETKUFA").textContent;
-
-    // הוסף את התוצאה למערך
-    results.push({ id, tsuaMemuzaat });
-  }
-
-  // מיין את התוצאות לפי התשואה מהגבוה לנמוך
-  results.sort((a, b) => b.tsuaMemuzaat - a.tsuaMemuzaat);
-
-  // הדפס את התוצאות הממוינות
-  results.forEach(result => {
-    console.log(`ID: ${result.id}, TSUA_MEMUZAAT_LETKUFA: ${result.tsuaMemuzaat}`);
-  });
-}
+    }

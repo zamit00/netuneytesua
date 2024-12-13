@@ -55,6 +55,11 @@ var rashit;
 
 
 function bring(){
+
+
+
+
+function bring(){
  fetch('kupotKlali.xml')
     .then(response => response.text()) // מקבל את תוכן הקובץ כטקסט
     .then(xmlString => {
@@ -90,25 +95,18 @@ let optionCollection = [];
               ochlosiyayaad: ochlosiyayaad, divuach: divuach });
           }
         }
-      
+      }
       optionCollection.sort((a, b) => b.tesuam - a.tesuam);
     
       if(optionCollection.length!==0){
       for(let r=0;r<=Math.min(optionCollection.length-1,2);r++){
-       
-    const thel = document.getElementById(`thb${i}`);
-    const tdel = document.getElementById(`output${i}`);
-   
-    
-        thel.textContent = optionCollection[r].shemkupa;
-        tdel.textContent = optionCollection[r].tesuam;
+               alert(optionCollection[r].shemkupa + ":" + optionCollection[r].tesuam);
       } 
-    }
+    
     }
     })
     .catch(error => console.error('Error:', error));
     
-    }
 
 
 

@@ -128,7 +128,11 @@ let optionCollection = [];
         }
       }
       optionCollection.sort((a, b) => b.tesuam - a.tesuam);
-    
+    for(let i=1;i<=3;i++){
+     document.getElementById(`thb${i}`).textContent='';
+      document.getElementById(`output${r+1}`).textContent='';
+    }
+     
       if(optionCollection.length!==0){
       for(let r=0;r<=Math.min(optionCollection.length-1,2);r++){
                

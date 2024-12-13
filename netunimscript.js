@@ -27376,8 +27376,7 @@ function bring(){
     .then(xmlString => {
         const parser = new DOMParser(); // יוצר parser לניתוח XML
         const xmlDoc = parser.parseFromString(xmlString, "application/xml"); // מנתח את הטקסט למבנה XML
-    })
-    .catch(error => console.error('Error:', error));   
+   
 
 const rows = xmlDoc.getElementsByTagName("Row");
 let optionCollection = [];
@@ -27416,7 +27415,10 @@ let optionCollection = [];
       } 
     
     }
-}
+    })
+    .catch(error => console.error('Error:', error));
+    
+    }
 
 
  /*

@@ -90,7 +90,7 @@ let optionCollection = [];
               ochlosiyayaad: ochlosiyayaad, divuach: divuach });
           }
         }
-      }
+      
       optionCollection.sort((a, b) => b.tesuam - a.tesuam);
     
       if(optionCollection.length!==0){
@@ -102,11 +102,8 @@ let optionCollection = [];
     
         thel.textContent = optionCollection[r].shemkupa;
         tdel.textContent = optionCollection[r].tesuam;
-
-          
-        
       } 
-    
+    }
     }
     })
     .catch(error => console.error('Error:', error));

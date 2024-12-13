@@ -27411,7 +27411,16 @@ let optionCollection = [];
     
       if(optionCollection.length!==0){
       for(let r=0;r<=Math.min(optionCollection.length-1,2);r++){
-               alert(optionCollection[r].shemkupa + ":" + optionCollection[r].tesuam);
+       
+    const thel = document.getElementById(`thb${i}`);
+    const tdel = document.getElementById(`output${i}`);
+   
+    
+        thel.textContent = optionCollection[r].shemkupa;
+        tdel.textContent = optionCollection[r].tesuam;
+
+          
+        
       } 
     
     }

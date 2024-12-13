@@ -132,7 +132,7 @@ let optionCollection = [];
       if(optionCollection.length!==0){
       for(let r=0;r<=Math.min(optionCollection.length-1,2);r++){
                alert(optionCollection[r].shemkupa + ":" + optionCollection[r].tesuam);
-      document.getElementById(`thb${r}`).textContent=optionCollection[r].shemkupa;
+      /*document.getElementById(`thb${r}`).textContent=optionCollection[r].shemkupa;*/
       } 
     
     }

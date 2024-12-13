@@ -8,8 +8,8 @@
    .kot h1{color:rgb(89, 227, 89);position: absolute; left: 50%; transform: translateX(-50%);
        top: 1vh;}
    .kot h2{color:white;position: absolute; left: 50%; transform: translateX(-50%);top: 7vh;}
-  table{widt:80vw;border:1px solid black;}
-   th, td{widt:40vw;border:1px solid black;}
+  table{width:80vw;border:1px solid black;}
+   th, td{width:40vw;border:1px solid black;}
    @media only screen and (min-width: 767px){
     .logo{position: fixed;right: 6vw;top:3vh;width:100px; height:auto;}
     header{width: 100vw;height: 18vh;position: fixed;top:0;background-color: #333;

@@ -1,0 +1,31 @@
+
+
+
+/* הגדרות כלליות */
+
+   
+   main{width: 100vw;height:800px;margin-top: 20vh;}
+   select{width: 250px;height: 25px;float: left;margin-left: 40vw;text-align: center;}
+   label{margin-right: 50px;}
+   .muzar{margin: 20px;width: 100vw;}
+   button{width: 60px;height: auto;margin-right: 177px;}
+   @media only screen and (min-width: 767px){
+      
+      
+  }
+  
+  
+  @media only screen and (max-width: 768px){
+   .muzar{display: flex;flex-direction: column; width: 95vw;box-sizing: border-box;
+   margin-left: 0;margin-right: 0;align-items: center;}
+      select,label{width: 85%;text-align: center;
+         float: none;margin:5px 0;padding: 0%;box-sizing: border-box;}
+  }
+
+  @media only screen and (max-width: 480px){
+    
+  }
+  @media only screen and (max-width: 320px){
+   
+  }
+   

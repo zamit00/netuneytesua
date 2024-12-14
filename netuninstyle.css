@@ -27,6 +27,8 @@
    margin-left: 0;margin-right: 0;align-items: center;}
       select,label{width: 85%;text-align: center;
          float: none;margin:5px 0;padding: 0%;box-sizing: border-box;}
+ .labels{margin-bottom:5px;width: 100vw; text-align:center;}
+ 
   }
 
   @media only screen and (max-width: 480px){

@@ -25,12 +25,10 @@
     <main>
         <h1 style="margin-top: 20vh;text-align: center; ">השוואת תשואות קופות גמל</h1>
        
-
+      <div class="klali">
             <div class="muzar">
                 <label for="product" id="lblproduct">בחר מוצר:</label>
-                <select id="product" name="product" onchange="rashiadd()" required>
-                    
-                </select>
+                <select id="product" name="product" onchange="rashiadd()" required>  </select>
             </div>
             <div class="maslul muzar" id="maslul">
                 <label  for="maslul-type">בחר מסלול:</label>
@@ -38,9 +36,9 @@
                     <option value="" disabled selected >בחר</option>
                 </select>
             </div>        
-        <button  onclick="bring()">בצע השוואה</button><br>
+           <button  onclick="bring()">בצע השוואה</button><br>
+       </div>
        
-        
         <div class="hashspcific">
            <div class="maslul muzar" id="maslul1">
                 <label  for="maslul-type1">בחר מסלול:</label>
@@ -55,10 +53,10 @@
                     <option value="" disabled selected>בחר</option>
                 </select>
             </div>
+             <button class="hashspcific" onclick="brings()">בצע השוואה ספציפית</button>
+             <br>
         </div>  
-        <button class="hashspcific" onclick="brings()">בצע השוואה ספציפית</button><br>
-
-
+        
         
         
         <label class='labels' >תשואה מצטברת 12 חודשים</label>  

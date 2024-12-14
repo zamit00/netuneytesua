@@ -79,6 +79,10 @@ function changek(){
 
  
  }
+ document.getElementById('table12').style.display="none";
+ document.getElementById('table3').style.display="none";
+ document.getElementById('table5').style.display="none";
+ 
 }
 
 function rashiadd(){
@@ -107,6 +111,10 @@ var rashit;
 
 
 function bring(){
+ document.getElementById('table12').style.display="block";
+ document.getElementById('table3').style.display="block";
+ document.getElementById('table5').style.display="block";
+
  for(let i=1;i<=3;i++){
      document.getElementById(`thb${i}`).textContent='';
      document.getElementById(`output${i}`).textContent='';

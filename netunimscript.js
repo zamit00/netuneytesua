@@ -111,6 +111,7 @@ var rashit;
 
 
 function bring(){
+ if(maslul.value===''){return;}
  document.getElementById('table12').style.display="block";
  document.getElementById('table3').style.display="block";
  document.getElementById('table5').style.display="block";

@@ -9,7 +9,8 @@
    label{margin-right: 50px;}
    .muzar{margin: 20px;width: 100vw;}
    button{width: 60px;height: auto;margin-right: 177px;}
-  table{width:80vw;border:1px solid black;}
+  table{width:80vw;border:1px solid black;
+       margin-bottom:20px;}
    th, td{width:40vw;height:30px;border:1px solid black;
          text-align: center;}
  

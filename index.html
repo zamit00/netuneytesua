@@ -35,10 +35,31 @@
                 <select id="maslul-type" name="maslul-type" required placeholder="בחר" onchange='changek()' >
                     <option value="" disabled selected>בחר</option>
                 </select>
-            </div>
-            
+            </div>        
         <button  onclick="bring()">בצע השוואה</button><br>
-          <label class='labels' >תשואה מצטברת 12 חודשים</label>  
+       
+        
+        <div class="hashspcific">
+           <div class="maslul muzar" id="maslul1">
+                <label  for="maslul-type1">בחר מסלול:</label>
+                <select id="maslul-type1" name="maslul-type" required placeholder="בחר" onchange='changek()' >
+                    <option value="" disabled selected>בחר</option>
+                </select>
+            </div>
+
+            <div class="maslul muzar" id="maslul2">
+                <label  for="maslul-type2">בחר מסלול:</label>
+                <select id="maslul-type2" name="maslul-type" required placeholder="בחר" onchange='changek()' >
+                    <option value="" disabled selected>בחר</option>
+                </select>
+            </div>
+        </div>  
+        <button  onclick="brings()">בצע השוואה ספציפית</button><br>
+
+
+        
+        
+        <label class='labels' >תשואה מצטברת 12 חודשים</label>  
        
         <table id="tbl1">
              <tr>

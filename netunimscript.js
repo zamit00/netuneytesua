@@ -69,6 +69,10 @@ function changek(){
  for(let i=1;i<=3;i++){
      document.getElementById(`thb${i}`).textContent='';
      document.getElementById(`output${i}`).textContent='';}
+
+     document.getElementById(`thb${i+10}`).textContent='';
+     document.getElementById(`output${i+10}`).textContent='';}
+
 }
 
 function rashiadd(){
@@ -99,7 +103,10 @@ var rashit;
 function bring(){
  for(let i=1;i<=3;i++){
      document.getElementById(`thb${i}`).textContent='';
-     document.getElementById(`output${i}`).textContent='';}
+     document.getElementById(`output${i}`).textContent='';
+ document.getElementById(`thb${i+10}`).textContent='';
+     document.getElementById(`output${i+10}`).textContent='';
+ }
  
  fetch('kupotKlali.xml')
     .then(response => response.text()) // מקבל את תוכן הקובץ כטקסט

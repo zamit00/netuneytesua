@@ -72,6 +72,10 @@ function changek(){
 
      document.getElementById(`thb${i+10}`).textContent='';
      document.getElementById(`output${i+10}`).textContent='';
+      document.getElementById(`thb${i+20}`).textContent='';
+     document.getElementById(`output${i+20}`).textContent='';
+
+ 
  }
 }
 
@@ -104,8 +108,12 @@ function bring(){
  for(let i=1;i<=3;i++){
      document.getElementById(`thb${i}`).textContent='';
      document.getElementById(`output${i}`).textContent='';
- document.getElementById(`thb${i+10}`).textContent='';
+     document.getElementById(`thb${i+10}`).textContent='';
      document.getElementById(`output${i+10}`).textContent='';
+     document.getElementById(`thb${i+20}`).textContent='';
+     document.getElementById(`output${i+20}`).textContent='';
+
+ 
  }
  
  fetch('kupotKlali.xml')
@@ -132,7 +140,8 @@ let optionCollection = [];
         const mas = row.getElementsByTagName("HITMAHUT_MISHNIT")[0]?.textContent ||  '';
         const tesuam = row.getElementsByTagName("TSUA_MITZTABERET_LETKUFA")[0]?.textContent ||  '';
        const tesuam36 = row.getElementsByTagName("TSUA_MITZTABERET_36_HODASHIM")[0]?.textContent ||  '';
-       
+       const tesuam60 = row.getElementsByTagName("TSUA_MITZTABERET_60_HODASHIM")[0]?.textContent ||  '';
+
 
      
         if(Number(yitratnehasim)>0 &&  divuach ==="דווח" &&
@@ -143,7 +152,7 @@ let optionCollection = [];
         
         if(mozar===moz.value && mas===maslul.value ) {
             optionCollection.push({mh:mhkupa, shemkupa: shemkupa,mozar:mozar, tesuam: Number(tesuam), 
-              ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:Number(tesuam36)});
+              ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:Number(tesuam36),tesuam60:Number(tesuam60) });
           }
         }
       }
@@ -160,6 +169,11 @@ let optionCollection = [];
       document.getElementById(`thb${r+11}`).textContent=optionCollection[r].shemkupa;
       document.getElementById(`output${r+11}`).textContent=optionCollection[r].tesuam36+'%';
 
+      optionCollection.sort((a, b) => b.tesuam60 - a.tesuam60);
+      document.getElementById(`thb${r+11}`).textContent=optionCollection[r].shemkupa;
+      document.getElementById(`output${r+11}`).textContent=optionCollection[r].tesuam60+'%';
+
+       
       } 
     
     }

@@ -9,6 +9,8 @@
     <!-- תיקיית אייקונים -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="netunimscript.js" defer></script>
+    <script src="specific.js" defer></script>
+
 </head>
 <body dir="rtl">
 
@@ -33,7 +35,7 @@
             <div class="maslul muzar" id="maslul">
                 <label  for="maslul-type">בחר מסלול:</label>
                 <select id="maslul-type" name="maslul-type" required placeholder="בחר" onchange='changek()' >
-                    <option value="" disabled selected>בחר</option>
+                    <option value="" disabled selected onchang='specificadd()'>בחר</option>
                 </select>
             </div>        
         <button  onclick="bring()">בצע השוואה</button><br>

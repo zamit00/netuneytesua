@@ -72,6 +72,7 @@ function changek(){
 }
 
 function rashiadd(){
+ changek();
 const options = maslul.querySelectorAll('option');
 for (let i = 1; i < options.length; i++) {
   maslul.removeChild(options[i]);

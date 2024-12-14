@@ -124,7 +124,10 @@ let optionCollection = [];
         const mhkupa = row.getElementsByTagName("ID")[0]?.textContent ||  '';
         const mas = row.getElementsByTagName("HITMAHUT_MISHNIT")[0]?.textContent ||  '';
         const tesuam = row.getElementsByTagName("TSUA_MITZTABERET_LETKUFA")[0]?.textContent ||  '';
+       const tesuam36 = row.getElementsByTagName("TSUA_MITZTABERET_36_HODASHIM")[0]?.textContent ||  '';
        
+
+     
         if(Number(yitratnehasim)>0 &&  divuach ==="דווח" &&
         ochlosiyayaad!== "עובדי סקטור מסויים" && ochlosiyayaad!==`עובדי מפעל/גוף מסויים`
          && moz.value && maslul.value!=='' && mozar!=='מטרה אחרת' && Number(tesuam)!==0
@@ -133,19 +136,23 @@ let optionCollection = [];
         
         if(mozar===moz.value && mas===maslul.value ) {
             optionCollection.push({mh:mhkupa, shemkupa: shemkupa,mozar:mozar, tesuam: Number(tesuam), 
-              ochlosiyayaad: ochlosiyayaad, divuach: divuach });
+              ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:tesuam36});
           }
         }
       }
-      optionCollection.sort((a, b) => b.tesuam - a.tesuam);
+      
     
      
       if(optionCollection.length!==0){
       for(let r=0;r<=Math.min(optionCollection.length-1,2);r++){
-               
+       optionCollection.sort((a, b) => b.tesuam - a.tesuam);        
       document.getElementById(`thb${r+1}`).textContent=optionCollection[r].shemkupa;
       document.getElementById(`output${r+1}`).textContent=optionCollection[r].tesuam+'%';
-  
+
+       optionCollection.sort((a, b) => b.tesuam36 - a.tesuam36);
+      document.getElementById(`thb${r+11}`).textContent=optionCollection[r].shemkupa;
+      document.getElementById(`output${r+11}`).textContent=optionCollection[r].tesuam+'%';
+
       } 
     
     }

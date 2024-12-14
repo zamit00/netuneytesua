@@ -65,6 +65,11 @@ hishtalmot.forEach(item => {
   optiona.textContent = item;  // textContent יהיה שם הרכיב
   maslul.appendChild(optiona);  // הוספת ה-option ל-select
 });
+function changek(){
+ for(let i=1;i<=3;i++){
+     document.getElementById(`thb${i}`).textContent='';
+     document.getElementById(`output${i}`).textContent='';}
+}
 
 function rashiadd(){
 const options = maslul.querySelectorAll('option');

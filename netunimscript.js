@@ -170,8 +170,8 @@ let optionCollection = [];
       document.getElementById(`output${r+11}`).textContent=optionCollection[r].tesuam36+'%';
 
       optionCollection.sort((a, b) => b.tesuam60 - a.tesuam60);
-      document.getElementById(`thb${r+11}`).textContent=optionCollection[r].shemkupa;
-      document.getElementById(`output${r+11}`).textContent=optionCollection[r].tesuam60+'%';
+      document.getElementById(`thb${r+21}`).textContent=optionCollection[r].shemkupa;
+      document.getElementById(`output${r+21}`).textContent=optionCollection[r].tesuam60+'%';
 
        
       } 

@@ -2,35 +2,50 @@
 
 
 /* הגדרות כלליות */
-.hashspcific{display: none;}
+
 
    
-   main{width: 100vw;height:800px;margin-top: 20vh;}
-   select{width: 250px;height: 25px;float: left;margin-left: 40vw;text-align: center;}
-   label{margin-right: 50px;}
-   .muzar{margin: 20px;width: 100vw;}
-   button{width: 120px;height: auto;
-          margin-right: 45vw;margin-bottom:15px;}
-  table{width:80vw;border:1px solid black;
-       margin-bottom:20px;margin-right:35px}
-   th, td{width:40vw;height:30px;border:1px solid black;
-         text-align: center;}
-.labels{margin-bottom:5px;margin-right:35px;
-color:blue;  }
- h1{font-size:35px;color:rgb(89, 227, 89);}
+   
+   
+   
+  
+   
+body{margin: 0%;padding: 0%;display: flex;justify-content: center;} 
+main{display: flex;flex-direction: column;align-items: center;}
+select,button{background-color: #333;color:white;font-weight: bold;}
+option {background-color: white; color: black;  }
+.hashspecific{display: none;}
+
 @media only screen and (min-width: 767px){
-      
-      
-  }
-  
-  
+   main{width: 60vw;border:3px solid black;}
+   
+   th, td{width:25vw;height:30px;border:1px solid black;}
+   td{text-align: center;}
+   th{text-align: right;padding-right: 5px;}
+   table{width:50vw;border:1px solid black;margin-bottom:20px;margin-right: 10vw;}
+   button{width: 6vw;height: auto;margin-bottom:35px;}
+   select{width: 15vw;height: 25px;text-align: center;float: left;margin-left: 10vw;}
+   .labels{margin-bottom:10px;color:blue; margin-right: 10vw;}
+   h1{font-size:35px;color:rgb(89, 227, 89);}
+   .muzar{margin: 20px 0px ;width: 40vw;}
+   .klali{width:50vw;margin-right: 10vw;}
+   
+   
+}
   @media only screen and (max-width: 768px){
-   .muzar{display: flex;flex-direction: column; width: 95vw;box-sizing: border-box;
-   margin-left: 0;margin-right: 0;align-items: center;}
-      select,label{width: 85%;text-align: center;
-         float: none;margin:5px 0;padding: 0%;box-sizing: border-box;}
- .labels{margin-bottom:5px;width: 100vw; text-align:center;}
- 
+
+   main{width: 90vw;}
+   th, td{width:45vw;height:30px;border:1px solid black;;box-sizing: border-box;}
+   td{text-align: center;}
+   th{text-align: right;padding-right: 5px;}
+   table{width:90vw;border:1px solid black;margin-bottom:20px;margin-right: 0px;box-sizing: border-box;}
+   button{width: 90vw;height: auto;margin-bottom:35px;box-sizing: border-box;font-size: 16px;}
+   select{width: 90vw;height: 25px;text-align: center;float: none;margin-left: 0;
+      font-size: 16px;box-sizing: border-box;}
+   .labels{margin-bottom:10px;color:blue; margin-right: 0px;box-sizing: border-box;}
+   h1{font-size:25px;color:rgb(89, 227, 89);box-sizing: border-box;}
+   .muzar{margin: 20px 0px ;width: 90vw;box-sizing: border-box;}
+   .klali{width:90vw;margin-right: 0vw;box-sizing: border-box;}
   }
 
   @media only screen and (max-width: 480px){

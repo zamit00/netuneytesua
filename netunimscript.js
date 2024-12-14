@@ -158,7 +158,7 @@ let optionCollection = [];
 
        optionCollection.sort((a, b) => b.tesuam36 - a.tesuam36);
       document.getElementById(`thb${r+11}`).textContent=optionCollection[r].shemkupa;
-      document.getElementById(`output${r+11}`).textContent=optionCollection[r].tesuam+'%';
+      document.getElementById(`output${r+11}`).textContent=optionCollection[r].tesuam36+'%';
 
       } 
     

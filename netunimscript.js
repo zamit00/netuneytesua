@@ -143,7 +143,7 @@ let optionCollection = [];
         
         if(mozar===moz.value && mas===maslul.value ) {
             optionCollection.push({mh:mhkupa, shemkupa: shemkupa,mozar:mozar, tesuam: Number(tesuam), 
-              ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:tesuam36});
+              ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:Number(tesuam36)});
           }
         }
       }

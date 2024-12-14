@@ -1,8 +1,9 @@
 
 
 
-/* הגדרות כלליות */
+/* הגדרות כלליות 
 .hashspcific{display: none;}
+*/
    
    main{width: 100vw;height:800px;margin-top: 20vh;}
    select{width: 250px;height: 25px;float: left;margin-left: 40vw;text-align: center;}

@@ -32,81 +32,82 @@
             </div>
             <div class="maslul muzar" id="maslul">
                 <label  for="maslul-type">בחר מסלול:</label>
-                <select id="maslul-type" name="maslul-type" required placeholder="בחר" onchange='changek();specificadd()` >
+                <select id="maslul-type" name="maslul-type" required placeholder="בחר" onchange="changeka();specificadd()" >
                     <option value="" disabled selected >בחר</option>
                 </select>
-            </div>        
-           <button  onclick="bring()">בצע השוואה</button><br>
-       </div>
+            </div>
+        </div>
+      
        
-        <div class="hashspcific">
+        <div class="hashspecific">
            <div class="maslul muzar" id="maslul1">
                 <label  for="maslul-type1">בחר מסלול:</label>
-                <select id="maslul-type1" name="maslul-type" required placeholder="בחר" onchange='changek()' >
+                <select id="maslul-type1" name="maslul-type1" required placeholder="בחר" onchange="changek()" >
                     <option value="" disabled selected>בחר</option>
                 </select>
             </div>
 
             <div class="maslul muzar" id="maslul2">
                 <label  for="maslul-type2">בחר מסלול:</label>
-                <select id="maslul-type2" name="maslul-type" required placeholder="בחר" onchange='changek()' >
+                <select id="maslul-type2" name="maslul-type2" required placeholder="בחר" onchange="changek()" >
                     <option value="" disabled selected>בחר</option>
                 </select>
             </div>
-             <button class="hashspcific" onclick="brings()">בצע השוואה ספציפית</button>
-             <br>
         </div>  
+        <button  onclick="bring()">בצע השוואה</button><br>
         
-        
-        
-        <label class='labels' >תשואה מצטברת 12 חודשים</label>  
-       
-        <table id="tbl1">
-             <tr>
-                 <th id="thb1"></th>
-                 <td id="output1" class="tdbig"></td>
-             </tr>
-              <tr>
-                 <th id="thb2" > </th>
-                  <td id="output2" class="tdbig"></td>
-              </tr>
-              <tr>
-                 <th id="thb3" > </th>
-                <td id="output3" class="tdbig"></td>
-           </tr>
-                </table>  
-<label class='labels' >תשואה מצטברת 3 שנים</label>  
- 
-        <table id="tbl2">
-             <tr>
-                 <th id="thb11"></th>
-                 <td id="output11" class="tdbig"></td>
-             </tr>
-              <tr>
-                 <th id="thb12" > </th>
-                  <td id="output12" class="tdbig"></td>
-              </tr>
-              <tr>
-                 <th id="thb13" > </th>
-                <td id="output13" class="tdbig"></td>
-           </tr>
-        </table>
-<label class='labels' >תשואה מצטברת 5 שנים</label>  
-        <table id="tbl3">
-             <tr>
-                 <th id="thb21"></th>
-                 <td id="output21" class="tdbig"></td>
-             </tr>
-              <tr>
-                 <th id="thb22" > </th>
-                  <td id="output22" class="tdbig"></td>
-              </tr>
-              <tr>
-                 <th id="thb23" > </th>
-                <td id="output23" class="tdbig"></td>
-           </tr>
-        </table>
-        </main>
+        <div class="table12">       
+                <label class="labels" >תשואה מצטברת 12 חודשים</label>  
+                <table id="tbl1">
+                    <tr>
+                        <th id="thb1"></th>
+                        <td id="output1" class="tdbig"></td>
+                    </tr>
+                    <tr>
+                        <th id="thb2" > </th>
+                        <td id="output2" class="tdbig"></td>
+                    </tr>
+                    <tr>
+                        <th id="thb3" > </th>
+                        <td id="output3" class="tdbig"></td>
+                    </tr>
+                </table>
+        </div>
+        <div class="table3">  
+                <label class="labels" >תשואה מצטברת 3 שנים</label>  
+                <table id="tbl2">
+                    <tr>
+                        <th id="thb11"></th>
+                        <td id="output11" class="tdbig"></td>
+                    </tr>
+                    <tr>
+                        <th id="thb12" > </th>
+                        <td id="output12" class="tdbig"></td>
+                    </tr>
+                    <tr>
+                        <th id="thb13" > </th>
+                        <td id="output13" class="tdbig"></td>
+                    </tr>
+                </table>
+        </div>
+        <div class="table5"> 
+            <label class="labels" >תשואה מצטברת 5 שנים</label>  
+            <table id="tbl3">
+                <tr>
+                    <th id="thb21"></th>
+                    <td id="output21" class="tdbig"></td>
+                </tr>
+                <tr>
+                    <th id="thb22" > </th>
+                    <td id="output22" class="tdbig"></td>
+                </tr>
+                <tr>
+                    <th id="thb23" > </th>
+                    <td id="output23" class="tdbig"></td>
+            </tr>
+            </table>
+        </div>
+    </main>
 
     
 

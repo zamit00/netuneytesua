@@ -9,8 +9,8 @@
        top: 1vh;}
    .kot h2{color:white;position: absolute; left: 50%; transform: translateX(-50%);top: 7vh;}
     @media only screen and (min-width: 767px){
-    .logo{position: fixed;right: 6vw;top:3vh;width:100px; height:auto;}
-    header{width: 100vw;height: 18vh;position: fixed;top:0;background-color: #333;
+    .logo{position: fixed;right: 26vw;top:3vh;width:100px; height:auto;}
+    header{width: 70vw;height: 18vh;position: fixed;top:0;background-color: #333;
    }
     .kot h1{font-size: 35px;margin-top: 0px;padding-top:0;}
     .kot h2{font-size: 27px;margin-top: 10px;}

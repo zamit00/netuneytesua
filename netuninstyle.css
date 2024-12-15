@@ -2,11 +2,10 @@
 body{margin: 0%;padding: 0%;display: flex;justify-content: center;} 
 main{display: flex;flex-direction: column;align-items: center;}
 select,button{background-color: #333;color:white;font-weight: bold;}
-button{color:rgb(89, 227, 89);font-weight:bold;}
 option {background-color: white; color: black;  }
 .hashspecific{display: none;}
 .table3,.table5,.table12{display:none;}
-
+.bazea{color:rgb(89, 227, 89);margin-bottom:35px; }
 @media only screen and (min-width: 767px){
    main{width: 60vw;border:3px solid black;}
    
@@ -14,7 +13,7 @@ option {background-color: white; color: black;  }
    td{text-align: center;}
    th{text-align: right;padding-right: 5px;}
    table{width:50vw;border:1px solid black;margin-bottom:20px;margin-right: 10vw;}
-   button{width: 6vw;height: auto;margin-bottom:35px;}
+   button{width: 6vw;height: auto;margin-bottom:10px;}
    select{width: 15vw;height: 25px;text-align: center;float: left;margin-left: 10vw;}
    .labels{margin-bottom:10px;color:blue; margin-right: 10vw;}
    h1{font-size:35px;color:rgb(89, 227, 89);}
@@ -30,7 +29,7 @@ option {background-color: white; color: black;  }
    td{text-align: center;}
    th{text-align: right;padding-right: 5px;}
    table{width:90vw;border:1px solid black;margin-bottom:20px;margin-right: 0px;box-sizing: border-box;}
-   button{width: 90vw;height: auto;margin-bottom:35px;box-sizing: border-box;font-size: 16px;}
+   button{width: 90vw;height: auto;margin-bottom:10px;box-sizing: border-box;font-size: 16px;}
    select{width: 90vw;height: 25px;text-align: center;float: none;margin-left: 0;
       font-size: 16px;box-sizing: border-box;}
    .labels{margin-bottom:10px;color:blue; margin-right: 0px;box-sizing: border-box;}

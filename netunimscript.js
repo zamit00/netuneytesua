@@ -37,7 +37,7 @@ const dogma=`<Row>
 <NUM_HEVRA>512237744</NUM_HEVRA>
  </Row>`
 
-
+const tkokadivuach="נכון לחודש 10/2024";
 
 
 const mozar=["קרנות השתלמות","תגמולים ואישית לפיצויים","קופת גמל להשקעה",

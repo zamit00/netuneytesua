@@ -165,7 +165,7 @@ function bring(){
        const tesuam36 = row.getElementsByTagName("TSUA_MITZTABERET_36_HODASHIM")[0]?.textContent ||  '';
        const tesuam60 = row.getElementsByTagName("TSUA_MITZTABERET_60_HODASHIM")[0]?.textContent ||  '';
      
-        if(Number(yitratnehasim)>0 &&  divuach ==="דווח" && !shemkupa.icludes('ניהול אישי') && !shemkupa.icludes('IRA') &&
+        if(Number(yitratnehasim)>0 &&  divuach ==="דווח" && !shemkupa.includes('ניהול אישי') && !shemkupa.includes('IRA') &&
         ochlosiyayaad!== "עובדי סקטור מסויים" && ochlosiyayaad!==`עובדי מפעל/גוף מסויים`
          && moz.value && maslul.value!=='' && mozar!=='מטרה אחרת' && Number(tesuam)!==0
         && tesuam){

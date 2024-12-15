@@ -67,6 +67,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+for (let i = 0; i < window.optionCollection.length; i++) {
+    let row = window.optionCollection[i];
+    const mozar = row.getElementsByTagName("SUG_KUPA")[0]?.textContent ||  '';
+    const shemkupa = row.getElementsByTagName("SHM_KUPA")[0]?.textContent || '';
+    console.log(mozar+":"+shemkupa);
+}
+
+
+
+
+
+
+
+
+
 const tkokadivuach="נכון לחודש 10/2024";
  document.getElementById("tkofatdivuachn").innerText=tkokadivuach;
 

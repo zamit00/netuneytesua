@@ -67,7 +67,7 @@ fetch('kupotKlali.xml')
                     const idKupaInSecondFile = row2.getElementsByTagName("ID_KUPA")[0]?.textContent || '';
 
                    
-                    if (idKupaMatches.includes(`<ID>${idKupaInSecondFile}</ID>`) {
+                    if (idKupaMatches.includes(`<ID>${idKupaInSecondFile}</ID>`)) {
                            optionCollection2.push(row);      
                         console.log(idKupaInSecondFile);
                     }

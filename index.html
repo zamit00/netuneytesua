@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="he">
 <head>
@@ -23,7 +24,7 @@
          </div>
     </header>
     <main>
-        <h1 style="margin-top: 20vh;text-align: center; ">השוואת תשואות קופות גמל</h1>
+        <h1 style="margin-top: 20vh;text-align: center;margin-bottom:5px; ">השוואת תשואות קופות גמל</h1>
        
       <div class="klali">
             <div class="muzar">
@@ -37,7 +38,7 @@
                 </select>
             </div>
         </div>
-      <div class="sughashvaa muzar">
+      <div class="klali muzar" id="sughash">
                 <label class="lblblack" id="sug">בחר סוג השוואה:</label>
                 <div>    
                     <input type="radio" class="rdbutton" id="rdbutton1" name="sughash" onchange="changek()">
@@ -49,7 +50,7 @@
                 </div>
         </div>
        
-        <div class="hashspecific">
+        <div class="hashspecific" id="hashspecific">
            <div class="maslul muzar" id="maslul1">
                 <label class="lblblack" for="maslul-type1"> בחר מסלול ראשון:</label>
                 <select id="maslul-type1" name="maslul-type1" required placeholder="בחר" onchange="changek()" >

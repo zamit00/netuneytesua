@@ -9,7 +9,9 @@ option {background-color: white; color: black;  }
 @media only screen and (min-width: 767px){
    main{width: 60vw;border:3px solid black;}
    
-   th, td{width:25vw;height:30px;border:1px solid black;}
+   th, td{height:30px;border:1px solid black;}
+   th{width:35vw;}
+   td{width:15vw;}
    td{text-align: center;}
    th{text-align: right;padding-right: 5px;}
    table{width:50vw;border:1px solid black;margin-bottom:20px;margin-right: 10vw;}
@@ -23,9 +25,10 @@ option {background-color: white; color: black;  }
    
 }
   @media only screen and (max-width: 768px){
-
+   th{width:65vw;}
+   td{width:25vw;}
    main{width: 90vw;}
-   th, td{width:45vw;height:30px;border:1px solid black;;box-sizing: border-box;}
+   th, td{height:30px;border:1px solid black;;box-sizing: border-box;}
    td{text-align: center;}
    th{text-align: right;padding-right: 5px;}
    table{width:90vw;border:1px solid black;margin-bottom:20px;margin-right: 0px;box-sizing: border-box;}

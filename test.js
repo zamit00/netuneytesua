@@ -79,7 +79,9 @@ fetch('kupotKlali.xml')
 
     
   })
-.catch(error => console.error('שגיאה בקורא את קובץ ה-XML:', error));
+  .catch(error => {
+    console.error('Error loading kupotKlali.xml:', error);
+});
 
 
 

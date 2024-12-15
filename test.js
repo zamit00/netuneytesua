@@ -42,10 +42,10 @@ fetch('kupotKlali.xml')
       }
     }
     
-    for (let i = 0; i < rows.length; i++) {
-        const row = rows[i];
-        const shemkupa = row.getElementsByTagName("SHM_KUPA")[0]?.textContent || '';
-        const mhkupa = row.getElementsByTagName("ID")[0]?.textContent ||  '';
+    for (let i = 0; i < optionCollection.length; i++) {
+        const opt = optionCollection[i];
+        const shemkupa = opt.getElementsByTagName("SHM_KUPA")[0]?.textContent || '';
+        const mhkupa = opt.getElementsByTagName("ID")[0]?.textContent ||  '';
       console.log(mhkupa+":"+shemkupa)
       
     }

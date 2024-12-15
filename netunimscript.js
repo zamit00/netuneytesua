@@ -82,6 +82,11 @@ function changek(){
  document.getElementById('table12').style.display="none";
  document.getElementById('table3').style.display="none";
  document.getElementById('table5').style.display="none";
+ if (document.getElementById('rdbutton2').checked){
+  document.getElementById('hashspecific').style.display="block";
+ }
+ else{document.getElementById('hashspecific').style.display="none";
+     }
  
 }
 

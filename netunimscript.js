@@ -38,6 +38,7 @@ const dogma=`<Row>
  </Row>`
 
 const tkokadivuach="נכון לחודש 10/2024";
+ document.getElementById("tkofatdivuachn").innerText=tkokadivuach;
 
 
 const mozar=["קרנות השתלמות","תגמולים ואישית לפיצויים","קופת גמל להשקעה",

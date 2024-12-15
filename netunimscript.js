@@ -209,7 +209,7 @@ function bring(){
  
 }
    
-        
+      
 function specificadd(){
      var maslul1= document.getElementById("maslul-type1");
     var maslul2= document.getElementById("maslul-type2");
@@ -237,7 +237,7 @@ function specificadd(){
     const tesuam36 = row.getElementsByTagName("TSUA_MITZTABERET_36_HODASHIM")[0]?.textContent ||  '';
     const tesuam60 = row.getElementsByTagName("TSUA_MITZTABERET_60_HODASHIM")[0]?.textContent ||  '';
    
-    if(mozara===moza.value && masa===maslula.value ) {
+    if(mozara===moz.value && masa===maslul.value ) {
         const optiona = document.createElement("option");
         optiona.value = mhkupa;  // value יהיה שם הרכיב
         optiona.textContent = shemkupa;  // textContent יהיה שם הרכיב

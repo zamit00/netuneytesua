@@ -51,9 +51,7 @@ const mozar=["קרנות השתלמות","תגמולים ואישית לפיצו
 
   var selectElement;
   var maslul= document.getElementById("maslul-type");
-  var maslul1= document.getElementById("maslul-type1");
-  var maslul2= document.getElementById("maslul-type2");
-  var moz=document.getElementById("product");
+   var moz=document.getElementById("product");
   
 mozar.forEach(item => {
   const option = document.createElement("option");
@@ -119,7 +117,9 @@ var rashit;
 
 function bring(){
  if(maslul.value===''){return;}
- 
+ var maslul1= document.getElementById("maslul-type1");
+ var maslul2= document.getElementById("maslul-type2");
+
  
  document.getElementById('table12').style.display="block";
  document.getElementById('table3').style.display="block";

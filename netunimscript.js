@@ -176,8 +176,9 @@ function bring(){
             optionCollection.push({mh:mhkupa, shemkupa: shemkupa,mozar:mozar, tesuam: Number(tesuam), 
               ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:Number(tesuam36),tesuam60:Number(tesuam60) });
           
-         alert('ok');
+         
           }
+         alert('ok');
         }
          else{
         if(mozar===moz.value && mas===maslul.value ) {

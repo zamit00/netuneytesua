@@ -172,7 +172,7 @@ function bring(){
         && tesuam){
 
         if (document.getElementById('rdbutton2').checked){
-         if(mozar===moz.value && (mas===maslul1.value || mas===maslul2.value )) {
+         if(mozar===moz.value && (shemkupa===maslul1.value || shemkupa===maslul2.value )) {
             optionCollection.push({mh:mhkupa, shemkupa: shemkupa,mozar:mozar, tesuam: Number(tesuam), 
               ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:Number(tesuam36),tesuam60:Number(tesuam60) });
           

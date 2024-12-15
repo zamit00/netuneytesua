@@ -117,9 +117,7 @@ var rashit;
 
 function bring(){
  if(maslul.value===''){return;}
- var maslul1= document.getElementById("maslul-type1");
- var maslul2= document.getElementById("maslul-type2");
-
+ 
  
  document.getElementById('table12').style.display="block";
  document.getElementById('table3').style.display="block";
@@ -163,8 +161,10 @@ function bring(){
         const tesuam = row.getElementsByTagName("TSUA_MITZTABERET_LETKUFA")[0]?.textContent ||  '';
        const tesuam36 = row.getElementsByTagName("TSUA_MITZTABERET_36_HODASHIM")[0]?.textContent ||  '';
        const tesuam60 = row.getElementsByTagName("TSUA_MITZTABERET_60_HODASHIM")[0]?.textContent ||  '';
+        const maslul1= document.getElementById("maslul-type1");
+        const maslul2= document.getElementById("maslul-type2");
 
-
+alert(maslul1.value +":"+maslul2.value);
      
         if(Number(yitratnehasim)>0 &&  divuach ==="דווח" &&
         ochlosiyayaad!== "עובדי סקטור מסויים" && ochlosiyayaad!==`עובדי מפעל/גוף מסויים`

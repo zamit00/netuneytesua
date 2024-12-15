@@ -74,7 +74,7 @@ fetch('kupotKlali.xml')
                 }
                for (let r = 0; r < optionCollection2.length; r++) {
               const opt2 = optionCollection2[i];
-              const idkupa2 = opt.getElementsByTagName("ID_KUPA")[0]?.textContent || '';
+              const idkupa2 = opt2.getElementsByTagName("ID_KUPA")[0]?.textContent || '';
              console.log(idkupa2);
                    }
             })

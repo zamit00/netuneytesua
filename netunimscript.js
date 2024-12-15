@@ -210,7 +210,48 @@ function bring(){
 }
    
         
-        
+function specificadd(){
+     var maslul1= document.getElementById("maslul-type1");
+    var maslul2= document.getElementById("maslul-type2");
+  
+  const optionsa = maslul1.querySelectorAll('option');
+  if(optionsa.length>1){
+  for (let i = 1; i < optionsa.length; i++) {
+    maslul1.removeChild(optionsa[i]);
+  }
+  }
+    const optionsb = maslul2.querySelectorAll('option');
+  if(optionsb.length>1){
+  for (let i = 1; i < optionsb.length; i++) {
+    maslul2.removeChild(options[i]);
+  } 
+}
+
+  for (let i = 0; i < window.optionCollection.length; i++) {
+    let row = window.optionCollection[i];
+    const mozara = row.getElementsByTagName("SUG_KUPA")[0]?.textContent ||  '';
+    const shemkupa = row.getElementsByTagName("SHM_KUPA")[0]?.textContent || '';
+    const mhkupa = row.getElementsByTagName("ID")[0]?.textContent ||  '';
+    const masa = row.getElementsByTagName("HITMAHUT_MISHNIT")[0]?.textContent ||  '';
+    const tesuama = row.getElementsByTagName("TSUA_MITZTABERET_LETKUFA")[0]?.textContent ||  '';
+    const tesuam36 = row.getElementsByTagName("TSUA_MITZTABERET_36_HODASHIM")[0]?.textContent ||  '';
+    const tesuam60 = row.getElementsByTagName("TSUA_MITZTABERET_60_HODASHIM")[0]?.textContent ||  '';
+   
+    if(mozara===moza.value && masa===maslula.value ) {
+        const optiona = document.createElement("option");
+        optiona.value = mhkupa;  // value יהיה שם הרכיב
+        optiona.textContent = shemkupa;  // textContent יהיה שם הרכיב
+        maslul1.appendChild(optiona); 
+          
+        const optionb = document.createElement("option");
+        optionb.value = mhkupa;  // value יהיה שם הרכיב
+        optionb.textContent = shemkupa;  // textContent יהיה שם הרכיב
+        maslul2.appendChild(optionb); 
+            
+          }
+
+}   
+  }        
         
 
        

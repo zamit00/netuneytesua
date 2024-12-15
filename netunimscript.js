@@ -178,7 +178,7 @@ function bring(){
           
          
           }
-         alert('ok');
+         
         }
          else{
         if(mozar===moz.value && mas===maslul.value ) {

@@ -6,6 +6,7 @@ option,select {background-color: white; color: black;}
 .hashspecific{display: none;}
 .table3,.table5,.table12{display:none;}
 .bazea{color:rgb(89, 227, 89);margin-bottom:35px; }
+.tkofatdivuachn{color:blue;font-size:14px;margin-right:15px;}
 
 @media only screen and (min-width: 767px){
    main{width: 70vw;border:3px solid black;height:600px;}

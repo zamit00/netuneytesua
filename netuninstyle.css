@@ -6,28 +6,30 @@ option,select {background-color: white; color: black;}
 .hashspecific{display: none;}
 .table3,.table5,.table12{display:none;}
 .bazea{color:rgb(89, 227, 89);margin-bottom:35px; }
+
 @media only screen and (min-width: 767px){
-   main{width: 60vw;border:3px solid black;}
-   
-   th, td{height:30px;border:1px solid black;}
-   th{width:35vw;}
+   main{width: 70vw;border:3px solid black;height:600px;}
+   .lblblack{background-color: white;color:#333;font-weight: bold;}
+   th, td{height:35px;border:1px solid black;}
+   th{width:45vw;}
    td{width:15vw;}
    td{text-align: center;}
    th{text-align: right;padding-right: 5px;}
-   table{width:50vw;border:1px solid black;margin-bottom:20px;margin-right: 10vw;}
-   button{width: 6vw;height: auto;margin-bottom:10px;}
+   table{width:60vw;border:1px solid black;margin-bottom:20px;margin-right: 10vw;}
+   button{width: 10vw;height: auto;margin-bottom:10px;}
    select{width: 15vw;height: 25px;text-align: center;float: left;margin-left: 10vw;}
    .labels{margin-bottom:10px;color:blue; margin-right: 10vw;}
    h1{font-size:35px;color:rgb(89, 227, 89);}
    .muzar{margin: 20px 0px ;width: 40vw;}
-   .klali{width:50vw;margin-right: 10vw;}
-   
+   .klali{width:60vw;margin-right: 10vw;}
+   .bazea{color:rgb(89, 227, 89);margin-bottom:35px;margin-left:10vw;width: 15vw; }
+   #sughash{margin-right:10vw;}
    
 }
   @media only screen and (max-width: 768px){
    th{width:65vw;}
    td{width:25vw;}
-   main{width: 90vw;}
+   main{width: 90vw;height:auto;}
    th, td{height:30px;border:1px solid black;;box-sizing: border-box;}
    td{text-align: center;}
    th{text-align: right;padding-right: 5px;}
@@ -38,9 +40,10 @@ option,select {background-color: white; color: black;}
       font-size: 16px;box-sizing: border-box;}
    .labels{margin-bottom:10px;color:blue; margin-right: 0px;box-sizing: border-box;}
    h1{font-size:25px;color:rgb(89, 227, 89);box-sizing: border-box;}
-   .muzar{margin: 20px 0px ;width: 90vw;box-sizing: border-box;
+   .muzar{margin: 10px 0px ;width: 90vw;box-sizing: border-box;
          display:flex; flex-direction:column;}
    .klali{width:90vw;margin-right: 0vw;box-sizing: border-box;}
+   
   }
 
   @media only screen and (max-width: 480px){

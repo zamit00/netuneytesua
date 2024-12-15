@@ -49,5 +49,44 @@ fetch('kupotKlali.xml')
       console.log(mhkupa+":"+shemkupa)
       
     }
+
+
+   fetch('nechasim.xml')
+            .then(response => response.text()) // מקבל את תוכן הקובץ השני
+            .then(xmlString => {
+                const parser2 = new DOMParser();
+                const xmlDoc2 = parser2.parseFromString(xmlString, "application/xml");
+
+                const rows2 = xmlDoc2.getElementsByTagName("Row");
+                let optionCollection2 = [];
+              
+                for (let i = 0; i < rows2.length; i++) {
+                    const row2 = rows2[i];
+
+                    
+                    const idKupaInSecondFile = row2.getElementsByTagName("ID_KUPA")[0]?.textContent || '';
+
+                   
+                    if (idKupaMatches.includes(`<ID>${idKupaInSecondFile}</ID>`) {
+                           optionCollection2.push(row);      
+                        console.log(idKupaInSecondFile);
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error loading nechasim.xml:', error);
+            });
+
+    
   })
 .catch(error => console.error('שגיאה בקורא את קובץ ה-XML:', error));
+
+
+
+
+
+
+
+
+
+

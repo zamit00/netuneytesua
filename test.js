@@ -46,7 +46,7 @@ fetch('kupotKlali.xml')
         const opt = optionCollection[i];
         const shemkupa = opt.getElementsByTagName("SHM_KUPA")[0]?.textContent || '';
         const mhkupa = opt.getElementsByTagName("ID")[0]?.textContent ||  '';
-      console.log(mhkupa+":"+shemkupa)
+      
       
     }
 
@@ -69,9 +69,14 @@ fetch('kupotKlali.xml')
                    
                     if (optionCollection.includes(`<ID>${idKupaInSecondFile}</ID>`)) {
                            optionCollection2.push(row);      
-                        console.log(idKupaInSecondFile);
+                        
                     }
                 }
+               for (let r = 0; r < optionCollection2.length; r++) {
+              const opt2 = optionCollection2[i];
+              const idkupa2 = opt.getElementsByTagName("ID_KUPA")[0]?.textContent || '';
+             console.log(idkupa2);
+                   }
             })
             .catch(error => {
                 console.error('Error loading nechasim.xml:', error);

@@ -51,6 +51,8 @@ const mozar=["קרנות השתלמות","תגמולים ואישית לפיצו
 
   var selectElement;
   var maslul= document.getElementById("maslul-type");
+  var maslul1= document.getElementById("maslul-type1");
+  var maslul2= document.getElementById("maslul-type2");
   var moz=document.getElementById("product");
   
 mozar.forEach(item => {
@@ -117,6 +119,8 @@ var rashit;
 
 function bring(){
  if(maslul.value===''){return;}
+ 
+ 
  document.getElementById('table12').style.display="block";
  document.getElementById('table3').style.display="block";
  document.getElementById('table5').style.display="block";
@@ -167,14 +171,21 @@ function bring(){
          && moz.value && maslul.value!=='' && mozar!=='מטרה אחרת' && Number(tesuam)!==0
         && tesuam){
 
-        
-        if(mozar===moz.value && mas===maslul.value ) {
+        if (document.getElementById('rdbutton2').checked){
+         if(mozar===moz.value && (mas===maslul1.value || mas===maslul2.value )) {
             optionCollection.push({mh:mhkupa, shemkupa: shemkupa,mozar:mozar, tesuam: Number(tesuam), 
               ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:Number(tesuam36),tesuam60:Number(tesuam60) });
           }
         }
+         else{
+        if(mozar===moz.value && mas===maslul.value ) {
+            optionCollection.push({mh:mhkupa, shemkupa: shemkupa,mozar:mozar, tesuam: Number(tesuam), 
+              ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:Number(tesuam36),tesuam60:Number(tesuam60) });
+          }
+         }
+        }
       }
-      
+    
     
      
       if(optionCollection.length!==0){
@@ -199,4 +210,5 @@ function bring(){
     .catch(error => console.error('Error:', error));
     
     }
+ 
 

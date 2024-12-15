@@ -1,8 +1,8 @@
    
 body{margin: 0%;padding: 0%;display: flex;justify-content: center;} 
 main{display: flex;flex-direction: column;align-items: center;}
-select,button{background-color: #333;color:white;font-weight: bold;}
-option {background-color: white; color: black;  }
+.lblblack,button{background-color: #333;color:white;font-weight: bold;}
+option,select {background-color: white; color: black;}
 .hashspecific{display: none;}
 .table3,.table5,.table12{display:none;}
 .bazea{color:rgb(89, 227, 89);margin-bottom:35px; }

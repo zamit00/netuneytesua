@@ -140,7 +140,9 @@ function bring(){
 
         const parser = new DOMParser(); // יוצר parser לניתוח XML
         const xmlDoc = parser.parseFromString(xmlString, "application/xml"); // מנתח את הטקסט למבנה XML
-        
+        const maslul1= document.getElementById("maslul-type1");
+        const maslul2= document.getElementById("maslul-type2");
+
    
 
       const rows = xmlDoc.getElementsByTagName("Row");
@@ -161,10 +163,6 @@ function bring(){
         const tesuam = row.getElementsByTagName("TSUA_MITZTABERET_LETKUFA")[0]?.textContent ||  '';
        const tesuam36 = row.getElementsByTagName("TSUA_MITZTABERET_36_HODASHIM")[0]?.textContent ||  '';
        const tesuam60 = row.getElementsByTagName("TSUA_MITZTABERET_60_HODASHIM")[0]?.textContent ||  '';
-        const maslul1= document.getElementById("maslul-type1");
-        const maslul2= document.getElementById("maslul-type2");
-
-alert(maslul1.value +":"+maslul2.value);
      
         if(Number(yitratnehasim)>0 &&  divuach ==="דווח" &&
         ochlosiyayaad!== "עובדי סקטור מסויים" && ochlosiyayaad!==`עובדי מפעל/גוף מסויים`
@@ -172,7 +170,7 @@ alert(maslul1.value +":"+maslul2.value);
         && tesuam){
 
         if (document.getElementById('rdbutton2').checked){
-         if(mozar===moz.value && (shemkupa===maslul1.value || shemkupa===maslul2.value )) {
+         if(mozar===moz.value && (mhkupa===maslul1.value || mhkupa===maslul2.value )) {
             optionCollection.push({mh:mhkupa, shemkupa: shemkupa,mozar:mozar, tesuam: Number(tesuam), 
               ochlosiyayaad: ochlosiyayaad, divuach: divuach, tesuam36:Number(tesuam36),tesuam60:Number(tesuam60) });
           

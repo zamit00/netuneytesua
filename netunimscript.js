@@ -77,8 +77,8 @@ var rashit;
   
 }
 
-function sayok(x){
-  const mhkupaf= x.parentNode.parentNode.firstElementChild.innerText;
+function bringinfo(x){
+  const mhkupaf= x.parentNode.firstElementChild.innerText;
   
   fetch('kupotKlali.xml')
     .then(response => response.text()) // מקבל את תוכן הקובץ כטקסט
@@ -450,21 +450,21 @@ function bring(){
        document.getElementById(`outputmh${r+1}`).textContent=optionCollection[r].mh;      
        document.getElementById(`thb${r+1}`).innerHTML=optionCollection[r].shemkupa
        +      `<i class="fa fa-info-circle"  id='t12_${r+1}' style="font-size: 14px;float:left;margin-left:5px"
-        onclick="sayok(this)"></i>`;
+        ></i>`;
        document.getElementById(`output${r+1}`).textContent=optionCollection[r].tesuam+'%';
 
        optionCollection.sort((a, b) => b.tesuam36 - a.tesuam36);
        document.getElementById(`outputmh${r+11}`).textContent=optionCollection[r].mh; 
        document.getElementById(`thb${r+11}`).innerHTML=optionCollection[r].shemkupa
        +      `<i class="fa fa-info-circle"  id='t36_${r+1}' style="font-size: 14px;float:left;margin-left:5px"
-        onclick="sayok(this)"></i>`;
+        ></i>`;
        document.getElementById(`output${r+11}`).textContent=optionCollection[r].tesuam36+'%';
 
       optionCollection.sort((a, b) => b.tesuam60 - a.tesuam60);
       document.getElementById(`outputmh${r+21}`).textContent=optionCollection[r].mh; 
       document.getElementById(`thb${r+21}`).innerHTML=optionCollection[r].shemkupa
       +      `<i class="fa fa-info-circle"  id='t60_${r+1}' style="font-size: 14px;float:left;margin-left:5px"
-       onclick="sayok(this)"></i>`;
+       ></i>`;
       document.getElementById(`output${r+21}`).textContent=optionCollection[r].tesuam60+'%';
 
        

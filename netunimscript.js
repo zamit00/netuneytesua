@@ -174,7 +174,7 @@ function bringinfo(x){
         function clsw(){window.close()}
     </script>
     </head>
-      <header>
+      <header onclick="clsw()" >
         <div class="kot">
              <h1>כסף צומח</h1>
              <h2>קופות גמל וקרנות השתלמות</h2>

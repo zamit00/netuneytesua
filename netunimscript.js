@@ -116,7 +116,7 @@ function bringinfo(x){
 
       const screenh = window.innerHeight;
       const maxw = Math.min(screenw * 0.95, 800);
-  const maxh = Math.min(screenh * 0.95, 600);
+  const maxh = Math.min(screenh * 0.98, 700);
   const windowf = `width=${maxw},height=${maxh},resizable=yes,scrollbars=yes`;
   
   // פתיחת החלון החדש
@@ -132,23 +132,55 @@ function bringinfo(x){
     <head>
       <title style="text-align:center;"></title>
       <style>
-        th{background-color:#333;color:white;text-align: right; padding-right:5px;}
+       header{width: 100vw;height: 16vh;position: fixed;top:0;background-color: #333;
+        z-index:100;}
+        body{padding-top: 2vh;}
+      .kot h1{color:rgb(89, 227, 89);position: absolute; left: 50%; transform: translateX(-50%);
+       top: 1vh;}
+      .kot h2{color:white;position: absolute; left: 50%; transform: translateX(-50%);top: 7vh;}
+       #tbl1{margin-top:16vh;} 
+      th{background-color:#333;color:white;text-align: right; padding-right:5px;}
         td{padding-right:5px;}
         tr{height:20px;width:90vw;}
         .thsmallinfo{max-width:30vw;text-align:center;}
         .thr{text-align:right;padding-right:5px;}
         .thbiginfo{width:45vw;}
-        .oc{background-color:rgb(163, 157, 157);color:rgb(89, 227, 89);font-weight:bold;}
+        .oc{background-color:rgb(163, 157, 157);color:rgb(89, 227, 89);font-weight:bold;}   
         
-        .xsign{color:black;;font-size:30px; width:90vw;
-        align-text:left; color:black;font-weight:bold;margin-bottom:30px;}
+        align-text:left; color:black;font-weight:bold;}
+    
+    @media only screen and (min-width: 767px){
+    .logo{position: fixed;right: 26vw;top:3vh;width:100px; height:auto;}
+    header{width: 70vw;height: 18vh;position: fixed;top:0;background-color: #333;
+   }
+    .kot h1{font-size: 35px;margin-top: 0px;padding-top:0;}
+    .kot h2{font-size: 27px;margin-top: 10px;}
+  }
+  
+  
+  @media only screen and (max-width: 768px){
+    .xsign{color:white;position:fixed;left:20px;top:20px;}
+    header{width: 100vw;height: 18vh;}
+    .kot h1{font-size: 30px;margin-top: 0px;padding-top:0;}
+    .kot h2{font-size: 22px;margin-top: 10px;white-space:nowrap;}
+  }
+
+ 
+  
     
         </style>
       <script>
         function clsw(){window.close()}
     </script>
     </head>
-    <div class='xsign' onclick="clsw()">X</div>
+      <header>
+        <div class="kot">
+             <h1>כסף צומח</h1>
+             <h2>קופות גמל וקרנות השתלמות</h2>
+         </div>
+         <div class='xsign' onclick="clsw()">X</div>
+    </header>
+    
     <body style="display:flex;flex-direction:column; align-items:center;">
       <table id="tbl1" border="1" class="tblinfo" style="height:auto;width:90vw;margin-bottom:2vw;
       box-sizing:border-box;border-collapse:collapse">

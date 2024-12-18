@@ -140,8 +140,8 @@ function bringinfo(x){
         .thbiginfo{width:45vw;}
         .oc{background-color:rgb(163, 157, 157);color:rgb(89, 227, 89);font-weight:bold;}
         
-        .xsign{color:black;;font-size:20px; width:90vw;
-        align-text:left; color:black;font-weight:bold;}
+        .xsign{color:black;;font-size:30px; width:90vw;
+        align-text:left; color:black;font-weight:bold;margin-bottom:30px;}
     
         </style>
       <script>

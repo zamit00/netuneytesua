@@ -24,7 +24,7 @@
          </div>
     </header>
     <main>
-        <h1 style="margin-top: 20vh;text-align: center;margin-bottom:5px; ">השוואת תשואות קופות גמל</h1>
+        <h1 style="margin-top: 17vh;text-align: center;margin-bottom:5px; ">השוואת תשואות קופות גמל</h1>
         <div id="tkofatdivuachn"></div>
        
       <div class="klali">
@@ -72,14 +72,17 @@
                 <label class="labels" >תשואה מצטברת 12 חודשים</label>  
                 <table id="tbl1">
                     <tr>
+                        <td id="outputmh1" class="tdsmall"></td>
                         <th id="thb1"></th>
                         <td id="output1" class="tdbig"></td>
                     </tr>
                     <tr>
+                        <td id="outputmh2" class="tdsmall"></td>
                         <th id="thb2" > </th>
                         <td id="output2" class="tdbig"></td>
                     </tr>
                     <tr>
+                        <td id="outputmh3" class="tdsmall"></td>
                         <th id="thb3" > </th>
                         <td id="output3" class="tdbig"></td>
                     </tr>
@@ -89,14 +92,17 @@
                 <label class="labels" >תשואה מצטברת 3 שנים</label>  
                 <table id="tbl2">
                     <tr>
-                        <th id="thb11"></th>
+                        <td id="outputmh11" class="tdsmall"></td>
+                        <th id="thb11"></i></th>
                         <td id="output11" class="tdbig"></td>
                     </tr>
                     <tr>
+                        <td id="outputmh12" class="tdsmall"></td>
                         <th id="thb12" > </th>
                         <td id="output12" class="tdbig"></td>
                     </tr>
                     <tr>
+                        <td id="outputmh13" class="tdsmall"></td>
                         <th id="thb13" > </th>
                         <td id="output13" class="tdbig"></td>
                     </tr>
@@ -106,15 +112,18 @@
             <label class="labels" >תשואה מצטברת 5 שנים</label>  
             <table id="tbl3">
                 <tr>
+                    <td id="outputmh21" class="tdsmall"></td>
                     <th id="thb21"></th>
                     <td id="output21" class="tdbig"></td>
                 </tr>
                 <tr>
+                    <td id="outputmh22" class="tdsmall"></td>
                     <th id="thb22" > </th>
                     <td id="output22" class="tdbig"></td>
                 </tr>
                 <tr>
-                    <th id="thb23" > </th>
+                    <td id="outputmh23" class="tdsmall"></td>
+                    <th id="thb23" > </th> 
                     <td id="output23" class="tdbig"></td>
             </tr>
             </table>
@@ -127,173 +136,3 @@
 </html>
         
         
-        <!--   
-        <table id="tbl1">
-             <tr>
-                 <th id="thb1"></th>
-                 <td id="output1" class="tdbig"></td>
-             </tr>
-              <tr>
-                 <th id="thb2" > </th>
-                  <td id="output2" class="tdbig"></td>
-              </tr>
-              <tr>
-                 <th id="thb3" > </th>
-                <td id="output3" class="tdbig"></td>
-           </tr>
-    </table>
-            <div class="muzar">
-                <label for="maslul-type" id="lblmaslul">בחר מסלול:</label>
-                <select id="maslul-type" name="maslul-type" required></select>
-            </div>
-        
-        
-         <div class="rdioall">
-                    <div class="radio-group">
-                        <label class="hasifa">חשיפה למניות:</label>
-                        <div class="rd">
-                            <input type="radio" id="exposure1-preference" name="exposure1" value="אין העדפה" class="rdb1" checked>
-                            <label for="exposure1-preference">אין העדפה</label>
-                        </div>
-                        <div class="rd">
-                            <input type="radio" id="exposure1-increased" name="exposure1" value="מוגבר" class="rdb">
-                            <label for="exposure1-increased">מוגבר</label>
-                        </div>
-                        <div class="rd">
-                            <input type="radio" id="exposure1-medium" name="exposure1" value="בינוני" class="rdb">
-                            <label for="exposure1-medium">בינוני</label>
-                        </div>
-                        <div class="rd">
-                            <input type="radio" id="exposure1-low" name="exposure1" value="מועט" class="rdb">
-                            <label for="exposure1-low">מועט</label>
-                        </div>
-                    </div>
-                
-                    <div class="radio-group">
-                        <label class="hasifa">חשיפה לחול:</label>
-                        <div class="rd">
-                        </div>
-            </div>
-                    <div class="alltables" id="allthetables1">
-                        <div class="table-container1">
-                            <table id="tbl1">
-                                <tr>
-                                    <th class="thb">מספר באוצר</th>
-                                    <td id="output1" class="tdbig"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thbh" >שם המסלול</th>
-                                    <td id="output2" class="tdbig"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thb" >סוג קופה</th>
-                                    <td id="output3" class="tdbig"></td>
-                                </tr>
-                                <tr>
-                                    <th  class="thbh" >התמחות ראשית</th>
-                                    <td id="output4" class="tdbig"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thb" >התמחות משנית</th>
-                                    <td id="output5" class="tdbig"></td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="table-container2">
-                            <table id="tbl2">
-                                <tr>
-                                    <th  class="thbh">צבירה</th>
-                                    <td id="output6" class="tdbig"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thb" >שיעור דמי ניהול</th>
-                                    <td id="output7" class="tdbig"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thbh" > תשואה 12 חודשים</th>
-                                    <td id="output8" class="tdbig"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thb">תשואה מצטברת 3 שנים</th>
-                                    <td id="output9" class="tdbig"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thbh" >סטיית תקן 3 שנים</th>
-                                    <td id="output10" class="tdbig"></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    
-                <div class="alltables" id="allthetables2">
-                        <div class="table-container3">
-                            <table id="tbl3">
-                                <tr>
-                                    <td class="thb" id="nh3">הנכס</td>
-                                    <td class="thb" id="nh31">סכום</td>
-                                    <td class="thb" id="nh31">אחוז</td>
-                                </tr>
-                                <tr>
-                                    <th  class="thbh" >נכסים סחירים ונזילים</th>
-                                    <td id="schom1" class="tdsmall"></td>
-                                    <td id="ahuz1" class="tdsmall"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thb">נכסים לא סחירים</th>
-                                    <td id="schom2" class="tdsmall"></td>
-                                     <td id="ahuz2" class="tdsmall"></td>
-                                </tr>
-                              </table>
-                        </div>
-                        <div class="table-container4">
-                            <table id="tbl4">
-                                <tr>
-                                    <td class="thb" id="nh4">הנכס</td>
-                                    <td class="thb" id="nh41">סכום</td>
-                                    <td class="thb" id="nh41">אחוז</td>
-                                </tr>
-                                <tr>
-                                    <th  class="thbh">נכסים בארץ</th>
-                                    <td id="schom3" class="tdsmall"></td>
-                                    <td id="ahuz3" class="tdsmall"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thb">נכסים בחו"ל ומט"ח</th>
-                                    <td id="schom4" class="tdsmall"></td>
-                                     <td id="ahuz4" class="tdsmall"></td>
-                                </tr>
-                              </table>
-                        </div>
-                </div>
-                <div class="alltables" id="allthetables3">
-                        <div class="table-container5">
-                            <table id="tbl5">
-                                <tr>
-                                    <td class="thb" id="nh5">הנכס</td>
-                                    <td class="thb" id="nh51">סכום</td>
-                                    <td class="thb" id="nh51">אחוז</td>
-                                </tr>
-                                <tr>
-                                    <th  class="thbh" >חשיפה למניות</th>
-                                    <td id="schom5" class="tdsmall"></td>
-                                    <td id="ahuz5" class="tdsmall"></td>
-                                </tr>
-                                <tr>
-                                    <th class="thb" >חשיפה לחול</th>
-                                    <td id="schom6" class="tdsmall"></td>
-                                     <td id="ahuz6" class="tdsmall"></td>
-                                </tr>
-                                <tr>
-                                    <th  class="thbh" >חשיפה למט"ח</th>
-                                    <td id="schom7" class="tdsmall"></td>
-                                     <td id="ahuz7" class="tdsmall"></td>
-                                </tr>
-                              </table>
-                        </div>
-                    </div>
-        
-        
-             -->  
-            
-            
-    

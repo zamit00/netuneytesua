@@ -51,8 +51,9 @@ option,select {background-color: white; color: black;}
      select{width: 90vw;height: 25px;text-align: center;float: none;margin-left: 0;
       font-size: 16px;box-sizing: border-box;}
    .labels{margin-bottom:10px;color:blue; margin-right: 0px;box-sizing: border-box;}
-   h1{font-size:25px;color:rgb(89, 227, 89);box-sizing: border-box;}
-   .muzar{margin: 10px 0px ;width: 90vw;box-sizing: border-box;
+   h1{font-size:35px;color:rgb(89, 227, 89);box-sizing: border-box;}
+   h2{font-size:25px;}
+     .muzar{margin: 10px 0px ;width: 90vw;box-sizing: border-box;
          display:flex; flex-direction:column;}
    .klali{width:90vw;margin-right: 0vw;box-sizing: border-box;}
    

@@ -163,7 +163,7 @@ function bringinfo(x){
     header{width: 100vw;height: 18vh;}
     .kot h1{font-size: 30px;margin-top: 0px;padding-top:0;}
     .kot h2{font-size: 22px;margin-top: 10px;white-space:nowrap;}
- th,td{font-size:16px;}
+ th,td{font-size:20px;}
   }
 
  

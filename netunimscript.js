@@ -159,7 +159,7 @@ function bringinfo(x){
   
   
   @media only screen and (max-width: 768px){
-    .xsign{color:white;position:fixed;left:20px;top:20px;}
+    .xsign{color:white;position:fixed;left:40px;top:20px;}
     header{width: 100vw;height: 18vh;}
     .kot h1{font-size: 30px;margin-top: 0px;padding-top:0;}
     .kot h2{font-size: 22px;margin-top: 10px;white-space:nowrap;}

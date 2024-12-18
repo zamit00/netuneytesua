@@ -139,8 +139,16 @@ function bringinfo(x){
         .thr{text-align:right;padding-right:5px;}
         .thbiginfo{width:45vw;}
         .oc{background-color:rgb(163, 157, 157);color:rgb(89, 227, 89);font-weight:bold;}
-      </style>
+        
+        .xsign{color:black;;font-size:20px; width:90vw;
+        align-text:left; color:black;font-weight:bold;}
+    
+        </style>
+      <script>
+        function clsw(){window.close()}
+    </script>
     </head>
+    <div class='xsign' onclick="clsw()">X</div>
     <body style="display:flex;flex-direction:column; align-items:center;">
       <table id="tbl1" border="1" class="tblinfo" style="height:auto;width:90vw;margin-bottom:2vw;
       box-sizing:border-box;border-collapse:collapse">

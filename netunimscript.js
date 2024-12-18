@@ -135,9 +135,9 @@ function bringinfo(x){
        header{width: 100vw;height: 16vh;position: fixed;top:0;background-color: #333;
         z-index:100;}
         body{padding-top: 2vh;}
-      .kot h1{color:rgb(89, 227, 89);position: absolute; left: 50%; transform: translateX(-50%);
+      .kot h1{font-size:25px;color:rgb(89, 227, 89);position: absolute; left: 50%; transform: translateX(-50%);
        top: 1vh;}
-      .kot h2{color:white;position: absolute; left: 50%; transform: translateX(-50%);top: 7vh;}
+      .kot h2{font-size:25px;color:white;position: absolute; left: 50%; transform: translateX(-50%);top: 7vh;}
        #tbl1{margin-top:16vh;} 
       th{background-color:#333;color:white;text-align: right; padding-right:5px;}
         td{padding-right:5px;}

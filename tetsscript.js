@@ -113,22 +113,21 @@ function processData() {
                 td.style.backgroundColor='white';
                 td.textContent = data[tb].mh;
                 trm.appendChild(td);
-                td = document.createElement('td');
-                td.style.color='#333';
-                td.style.backgroundColor='white'
-                trm.appendChild(td);
+            
                 td = document.createElement('td');
                 td.style.color='#333';
                 td.style.backgroundColor='white'  
                 td.textContent = data[tb].shemkupa;
                 trm.appendChild(td);
+                    
                 td = document.createElement('td');
                 td.style.backgroundColor='white'
                 td.style.color='#333';
                 td.textContent = data[tb].tesuam + "%";
                 trm.appendChild(td);
+                    
                 table.appendChild(trm);
-                 table.style.display = 'block';   
+                table.style.display = 'block';   
                 }
                 
     }

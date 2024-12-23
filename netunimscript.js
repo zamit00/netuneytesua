@@ -74,7 +74,20 @@ var rashit;
     option.textContent = item;  // textContent יהיה שם הרכיב
     maslul.appendChild(option);  // הוספת ה-option ל-select
 });
-  
+ if (document.getElementById('rdbutton1').checked){
+   document.getElementById('hashspecific').style.display="none";
+   document.getElementById('maslul').style.display="block";
+ };
+ if (document.getElementById('rdbutton2').checked){
+   document.getElementById('hashspecific').style.display="block";
+   document.getElementById('maslul').style.display="block";
+ };
+ if (document.getElementById('rdbutton3').checked){
+  document.getElementById('maslul').style.display="none";
+ };
+ if (document.getElementById('rdbutton4').checked){
+  document.getElementById('hashspecific').style.display="none";
+ };
 }
 
 function bringinfo(x){

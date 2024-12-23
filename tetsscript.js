@@ -83,23 +83,24 @@ function processData() {
     
     table.id = 'myTable';
     table.className = 'tbldata';
+    table.style.borderCollapse='collapse';
     document.getElementById('tbldo').appendChild(table);
     
    
             const headerRow = document.createElement('tr');
             th = document.createElement('th');
-            th.style.color='#333';
-            th.style.backgroundColor='white';
+            th.style.color='white';
+            th.style.backgroundColor='#333';
             th.textContent = 'מספר מה'  
             headerRow.appendChild(th);
             th = document.createElement('th');
-            th.style.color='#333';
-            th.style.backgroundColor='white';
+            th.style.color='white';
+            th.style.backgroundColor='#333';
             th.textContent = 'שם המסלול: '+hishtalmot[i];
             headerRow.appendChild(th);
             th = document.createElement('th');
-            th.style.color='#333';
-            th.style.backgroundColor='white';
+            th.style.color='white';
+            th.style.backgroundColor='#333';
             th.textContent = 'תשואה';
             headerRow.appendChild(th);
             table.appendChild(headerRow);

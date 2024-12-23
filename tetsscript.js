@@ -128,7 +128,12 @@ function processData() {
                 trm.appendChild(td);
                     
                 table.appendChild(trm);
-                table.style.display = 'block';   
+                 table.style.display = 'block';     
+                if (document.getElementById('rdbutton1').checked){
+                  if (data[tb].mas!==maslul){
+                      table.style.display = 'none';
+                  }
+                }
                 }
                 
     }

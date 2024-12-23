@@ -419,10 +419,13 @@ function bring(){
   alert("בחר מסלול השקעה");return;
  }
  else{
+  if (document.getElementById('rdbutton1').checked){processData();return;}
+else{
   document.getElementById('table12').style.display="block";
  document.getElementById('table3').style.display="block";
  document.getElementById('table5').style.display="block";
      }
+ }
  
  
  fetch('kupotKlali.xml')

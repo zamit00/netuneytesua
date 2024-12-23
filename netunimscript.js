@@ -49,6 +49,7 @@ function changek(){
  if (document.getElementById('rdbutton1').checked){
    document.getElementById('hashspecific').style.display="none";
    document.getElementById('maslul').style.display="block";
+  
  };
  if (document.getElementById('rdbutton2').checked){
    document.getElementById('hashspecific').style.display="block";

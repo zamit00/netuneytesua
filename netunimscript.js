@@ -398,12 +398,11 @@ fetch('nechasim.xml')
 }
 
 function bring(){
- if(maslul.value===''){alert("בחר מסלול השקעה");return;}
+
+
  
  
- document.getElementById('table12').style.display="block";
- document.getElementById('table3').style.display="block";
- document.getElementById('table5').style.display="block";
+ 
 
  for(let i=1;i<=3;i++){
      document.getElementById(`thb${i}`).textContent='';
@@ -420,6 +419,16 @@ function bring(){
 
  
  }
+ if (document.getElementById('rdbutton3').checked){processData();return;}
+ if ((document.getElementById('rdbutton1').checked || document.getElementById('rdbutton2').checked ) && maslul.value==='' ){
+  alert("בחר מסלול השקעה");return;
+ }
+ else{
+  document.getElementById('table12').style.display="block";
+ document.getElementById('table3').style.display="block";
+ document.getElementById('table5').style.display="block";
+     }
+ 
  
  fetch('kupotKlali.xml')
     .then(response => response.text()) // מקבל את תוכן הקובץ כטקסט

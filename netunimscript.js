@@ -177,8 +177,8 @@ function bringinfo(x){
     </head>
       <header onclick="clsw()" >
         <div class="kot">
-             <h1 style="font-size:35px;">כסף צומח</h1>
-             <h2 style="font-size:25px;" >קופות גמל וקרנות השתלמות</h2>
+             <h1 style="font-size:40px;">כסף צומח</h1>
+             <h2 style="font-size:30px;" >קופות גמל וקרנות השתלמות</h2>
          </div>
          <div class='xsign' onclick="clsw()">X</div>
     </header>
@@ -188,13 +188,13 @@ function bringinfo(x){
       box-sizing:border-box;border-collapse:collapse">
         
           <tr class="trinfo">
-            <th class="thbiginfo" >שם קופה</th>
-            <td class="thbiginfo" ></td>
+            <th style="font-size:16px;" class="thbiginfo" >שם קופה</th>
+            <td style="font-size:16px;" class="thbiginfo" ></td>
           </tr>
         
           <tr class="trinfo" >
-            <th class="thbiginfo" >מספר מה</th>
-            <td class="thbiginfo" ></td>
+            <th style="font-size:16px;" class="thbiginfo" >מספר מה</th>
+            <td style="font-size:16px;" class="thbiginfo" ></td>
           </tr>
           
           <tr class="trinfo" >
@@ -212,17 +212,17 @@ function bringinfo(x){
           </tr>
           
           <tr class="trinfo" >
-            <th class="thbiginfo" >תשואה 12 חודשים</th>
-            <td class="thbiginfo" ></td>
+            <th style="font-size:16px;" class="thbiginfo" >תשואה 12 חודשים</th>
+            <td style="font-size:16px;" class="thbiginfo" ></td>
           </tr>
           <tr class="trinfo" >
-            <th class="thbiginfo" >תשואה 3 שנים</th>
-            <td class="thbiginfo" ></td>
+            <th style="font-size:16px;" class="thbiginfo" >תשואה 3 שנים</th>
+            <td style="font-size:16px;" class="thbiginfo" ></td>
           </tr>
         
           <tr class="trinfo" >
-            <th class="thbiginfo" >תשואה 5 שנים</th>
-            <td class="thbiginfo" ></td>
+            <th style="font-size:16px;" class="thbiginfo" >תשואה 5 שנים</th>
+            <td style="font-size:16px;" class="thbiginfo" ></td>
           </tr>
           
           <tr class="trinfo" >
@@ -235,70 +235,70 @@ function bringinfo(x){
           </tr>
         
           <tr class="trinfo" >
-            <th class="thbiginfo" >סטיית תקן 3 שנים</th>
-            <td class="thbiginfo" ></td>
+            <th style="font-size:16px;" class="thbiginfo" >סטיית תקן 3 שנים</th>
+            <td style="font-size:16px;" class="thbiginfo" ></td>
           </tr>
           
           <tr class="trinfo" >
-            <th class="thbiginfo" >סטיית תקן 5 שנים</th>
-            <td class="thbiginfo" ></td>
+            <th style="font-size:16px;" class="thbiginfo" >סטיית תקן 5 שנים</th>
+            <td style="font-size:16px;" class="thbiginfo" ></td>
           </tr>
 
       </table>
       <table id="tbl2" border="1" class="tblinfo" style="height:auto;max-width:90vw;margin-bottom:10px;
       box-sizing:border-box;border-collapse:collapse"">
           <tr class="trinfo">
-            <th class="thsmallinfo thr oc" style="min-width:45vw;">סוג הנכס</th>
-            <th class="thsmallinfo oc" style="min-width:20vw;">סכום באלפי ש"ח</th>
-            <th class="thsmallinfo oc" style="min-width:20vw;">שיעור מהנכסים</th>
+            <th style="font-size:16px;" class="thsmallinfo thr oc" style="min-width:45vw;">סוג הנכס</th>
+            <th style="font-size:16px;" class="thsmallinfo oc" style="min-width:20vw;">סכום באלפי ש"ח</th>
+            <th style="font-size:16px;" class="thsmallinfo oc" style="min-width:20vw;">שיעור מהנכסים</th>
           </tr>
           <tr class="trinfo">
-            <th class="thsmallinfo thr" style="min-width:45vw;">נכסים סחירים ונזילים </th>
-            <td class="thsmallinfo" style="min-width:20vw;"></td>
-            <td class="thsmallinfo" style="min-width:20vw;"></td>
+            <th style="font-size:16px;" class="thsmallinfo thr" style="min-width:45vw;">נכסים סחירים ונזילים </th>
+            <td style="font-size:16px;" class="thsmallinfo" style="min-width:20vw;"></td>
+            <td style="font-size:16px;" class="thsmallinfo" style="min-width:20vw;"></td>
           </tr>
         
           <tr class="trinfo" >
-            <th class="thsmallinfo thr" >נכסים לא סחירים </th>
-            <td class="thsmallinfo" ></td>
-            <td class="thsmallinfo" ></td>
+            <th style="font-size:16px;" class="thsmallinfo thr" >נכסים לא סחירים </th>
+            <td style="font-size:16px;" class="thsmallinfo" ></td>
+            <td style="font-size:16px;" class="thsmallinfo" ></td>
           </tr>
           
           <tr class="trinfo" >
-            <th class="thsmallinfo thr" > נכסים בארץ </th>
-            <td class="thsmallinfo" ></td>
-            <td class="thsmallinfo" ></td>
+            <th style="font-size:16px;" class="thsmallinfo thr" > נכסים בארץ </th>
+            <td style="font-size:16px;" class="thsmallinfo" ></td>
+            <td style="font-size:16px;" class="thsmallinfo" ></td>
           </tr>
           <tr class="trinfo" >
-            <th class="thsmallinfo thr" >נכסים בחול </th>
-            <td class="thsmallinfo" ></td>
-            <td class="thsmallinfo" ></td>
+            <th style="font-size:16px;" class="thsmallinfo thr" >נכסים בחול </th>
+            <td style="font-size:16px;" class="thsmallinfo" ></td>
+            <td style="font-size:16px;" class="thsmallinfo" ></td>
           </tr>
         </table>
 
         <table id="tbl3" border="1" class="tblinfo" style="height:auto;max-width:90vw;margin-bottom:10px;
         box-sizing:border-box;border-collapse:collapse"" >
           <tr class="trinfo">
-            <th class="thsmallinfo thr oc" style="min-width:45vw;">סוג החשיפה</th>
-            <td class="thsmallinfo oc" style="min-width:20vw;">סכום באלפי ש"ח</td>
-            <td class="thsmallinfo oc" style="min-width:20vw;">שיעור מהנכסים</td>
+            <th style="font-size:16px;" class="thsmallinfo thr oc" style="min-width:45vw;">סוג החשיפה</th>
+            <td style="font-size:16px;" class="thsmallinfo oc" style="min-width:20vw;">סכום באלפי ש"ח</td>
+            <td style="font-size:16px;" class="thsmallinfo oc" style="min-width:20vw;">שיעור מהנכסים</td>
           </tr>
           <tr class="trinfo" >
-            <th class="thsmallinfo thr" style="min-width:45vw;">חשיפה למניות   </th>
-            <td class="thsmallinfo" style="min-width:20vw;"></td>
-             <td class="thsmallinfo" style="min-width:20vw;"></td>
+            <th style="font-size:16px;" class="thsmallinfo thr" style="min-width:45vw;">חשיפה למניות   </th>
+            <td style="font-size:16px;" class="thsmallinfo" style="min-width:20vw;"></td>
+             <td style="font-size:16px;" class="thsmallinfo" style="min-width:20vw;"></td>
           </tr>
         
           <tr class="trinfo" >
-            <th class="thsmallinfo thr" > חשיפה למטבע חוץ  </th>
-            <td class="thsmallinfo" ></td>
-             <td class="thsmallinfo" ></td>
+            <th style="font-size:16px;" class="thsmallinfo thr" > חשיפה למטבע חוץ  </th>
+            <td style="font-size:16px;" class="thsmallinfo" ></td>
+             <td style="font-size:16px;" class="thsmallinfo" ></td>
           </tr>
           
           <tr class="trinfo" >
-            <th class="thsmallinfo thr" > חשיפה לחול </th>
-            <td class="thsmallinfo" ></td>
-             <td class="thsmallinfo" ></td>
+            <th style="font-size:16px;" class="thsmallinfo thr" > חשיפה לחול </th>
+            <td style="font-size:16px;" class="thsmallinfo" ></td>
+             <td style="font-size:16px;" class="thsmallinfo" ></td>
           </tr>
        
         </table>

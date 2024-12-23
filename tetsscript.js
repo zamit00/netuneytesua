@@ -39,6 +39,7 @@ function fetchdata(x,y) {
                 tesuam36: Number(tesuam36), 
                 tesuam60: Number(tesuam60)
             });
+                console.log(mhkupa);
         }
         }
 

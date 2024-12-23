@@ -38,9 +38,9 @@ function changek(){
 
      document.getElementById(`thb${i+10}`).textContent='';
      document.getElementById(`output${i+10}`).textContent='';
-      document.getElementById(`thb${i+20}`).textContent='';
+     document.getElementById(`thb${i+20}`).textContent='';
      document.getElementById(`output${i+20}`).textContent='';
-  document.getElementById('tbldo').innerHTML='';
+     document.getElementById('tbldo').innerHTML='';
 
  
  }
@@ -49,20 +49,8 @@ function changek(){
  document.getElementById('table5').style.display="none";
  if (document.getElementById('rdbutton1').checked){
    document.getElementById('hashspecific').style.display="none";
-   document.getElementById('maslul').style.display="block";
-  
- };
- if (document.getElementById('rdbutton2').checked){
-   document.getElementById('hashspecific').style.display="block";
-   document.getElementById('maslul').style.display="block";
- };
- if (document.getElementById('rdbutton3').checked){
-  document.getElementById('maslul').style.display="none";
- };
- if (document.getElementById('rdbutton4').checked){
-  document.getElementById('hashspecific').style.display="none";
- };
- 
+ }
+ else {document.getElementById('hashspecific').style.display="block";} 
 }
 
 function rashiadd(){

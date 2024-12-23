@@ -73,18 +73,18 @@ function processData() {
    
             const headerRow = document.createElement('tr');
             th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgrounColor='#333';
+            th.style.color='#333';
+            th.style.backgrounColor='white';
             th.textContent = 'מספר מה'  
             headerRow.appendChild(th);
             th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgrounColor='#333';
+            th.style.color='#333';
+            th.style.backgrounColor='white';
             th.textContent = 'שם המסלול: '+hishtalmot[i];
             headerRow.appendChild(th);
             th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgrounColor='#333';
+            th.style.color='#333';
+            th.style.backgrounColor='white';
             th.textContent = 'תשואה';
             headerRow.appendChild(th);
             table.appendChild(headerRow);

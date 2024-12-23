@@ -32,6 +32,7 @@ hishtalmot.forEach(item => {
   maslul.appendChild(optiona);  // הוספת ה-option ל-select
 });
 function changek(){
+  document.getElementById('tbldo').innerHTML='';
  for(let i=1;i<=3;i++){
      document.getElementById(`thb${i}`).textContent='';
      document.getElementById(`output${i}`).textContent='';
@@ -40,9 +41,6 @@ function changek(){
      document.getElementById(`output${i+10}`).textContent='';
      document.getElementById(`thb${i+20}`).textContent='';
      document.getElementById(`output${i+20}`).textContent='';
-     document.getElementById('tbldo').innerHTML='';
-
- 
  }
  document.getElementById('table12').style.display="none";
  document.getElementById('table3').style.display="none";

@@ -112,7 +112,7 @@ function processData() {
                 td.style.color='#333';
                 td.style.backgroundColor='white';
                 td.textContent = data[tb].mh;
-                console.log(data[tb].mh;)
+                console.log(data[tb].mh);
                 td = document.createElement('td');
                 td.style.color='#333';
                 td.style.backgroundColor='white'

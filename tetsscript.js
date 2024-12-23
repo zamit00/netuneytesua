@@ -88,6 +88,7 @@ function processData() {
             th.textContent = 'תשואה';
             headerRow.appendChild(th);
             table.appendChild(headerRow);
+            table.style.display = 'none';
             
             for (let tb=1; tb<=data.length+1;tb++){
                 if (data[tb].tesuam){
@@ -110,12 +111,12 @@ function processData() {
                 td.textContent = data[tb].tesuam + "%";
                 trm.appendChild(td);
                 table.appendChild(trm);
-                 checktesua=Number(data[tb].tesuam);   
+                 table.style.display = 'block';   
                 }
                 
     }
-        if (checktesua!==0){table.style.display = 'block';checktesua=0;}
-        else{table.style.display = 'block';}
+       
+       
 
 
     /*    console.log(data);  

@@ -54,13 +54,27 @@ function fetchdata(x,y) {
 function processData() {
     var maslul= document.getElementById("maslul-type").value;
     var moz=document.getElementById("product").value;
-    const hishtalmot=["אג\"ח ממשלות","אג\"ח סחיר","אשראי ואג\"ח"
-        ,"הלכה יהודית","כללי","כספי (שקלי)","מניות","מניות סחיר"
-        ,"משולב מניות","משולב סחיר","עוקב מדד s&p 500","עוקב מדדי אג\"ח"
-        ,"עוקב מדדי מניות","עוקב מדדים - גמיש"];
+   const layeled=["חיסכון לילד -חוסכים המעדיפים סיכון מועט","חיסכון לילד -חוסכים המעדיפים סיכון בינוני",
+    "חיסכון לילד -חוסכים המעדיפים סיכון גבוה","הלכה יהודית"];
+    const hishtalmot=["אג\"ח ממשלות","אג\"ח סחיר","אשראי ואג\"ח","הלכה יהודית","כללי","כספי (שקלי)","מניות"
+                      ,"מניות סחיר","משולב מניות","משולב סחיר","עוקב מדד s&p 500",
+                      "עוקב מדדי אג\"ח","עוקב מדדי מניות","עוקב מדדים - גמיש"];
+    const gemel=["50-60","אג\"ח ממשלות","אג\"ח סחיר","אשראי ואג\"ח","הלכה יהודית","50-60","כספי (שקלי)","מניות "
+                 ,"מניות סחיר","60 ומעלה","משולב סחיר","עוקב מדד s&p 500","עוקב מדדי אג\"ח","עוקב מדדי מניות","עוקב מדדים - גמיש"];
+    const merkazitlepizuyim=["כללי"];
+    var mozarchoose;
+
+    if (moz==='קרנות השתלמות'){mozarchoose=hishtalmot;}
+    if (moz==='תגמולים ואישית לפיצויים'){mozarchoose=gemel;}
+    if (moz==='קופת גמל להשקעה'){mozarchoose=hishtalmot;}
+    if (moz==='קופת גמל להשקעה - חסכון לילד'){mozarchoose=layeled;}
+    if (moz==='מרכזית לפיצויים'){mozarchoose=merkazitlepizuyim;}
+       
     
-        for (let i=0; i<= hishtalmot.length-1;i++){
-    fetchdata(moz,hishtalmot[i]).then(data => {
+    
+    
+        for (let i=0; i<= mozarchoose.length-1;i++){
+    fetchdata(moz,mozarchoose[i]).then(data => {
     data.sort((a, b) => b.tesuam - a.tesuam);
     
     const table = document.createElement('table');

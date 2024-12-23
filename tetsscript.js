@@ -70,7 +70,9 @@ function processData() {
     if (moz==='קופת גמל להשקעה'){mozarchoose=hishtalmot;}
     if (moz==='קופת גמל להשקעה - חסכון לילד'){mozarchoose=layeled;}
     if (moz==='מרכזית לפיצויים'){mozarchoose=merkazitlepizuyim;}
-       
+    if (document.getElementById('rdbutton1').checked){
+         mozarchoose===maslul}
+     
     
     
     
@@ -129,11 +131,7 @@ function processData() {
                     
                 table.appendChild(trm);
                  table.style.display = 'block';     
-                if (document.getElementById('rdbutton1').checked){
-                  if (data[tb].mas!==maslul){
-                      table.style.display = 'none';
-                  }
-                }
+                
                 }
                 
     }

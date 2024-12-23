@@ -399,11 +399,6 @@ fetch('nechasim.xml')
 
 function bring(){
 
-
- 
- 
- 
-
  for(let i=1;i<=3;i++){
      document.getElementById(`thb${i}`).textContent='';
      document.getElementById(`output${i}`).textContent='';

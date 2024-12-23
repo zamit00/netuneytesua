@@ -40,6 +40,7 @@ function changek(){
      document.getElementById(`output${i+10}`).textContent='';
       document.getElementById(`thb${i+20}`).textContent='';
      document.getElementById(`output${i+20}`).textContent='';
+  document.getElementById('tbldo').innerHTML='';
 
  
  }

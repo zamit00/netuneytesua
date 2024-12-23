@@ -180,7 +180,7 @@ function bringinfo(x){
              <h1 style="font-size:40px;">כסף צומח</h1>
              <h2 style="font-size:30px;" >קופות גמל וקרנות השתלמות</h2>
          </div>
-         <div class='xsign' onclick="clsw()">X</div>
+         <div class='xsign' onclick="clsw()"  style="font-size:16px;position:fixed;lef:15px;top:10px;">X</div>
     </header>
     
     <body style="display:flex;flex-direction:column; align-items:center;">

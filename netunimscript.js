@@ -142,9 +142,9 @@ function bringinfo(x){
       th{background-color:#333;color:white;text-align: right; padding-right:5px;}
         td{padding-right:5px;}
         tr{height:20px;width:90vw;}
-        .thsmallinfo{max-width:30vw;text-align:center;}
+        .thsmallinfo{max-width:30vw;text-align:center;font-size:16px;}
         .thr{text-align:right;padding-right:5px;}
-        .thbiginfo{width:45vw;}
+        .thbiginfo{width:45vw;font-size:16px;}
         .oc{background-color:rgb(163, 157, 157);color:rgb(89, 227, 89);font-weight:bold;}   
         
         align-text:left; color:black;font-weight:bold;}

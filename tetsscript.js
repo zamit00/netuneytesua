@@ -1,6 +1,6 @@
 // הפונקציה fetchdata מחזירה Promise
 function fetchdata(x,y) {
-    console.log(x+":"+y)
+
     return fetch('kupotKlali.xml')
     .then(response => response.text()) // מקבל את תוכן הקובץ כטקסט
     .then(xmlString => {
@@ -39,7 +39,7 @@ function fetchdata(x,y) {
                 tesuam36: Number(tesuam36), 
                 tesuam60: Number(tesuam60)
             });
-                console.log(mhkupa);
+               
         }
         }
 
@@ -74,7 +74,7 @@ function processData() {
     
     
     
-        for (let i=0; i<= mozarchoose.length-1;i++){
+    for (let i=0; i<= mozarchoose.length-1;i++){
     fetchdata(moz,mozarchoose[i]).then(data => {
     data.sort((a, b) => b.tesuam - a.tesuam);
     
@@ -105,13 +105,14 @@ function processData() {
             table.appendChild(headerRow);
             table.style.display = 'none';
             
-            for (let tb=1; tb<=data.length+1;tb++){
+            for (let tb=0; tb<=data.length-1;tb++){
                 if (data[tb].tesuam){
                 const trm = document.createElement('tr');
                 td = document.createElement('td');
                 td.style.color='#333';
                 td.style.backgroundColor='white';
                 td.textContent = data[tb].mh;
+                console.log(data[tb].mh;)
                 td = document.createElement('td');
                 td.style.color='#333';
                 td.style.backgroundColor='white'

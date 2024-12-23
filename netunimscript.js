@@ -33,7 +33,7 @@ hishtalmot.forEach(item => {
 });
 function changek(){
   document.getElementById('tbldo').innerHTML='';
- for(let i=1;i<=3;i++){
+ for(let i=1;i<=2;i++){
      document.getElementById(`thb${i}`).textContent='';
      document.getElementById(`output${i}`).textContent='';
 
@@ -399,7 +399,7 @@ fetch('nechasim.xml')
 
 function bring(){
 
- for(let i=1;i<=3;i++){
+ for(let i=1;i<=2;i++){
      document.getElementById(`thb${i}`).textContent='';
      document.getElementById(`output${i}`).textContent='';
      document.getElementById(`outputmh${i}`).textContent='';
@@ -491,7 +491,7 @@ else{
     
      
       if(optionCollection.length!==0){
-      for(let r=0;r<=Math.min(optionCollection.length-1,2);r++){
+      for(let r=0;r<=Math.min(optionCollection.length-1,1);r++){
        optionCollection.sort((a, b) => b.tesuam - a.tesuam); 
        document.getElementById(`outputmh${r+1}`).textContent=optionCollection[r].mh;      
        document.getElementById(`thb${r+1}`).innerHTML=optionCollection[r].shemkupa

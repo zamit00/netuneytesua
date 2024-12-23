@@ -46,11 +46,20 @@ function changek(){
  document.getElementById('table12').style.display="none";
  document.getElementById('table3').style.display="none";
  document.getElementById('table5').style.display="none";
+ if (document.getElementById('rdbutton1').checked){
+   document.getElementById('hashspecific').style.display="none";
+   document.getElementById('maslul').style.display="block";
+ };
  if (document.getElementById('rdbutton2').checked){
-  document.getElementById('hashspecific').style.display="block";
- }
- else{document.getElementById('hashspecific').style.display="none";
-     }
+   document.getElementById('hashspecific').style.display="block";
+   document.getElementById('maslul').style.display="block";
+ };
+ if (document.getElementById('rdbutton3').checked){
+  document.getElementById('maslul').style.display="none";
+ };
+ if (document.getElementById('rdbutton4').checked){
+  document.getElementById('hashspecific').style.display="none";
+ };
  
 }
 
@@ -74,20 +83,7 @@ var rashit;
     option.textContent = item;  // textContent יהיה שם הרכיב
     maslul.appendChild(option);  // הוספת ה-option ל-select
 });
- if (document.getElementById('rdbutton1').checked){
-   document.getElementById('hashspecific').style.display="none";
-   document.getElementById('maslul').style.display="block";
- };
- if (document.getElementById('rdbutton2').checked){
-   document.getElementById('hashspecific').style.display="block";
-   document.getElementById('maslul').style.display="block";
- };
- if (document.getElementById('rdbutton3').checked){
-  document.getElementById('maslul').style.display="none";
- };
- if (document.getElementById('rdbutton4').checked){
-  document.getElementById('hashspecific').style.display="none";
- };
+ 
 }
 
 function bringinfo(x){

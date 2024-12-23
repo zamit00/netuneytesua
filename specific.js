@@ -15,7 +15,7 @@
    }
 function specificadd(){
  
- 
+ var maslulk= document.getElementById("maslul-type");
   var maslul1= document.getElementById("maslul-type1");
   var maslul2= document.getElementById("maslul-type2");
 const optionsa = maslul1.querySelectorAll('option');
@@ -57,10 +57,10 @@ for (let i = 1; i < optionsb.length; i++) {
     
         if(Number(yitratnehasim)>0 &&  divuach ==="דווח" &&
         ochlosiyayaad!== "עובדי סקטור מסויים" && ochlosiyayaad!==`עובדי מפעל/גוף מסויים`
-         && moza.value && maslula.value!=='' && mozara!=='מטרה אחרת' && Number(tesuama)!==0
+         && moza.value && maslulk.value!=='' && mozara!=='מטרה אחרת' && Number(tesuama)!==0
         && tesuama){ 
         
-        if(mozara===moza.value && masa===maslula.value ) {
+        if(mozara===moza.value && masa===maslulk.value ) {
           const optiona = document.createElement("option");
           optiona.value = mhkupa;  // value יהיה שם הרכיב
           optiona.textContent = shemkupa;  // textContent יהיה שם הרכיב

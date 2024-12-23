@@ -74,17 +74,17 @@ function processData() {
             const headerRow = document.createElement('tr');
             th = document.createElement('th');
             th.style.color='#333';
-            th.style.backgrounColor='white';
+            th.style.backgroundColor='white';
             th.textContent = 'מספר מה'  
             headerRow.appendChild(th);
             th = document.createElement('th');
             th.style.color='#333';
-            th.style.backgrounColor='white';
+            th.style.backgroundColor='white';
             th.textContent = 'שם המסלול: '+hishtalmot[i];
             headerRow.appendChild(th);
             th = document.createElement('th');
             th.style.color='#333';
-            th.style.backgrounColor='white';
+            th.style.backgroundColor='white';
             th.textContent = 'תשואה';
             headerRow.appendChild(th);
             table.appendChild(headerRow);
@@ -95,18 +95,19 @@ function processData() {
                 const trm = document.createElement('tr');
                 td = document.createElement('td');
                 td.style.color='#333';
-                td.style.backgrounColor='white';
+                td.style.backgroundColor='white';
                 td.textContent = data[tb].mh;
                 td = document.createElement('td');
                 td.style.color='#333';
+                td.style.backgroundColor='white'
                 trm.appendChild(td);
                 td = document.createElement('td');
-                td = document.createElement('td');
                 td.style.color='#333';
+                td.style.backgroundColor='white'  
                 td.textContent = data[tb].shemkupa;
                 trm.appendChild(td);
                 td = document.createElement('td');
-                td = document.createElement('td');
+                td.style.backgroundColor='white'
                 td.style.color='#333';
                 td.textContent = data[tb].tesuam + "%";
                 trm.appendChild(td);

@@ -55,6 +55,7 @@ option,select {background-color: white; color: black;}
      .muzar{margin: 10px 0px ;width: 90vw;box-sizing: border-box;
          display:flex; flex-direction:column;}
    .klali{width:90vw;margin-right: 0vw;box-sizing: border-box;}
+    #maslul{width:100vw;} 
    /*td{background-color:white;color:#333;}
     th{color:white;background-color:#333;}*/ 
  

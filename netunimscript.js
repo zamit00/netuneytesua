@@ -45,7 +45,7 @@ function changek(){
  document.getElementById('table12').style.display="none";
  document.getElementById('table3').style.display="none";
  document.getElementById('table5').style.display="none";
- if (document.getElementById('rdbutton1').checked){
+ if (document.getElementById('rdbutton1').checked || document.getElementById('rdbutton3').checked){
    document.getElementById('hashspecific').style.display="none";
  }
  else {document.getElementById('hashspecific').style.display="block";} 

@@ -22,7 +22,7 @@ function fetchdata(x,y) {
             const tesuam36 = row.getElementsByTagName("TSUA_MITZTABERET_36_HODASHIM")[0]?.textContent ||  '';
             const tesuam60 = row.getElementsByTagName("TSUA_MITZTABERET_60_HODASHIM")[0]?.textContent ||  '';
             
-            // אם יש תנאים נוספים שאתה רוצה להחיל על הנתונים
+           
             if (divuach === "דווח" && !shemkupa.includes('ניהול אישי') && !shemkupa.includes('IRA') &&
                 ochlosiyayaad !== "עובדי סקטור מסויים" && ochlosiyayaad !== `עובדי מפעל/גוף מסויים`
                 && mozar !== 'מטרה אחרת' && mas !== 'מבטיח תשואה' && mozar===x && mas===y) {
@@ -64,11 +64,12 @@ function processData() {
     data.sort((a, b) => b.tesuam - a.tesuam);
     
     const table = document.createElement('table');
+    let checktesua;
     
     table.id = 'myTable';
     table.className = 'tbldata';
     document.getElementById('tbldo').appendChild(table);
-    table.style.display = 'block';
+    
    
             const headerRow = document.createElement('tr');
             th = document.createElement('th');
@@ -95,8 +96,12 @@ function processData() {
                 td.textContent = data[tb].tesuam;
                 trm.appendChild(td);
                 table.appendChild(trm);
+                 checktesua=Number(data[tb].tesuam);   
                 }
+                
     }
+        if (checktesua!==0){table.style.display = 'block';checktesua=0;}
+        else{table.style.display = 'block';}
 
 
     /*    console.log(data);  

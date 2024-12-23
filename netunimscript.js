@@ -132,6 +132,7 @@ function bringinfo(x){
     <head>
       <title style="text-align:center;"></title>
       <style>
+      html{font-size: 16px;}
        header{width: 100vw;height: 16vh;position: fixed;top:0;background-color: #333;
         z-index:100;}
         body{padding-top: 2vh;}
@@ -176,8 +177,8 @@ function bringinfo(x){
     </head>
       <header onclick="clsw()" >
         <div class="kot">
-             <h1>כסף צומח</h1>
-             <h2>קופות גמל וקרנות השתלמות</h2>
+             <h1 style="font-size:35px;">כסף צומח</h1>
+             <h2 style="font-size:25px;" >קופות גמל וקרנות השתלמות</h2>
          </div>
          <div class='xsign' onclick="clsw()">X</div>
     </header>

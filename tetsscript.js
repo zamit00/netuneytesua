@@ -53,7 +53,6 @@ function fetchdata(x,y) {
 
 
 function processData() {
-    
     var maslul= document.getElementById("maslul-type").value;
     var moz=document.getElementById("product").value;
    const layeled=["חיסכון לילד -חוסכים המעדיפים סיכון מועט","חיסכון לילד -חוסכים המעדיפים סיכון בינוני",
@@ -65,7 +64,6 @@ function processData() {
                  ,"מניות סחיר","60 ומעלה","משולב סחיר","עוקב מדד s&p 500","עוקב מדדי אג\"ח","עוקב מדדי מניות","עוקב מדדים - גמיש"];
     const merkazitlepizuyim=["כללי"];
     var mozarchoose;
-   if (document.getElementById('rdbutton3').checked){
 
     if (moz==='קרנות השתלמות'){mozarchoose=hishtalmot;}
     if (moz==='תגמולים ואישית לפיצויים'){mozarchoose=gemel;}
@@ -73,6 +71,7 @@ function processData() {
     if (moz==='קופת גמל להשקעה - חסכון לילד'){mozarchoose=layeled;}
     if (moz==='מרכזית לפיצויים'){mozarchoose=merkazitlepizuyim;}
        
+    
     
     
     for (let i=0; i<= mozarchoose.length-1;i++){
@@ -133,7 +132,6 @@ function processData() {
                 }
                 
     }
-        
        
        
 
@@ -144,68 +142,6 @@ function processData() {
     data.sort((a, b) => b.tesuam60 - a.tesuam60);
         console.log(data);*/      
 
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
-   }
-else{
-    fetchdata(moz,maslul).then(data => {
-    data.sort((a, b) => b.tesuam - a.tesuam);
-          
-    const table = document.createElement('table');
-    
-    table.id = 'myTable';
-    table.className = 'tbldata';
-    table.style.borderCollapse='collapse';
-    document.getElementById('tbldo').appendChild(table);
-        const headerRow = document.createElement('tr');
-            th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgroundColor='#333';
-            th.textContent = 'מספר מה'  
-            headerRow.appendChild(th);
-            th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgroundColor='#333';
-            th.textContent = 'שם המסלול: '+hishtalmot[i];
-            headerRow.appendChild(th);
-            th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgroundColor='#333';
-            th.textContent = 'תשואה';
-            headerRow.appendChild(th);
-            table.appendChild(headerRow);
-            table.style.display = 'none';
-            
-            for (let tb=0; tb<=data.length-1;tb++){
-                if (data[tb].tesuam){
-                const trm = document.createElement('tr');
-                td = document.createElement('td');
-                td.style.color='#333';
-                td.style.backgroundColor='white';
-                td.textContent = data[tb].mh;
-                trm.appendChild(td);
-            
-                td = document.createElement('td');
-                td.style.color='#333';
-                td.style.backgroundColor='white'  
-                td.textContent = data[tb].shemkupa;
-                trm.appendChild(td);
-                    
-                td = document.createElement('td');
-                td.style.backgroundColor='white'
-                td.style.color='#333';
-                td.textContent = data[tb].tesuam + "%";
-                trm.appendChild(td);
-                    
-                table.appendChild(trm);
-                table.style.display = 'block';   
-                }
-            }
-
-        
     })
     .catch(error => {
         console.error('Error:', error);

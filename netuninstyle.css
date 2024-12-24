@@ -19,7 +19,7 @@ option,select {background-color: white; color: black;}
    header{width: 70vw;height: 16vh;}
    .lblblack{background-color: white;color:#333;font-weight: bold;font-size: 28px;}
    th, td{height:35px;border:1px solid black;}
-   th{width:30vw;}
+   th{width:40vw;}
    td{width:10vw;}
    td{text-align: center;}
    th{text-align: right;padding-right: 5px;}

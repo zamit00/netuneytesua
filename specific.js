@@ -11,6 +11,7 @@
      document.getElementById(`thb${i+20}`).textContent='';
      document.getElementById(`output${i+20}`).textContent='';
  }
+ document.getElementById('lbltbldo').style.display="none";
  document.getElementById('table12').style.display="none";
  document.getElementById('table3').style.display="none";
  document.getElementById('table5').style.display="none";

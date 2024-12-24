@@ -21,7 +21,7 @@
 }
 function specificadd(){
  changeka();
-  console.log('ok');
+
  var maslulk= document.getElementById("maslul-type");
   var maslul1= document.getElementById("maslul-type1");
   var maslul2= document.getElementById("maslul-type2");

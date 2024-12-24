@@ -34,7 +34,7 @@ for (let i = 1; i < optionsa.length; i++) {
   const optionsb = maslul2.querySelectorAll('option');
 if(optionsb.length>1){
 for (let i = 1; i < optionsb.length; i++) {
-  maslul2.removeChild(options[i]);
+  maslul2.removeChild(optionsb[i]);
 }
 } 
  fetch('kupotKlali.xml')

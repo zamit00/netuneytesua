@@ -26,17 +26,22 @@ option,select {background-color: white; color: black;}
    table{width:40vw;border:1px solid black;margin-bottom:20px;}
    button{width: 15vw;height:35px;margin-bottom:10px;font-size: 25px;}
    select{width: 30vw;height: 35px;text-align: center;
-      font-size: 28px;float: left;margin-left: 15vw;margin-bottom:10px;}
+      font-size: 25px;float: left;margin-left: 10vw;}
    .labels{margin-bottom:10px;color:blue; }
    h1{font-size:35px;color:rgb(89, 227, 89);}
    h2{white-space: nowrap;}
-   .muzar{margin: 20px 0px ;width: 70vw;font-size: 20px;}
+   .muzar{margin: 10px 0px ;width: 70vw;font-size: 20px;}
    .klali{width:70vw;}
-   .bazea{color:rgb(89, 227, 89);margin-bottom:10px;width: 20vw; font-size: 28px;width: 30vw;}
-  #tkofatdivuachn{font-size: 18px;font-weight: bold;}
-   
+   .bazea{color:rgb(89, 227, 89);margin-bottom:10px;width: 20vw; font-size: 28px;width: 30vw;
+      float: left;margin-left: 10vw;}
+   .bazeadiv{width: 70vw;}
+  #tkofatdivuachn{font-size: 25px;font-weight: bold;margin: 0px;padding: 0%;}
+  #klaliHishThree{float: left;display: flex;flex-direction: column;align-items: center;}
+  #klaliHishThree table{border-collapse: collapse;border: 1px solid black;}
+  #klaliHishThree{display: block;}
 }
   @media only screen and (max-width: 768px){
+   #klaliHishThree{display: none;}
    header{height:16vh}
    th{width:65vw;}
    td{width:15vw;}
@@ -47,8 +52,8 @@ option,select {background-color: white; color: black;}
    th{text-align: right;padding-right: 5px;}
    table{width:90vw;border:1px solid black;margin-bottom:20px;margin-right: 0px;box-sizing: border-box;}
    button,.lblblack{width: 90vw;height: auto;margin-bottom:10px;box-sizing: border-box;font-size: 16px;}
-  .lblblack{text-align: right}
-     select{width: 90vw;height: 25px;text-align: center;float: none;margin-left: 0;
+  .lblblack{text-align: right;margin-right: 20px;padding-right: 5px;}
+     select{width: 90vw;height: 25px;text-align: center;float: none;margin-right: 20px;
       font-size: 16px;box-sizing: border-box;}
    .labels{margin-bottom:10px;color:blue; margin-right: 0px;box-sizing: border-box;}
    h1{font-size:25px;color:rgb(89, 227, 89);box-sizing: border-box;}
@@ -56,9 +61,10 @@ option,select {background-color: white; color: black;}
          display:flex; flex-direction:column;}
    .klali{width:90vw;margin-right: 0vw;box-sizing: border-box;}
     #maslul{width:100vw;} 
+    .rdbutton{margin-right: 20px;}
    /*td{background-color:white;color:#333;}
     th{color:white;background-color:#333;}*/ 
- 
+    .bazeadiv, .bazea{margin-right: 20px;}
   }
 
   @media only screen and (max-width: 480px){

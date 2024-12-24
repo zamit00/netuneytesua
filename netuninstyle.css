@@ -26,13 +26,13 @@ option,select {background-color: white; color: black;}
    table{width:40vw;border:1px solid black;margin-bottom:20px;}
    button{width: 15vw;height:35px;margin-bottom:10px;font-size: 25px;}
    select{width: 30vw;height: 35px;text-align: center;
-      font-size: 28px;float: left;margin-left: 12vw;margin-bottom:10px;}
+      font-size: 28px;float: left;margin-left: 15vw;margin-bottom:10px;}
    .labels{margin-bottom:10px;color:blue; }
    h1{font-size:35px;color:rgb(89, 227, 89);}
    h2{white-space: nowrap;}
    .muzar{margin: 20px 0px ;width: 70vw;font-size: 20px;}
    .klali{width:70vw;}
-   .bazea{color:rgb(89, 227, 89);margin-bottom:10px;width: 20vw; font-size: 28px;}
+   .bazea{color:rgb(89, 227, 89);margin-bottom:10px;width: 20vw; font-size: 28px;width: 30vw;}
   #tkofatdivuachn{font-size: 18px;font-weight: bold;}
    
 }

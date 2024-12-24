@@ -103,16 +103,19 @@ function processData() {
             th = document.createElement('th');
             th.style.color='white';
             th.style.backgroundColor='#333';
+            th.style.textAlign="center";
             th.textContent = 'מספר מה'  
             headerRow.appendChild(th);
             th = document.createElement('th');
             th.style.color='white';
             th.style.backgroundColor='#333';
+            th.style.textAlign="center";
             th.textContent = 'שם המסלול: '+hishtalmot[i];
             headerRow.appendChild(th);
             th = document.createElement('th');
             th.style.color='white';
             th.style.backgroundColor='#333';
+            th.style.textAlign="center";
             th.textContent = 'תשואה';
             headerRow.appendChild(th);
             table.appendChild(headerRow);

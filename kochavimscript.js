@@ -4,7 +4,7 @@ window.onload = function() {
     const mozkoch=['קרנות השתלמות','קופת גמל להשקעה']
     const hishtalmot=["כללי"]
     
-    lbltbldo.style.display="block";
+    
     
     
     fetchdata(mozkoch[0],hishtalmot[0]).then(data => {
@@ -47,11 +47,6 @@ window.onload = function() {
                 
     }
        
-       
-
-
-
-    })
     .catch(error => {
         console.error('Error:', error);
     });

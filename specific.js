@@ -1,20 +1,26 @@
   var maslula= document.getElementById("maslul-type");
   var moza=document.getElementById("product");
   function changeka(){
-    for(let i=1;i<=3;i++){
-        document.getElementById(`thb${i}`).textContent='';
-        document.getElementById(`output${i}`).textContent='';
-   
-        document.getElementById(`thb${i+10}`).textContent='';
-        document.getElementById(`output${i+10}`).textContent='';
-         document.getElementById(`thb${i+20}`).textContent='';
-        document.getElementById(`output${i+20}`).textContent='';
-   
-    
-    }
-   }
+    document.getElementById('tbldo').innerHTML='';
+ for(let i=1;i<=2;i++){
+     document.getElementById(`thb${i}`).textContent='';
+     document.getElementById(`output${i}`).textContent='';
+
+     document.getElementById(`thb${i+10}`).textContent='';
+     document.getElementById(`output${i+10}`).textContent='';
+     document.getElementById(`thb${i+20}`).textContent='';
+     document.getElementById(`output${i+20}`).textContent='';
+ }
+ document.getElementById('table12').style.display="none";
+ document.getElementById('table3').style.display="none";
+ document.getElementById('table5').style.display="none";
+ if (document.getElementById('rdbutton1').checked || document.getElementById('rdbutton3').checked){
+   document.getElementById('hashspecific').style.display="none";
+ }
+ else {document.getElementById('hashspecific').style.display="block";} 
+}
 function specificadd(){
- 
+ changeka();
  var maslulk= document.getElementById("maslul-type");
   var maslul1= document.getElementById("maslul-type1");
   var maslul2= document.getElementById("maslul-type2");

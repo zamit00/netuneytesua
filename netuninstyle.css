@@ -41,7 +41,7 @@ option,select {background-color: white; color: black;}
   #klaliHishThree{display: block;}
 }
   @media only screen and (max-width: 768px){
-   #klaliHishThree{display: none;}
+   #klaliHishThree{display: block;}
    header{height:16vh}
    th{width:65vw;}
    td{width:15vw;}

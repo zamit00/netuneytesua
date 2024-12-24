@@ -72,13 +72,14 @@ function processData() {
     if (moz==='מרכזית לפיצויים'){mozarchoose=merkazitlepizuyim;}
        
     const lbltbldo= document.getElementById('lbltbldo');
-    
+     lbltbldo.style.display="block";
     
     for (let i=0; i<= mozarchoose.length-1;i++){
     fetchdata(moz,mozarchoose[i]).then(data => {
     if(document.getElementById("one").checked){
     data.sort((a, b) => b.tesuam - a.tesuam);
-    lbltbldo.innerText="תשואה מצטברת 12 חודשים"
+    lbltbldo.innerText="תשואה מצטברת 12 חודשים";
+        
     }
     else if(document.getElementById("three").checked){
     data.sort((a, b) => b.tesuam36 - a.tesuam36);

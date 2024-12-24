@@ -71,12 +71,23 @@ function processData() {
     if (moz==='קופת גמל להשקעה - חסכון לילד'){mozarchoose=layeled;}
     if (moz==='מרכזית לפיצויים'){mozarchoose=merkazitlepizuyim;}
        
-    
+    const lbltbldo= document.getElementById('lbltbldo');
     
     
     for (let i=0; i<= mozarchoose.length-1;i++){
     fetchdata(moz,mozarchoose[i]).then(data => {
+    if(document.getElementById("one").checked){
     data.sort((a, b) => b.tesuam - a.tesuam);
+    lbltbldo.innerText="תשואה מצטברת 12 חודשים"
+    }
+    else if(document.getElementById("three").checked){
+    data.sort((a, b) => b.tesuam36 - a.tesuam36);
+    lbltbldo.innerText="תשואה מצטברת 3 שנים"
+    }
+    else{
+    data.sort((a, b) => b.tesuam60 - a.tesuam60);
+    lbltbldo.innerText="תשואה מצטברת 5 שנים"
+    }
     
     const table = document.createElement('table');
     let checktesua;
@@ -124,7 +135,18 @@ function processData() {
                 td = document.createElement('td');
                 td.style.backgroundColor='white'
                 td.style.color='#333';
-                td.textContent = data[tb].tesuam + "%";
+                
+                 if(document.getElementById("one").checked){   
+                td.textContent = data[tb].tesuam + "%";}
+                    
+                if(document.getElementById("three").checked){
+                    td.textContent = data[tb].tesuam36 + "%";
+                    
+                }
+                if(document.getElementById("five").checked){
+                    td.textContent = data[tb].tesuam60 + "%"; 
+                }
+                    
                 trm.appendChild(td);
                     
                 table.appendChild(trm);

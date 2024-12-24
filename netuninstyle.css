@@ -34,7 +34,7 @@ option,select {background-color: white; color: black;}
    .klali{width:70vw;}
    .bazea{color:rgb(89, 227, 89);margin-bottom:10px;width: 20vw; font-size: 28px;width: 30vw;
       float: left;margin-left: 10vw;}
-   .bazeadiv{width: 70vw;}
+   .bazeadiv{width: 70vw;margin-bottom: 20px;}
   #tkofatdivuachn{font-size: 25px;font-weight: bold;margin: 0px;padding: 0%;}
   #klaliHishThree{float: left;display: flex;flex-direction: column;align-items: center;}
   #klaliHishThree table{border-collapse: collapse;border: 1px solid black;}

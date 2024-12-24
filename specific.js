@@ -54,7 +54,7 @@ for (let i = 1; i < optionsb.length; i++) {
         const tesuama = row.getElementsByTagName("TSUA_MITZTABERET_LETKUFA")[0]?.textContent ||  '';
        const tesuam36 = row.getElementsByTagName("TSUA_MITZTABERET_36_HODASHIM")[0]?.textContent ||  '';
        const tesuam60 = row.getElementsByTagName("TSUA_MITZTABERET_60_HODASHIM")[0]?.textContent ||  '';
-    
+        alert('ok');
         if(Number(yitratnehasim)>0 &&  divuach ==="דווח" &&
         ochlosiyayaad!== "עובדי סקטור מסויים" && ochlosiyayaad!==`עובדי מפעל/גוף מסויים`
          && moza.value && maslulk.value!=='' && mozara!=='מטרה אחרת' && Number(tesuama)!==0

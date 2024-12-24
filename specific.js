@@ -21,6 +21,7 @@
 }
 function specificadd(){
  changeka();
+  console.log('ok');
  var maslulk= document.getElementById("maslul-type");
   var maslul1= document.getElementById("maslul-type1");
   var maslul2= document.getElementById("maslul-type2");
@@ -41,7 +42,7 @@ for (let i = 1; i < optionsb.length; i++) {
     .then(xmlString => {
         const parser = new DOMParser(); // יוצר parser לניתוח XML
         const xmlDoc = parser.parseFromString(xmlString, "application/xml"); // מנתח את הטקסט למבנה XML
-   
+   console.log('ok1');
      
       const rows = xmlDoc.getElementsByTagName("Row");
       let optionCollection = [];
@@ -65,37 +66,25 @@ for (let i = 1; i < optionsb.length; i++) {
         ochlosiyayaad!== "עובדי סקטור מסויים" && ochlosiyayaad!==`עובדי מפעל/גוף מסויים`
          && moza.value && maslulk.value!=='' && mozara!=='מטרה אחרת' && Number(tesuama)!==0
         && tesuama){ 
-        
+        console.log('ok2');
         if(mozara===moza.value && masa===maslulk.value ) {
           const optiona = document.createElement("option");
           optiona.value = mhkupa;  // value יהיה שם הרכיב
           optiona.textContent = shemkupa;  // textContent יהיה שם הרכיב
           maslul1.appendChild(optiona); 
-            
+            console.log('ok3');
           const optionb = document.createElement("option");
           optionb.value = mhkupa;  // value יהיה שם הרכיב
           optionb.textContent = shemkupa;  // textContent יהיה שם הרכיב
           maslul2.appendChild(optionb); 
-              
+              console.log('ok4');
             }
            
           }
         
       }
       
-      if(optionCollection.length!==0){
-      for(let r=0;r<=optionCollection.length;r++){
-        const option = document.createElement("option");
-        option.value = optionCollection.mh;  // value יהיה שם הרכיב
-        option.textContent = optionCollection.shemkupa;  // textContent יהיה שם הרכיב
-         maslul1.appendChild(option);
-        
-        const option2 = document.createElement("option");
-        option2.value = optionCollection.mh;  // value יהיה שם הרכיב
-        option2.textContent = optionCollection.shemkupa;  // textContent יהיה שם הרכיב
-         maslul2.appendChild(option);
-    }
-    }
+     
     })
     .catch(error => console.error('Error:', error));
     

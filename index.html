@@ -12,6 +12,7 @@
     <script src="netunimscript.js" defer></script>
     <script src="specific.js" defer></script>
     <script src='tetsscript.js' defer></script>
+    <script src="kochavimscript.js" defer></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script>eruda.init();</script> -->
 </head>
@@ -19,7 +20,7 @@
 <body dir="rtl">
 
     <!-- Header -->
-    <header onclick="processData()">
+    <header>
         <div class="kot">
              <h1>כסף צומח</h1>
              <h2>קופות גמל וקרנות השתלמות</h2>
@@ -29,12 +30,19 @@
     <main>
         <h1 style="margin-top: 17vh;text-align: center;margin-bottom:5px; ">השוואת תשואות קופות גמל</h1>
         <div id="tkofatdivuachn"></div>
-       <div class="klali muzar" id="sughash">
+        <div class="klali muzar" id="sughash">
+            <div  id="klaliHishThree">
+                <label class="labels" >בולטים 12 חודשים: השתלמות מסלול כללי</label>  
+                <table id="klalikoch0">
+
+                </table>
+            </div>
                 <label class="lblblack" id="sug">בחר סוג השוואה:</label>
                 <div id="movililm">    
                     <input type="radio" class="rdbutton" id="rdbutton1" name="sughash" onchange="changek()" checked>
                     <label for="rdbutton1"> כוללת: ברמת מסלול  </label>
                 </div>
+                
                 <div  id="speci">
                     <input type="radio" class="rdbutton" id="rdbutton2" name="sughash" onchange="changek()">
                     <label for="rdbutton2"> ספציפית: בין שני מסלולים </label>
@@ -43,9 +51,15 @@
                     <input type="radio" class="rdbutton" id="rdbutton3" name="sughash" onchange="changek()">
                     <label for="rdbutton3"> כוללת: רמת מוצר </label>
                 </div>
+                
         </div>
+        
 
         <div class="klali muzar" id="tkufa">
+            <div  id="klaliHishThree">
+                <label class="labels" >בולטים 12 חודשים: גמל להשקעה מסלול כללי</label>  
+                <table id="klalikoch1"></table>
+            </div>
                 <label class="lblblack" id="sug">בחר תקופת השוואה:</label>
                 <div id="divone">    
                     <input type="radio" class="rdbutton" id="one" name="tkufahash" onchange="changek()" checked>
@@ -59,39 +73,41 @@
                     <input type="radio" class="rdbutton" id="five" name="tkufahash" onchange="changek()">
                     <label for="rdbutton3"> 5 שנים </label>
                 </div>
-      </div>
+        </div>
         
-      <div class="klali">
-            <div class="muzar">
-                <label class="lblblack" for="product" id="lblproduct">בחר מוצר:</label>
-                <select id="product" name="product" onchange="rashiadd()" required>  </select>
-            </div>
-            <div class="maslul muzar" id="maslul">
-                <label class="lblblack" for="maslul-type">בחר מסלול:</label>
-                <select id="maslul-type" name="maslul-type" required placeholder="בחר" onchange="specificadd()" >
-                    <option value="" disabled selected >בחר</option>
-                </select>
-            </div>
+        <div class="klali muzar">
+                <div class="muzar">
+                    <label class="lblblack" for="product" id="lblproduct">בחר מוצר:</label>
+                    <select id="product" name="product" onchange="rashiadd()" required>  </select>
+                </div>
+                
+                <div class="maslul muzar" id="maslul">
+                    <label class="lblblack" for="maslul-type">בחר מסלול:</label>
+                    <select id="maslul-type" name="maslul-type" required placeholder="בחר" onchange="specificadd()" >
+                        <option value="" disabled selected >בחר</option>
+                    </select>
+                </div>
         </div>
       
        
         <div class="hashspecific" id="hashspecific">
-           <div class="maslul muzar" id="maslul1">
-                <label class="lblblack" for="maslul-type1"> בחר מסלול ראשון:</label>
-                <select id="maslul-type1" name="maslul-type1" required placeholder="בחר" onchange="changek()" >
-                    <option value="" disabled selected>בחר</option>
-                </select>
-            </div>
+                <div class="maslul muzar" id="maslul1">
+                    <label class="lblblack" for="maslul-type1"> בחר מסלול ראשון:</label>
+                    <select id="maslul-type1" name="maslul-type1" required placeholder="בחר" onchange="changek()" >
+                        <option value="" disabled selected>בחר</option>
+                    </select>
+                </div>
 
-            <div class="maslul muzar" id="maslul2">
-                <label class="lblblack" for="maslul-type2">בחר מסלול שני:</label>
-                <select id="maslul-type2" name="maslul-type2" required placeholder="בחר" onchange="changek()" >
-                    <option value="" disabled selected>בחר</option>
-                </select>
-            </div>
-        </div>  
-        <button class="bazea" onclick="bring()">בצע השוואה</button><br>
-        
+                <div class="maslul muzar" id="maslul2">
+                    <label class="lblblack" for="maslul-type2">בחר מסלול שני:</label>
+                    <select id="maslul-type2" name="maslul-type2" required placeholder="בחר" onchange="changek()" >
+                        <option value="" disabled selected>בחר</option>
+                    </select>
+                </div>
+         </div>  
+        <div class="bazeadiv">
+                <button class="bazea" onclick="bring()">בצע השוואה</button><br>
+        </div>
         <div class="table12" id="table12">       
                 <label class="labels" >תשואה מצטברת 12 חודשים</label>  
                 <table id="tbl1">
@@ -123,20 +139,20 @@
                 </table>
         </div>
         <div class="table5" id="table5"> 
-            <label class="labels" >תשואה מצטברת 5 שנים</label>  
-            <table id="tbl3">
-                <tr>
-                    <td id="outputmh21" class="tdsmall"></td>
-                    <th id="thb21" onclick="bringinfo(this)"></th>
-                    <td id="output21" class="tdbig"></td>
-                </tr>
-                <tr>
-                    <td id="outputmh22" class="tdsmall"></td>
-                    <th id="thb22" onclick="bringinfo(this)"> </th>
-                    <td id="output22" class="tdbig"></td>
-                </tr>
+                <label class="labels" >תשואה מצטברת 5 שנים</label>  
+                <table id="tbl3">
+                    <tr>
+                        <td id="outputmh21" class="tdsmall"></td>
+                        <th id="thb21" onclick="bringinfo(this)"></th>
+                        <td id="output21" class="tdbig"></td>
+                    </tr>
+                    <tr>
+                        <td id="outputmh22" class="tdsmall"></td>
+                        <th id="thb22" onclick="bringinfo(this)"> </th>
+                        <td id="output22" class="tdbig"></td>
+                    </tr>
                 
-            </table>
+                 </table>
         </div>
         <!-- <button style="width:120px;height:30px;" onclick='processData()'> בצע</button> -->
         <div id='lbltbldo'></div>

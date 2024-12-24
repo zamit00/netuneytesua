@@ -38,7 +38,6 @@ option,select {background-color: white; color: black;}
   #tkofatdivuachn{font-size: 25px;font-weight: bold;margin: 0px;padding: 0%;}
   #klaliHishThree{float: left;display: flex;flex-direction: column;align-items: center;}
   #klaliHishThree table{border-collapse: collapse;border: 1px solid black;}
-  #klaliHishThree{display: block;}
 }
   @media only screen and (max-width: 768px){
    #klaliHishThree{display: none;}

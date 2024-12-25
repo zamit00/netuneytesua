@@ -14,6 +14,7 @@ option,select {background-color: white; color: black;}
 .tdinfo{width:20vw;height: 25px;font-size: 14px;}
 #lbltbldo{font-size:18px;color:blue;font-weight:bold;}
 #tbldo{margin-right 20px;}
+.kothash{text-align: center;}
 @media only screen and (min-width: 769px){
    main{width: 60vw;display: flex;flex-direction: column;align-items: center;
    }
@@ -65,7 +66,8 @@ option,select {background-color: white; color: black;}
    /*td{background-color:white;color:#333;}
     th{color:white;background-color:#333;}*/ 
     .bazeadiv, .bazea{margin-right: 20px;}
-   .tbldata,.kothash{margin-right: 35px !important;}
+   .tbldata{margin-right: 35px !important;}
+   
    
   }
 

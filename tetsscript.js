@@ -1,13 +1,13 @@
 
-function fetchdata(x,y) {
-
+async function fetchdata(x,y) {
+    
     return fetch('kupotKlali.xml')
     .then(response => response.text()) // מקבל את תוכן הקובץ כטקסט
     .then(xmlString => {
         const parser = new DOMParser(); 
         const xmlDoc = parser.parseFromString(xmlString, "application/xml");
         const rows = xmlDoc.getElementsByTagName("Row");
-
+        let colllen;
         let coll = [];
         for (let i = 0; i < rows.length; i++) {
             const row = rows[i];
@@ -26,7 +26,7 @@ function fetchdata(x,y) {
             if (divuach === "דווח" && !shemkupa.includes('ניהול אישי') && !shemkupa.includes('IRA') &&
                 ochlosiyayaad !== "עובדי סקטור מסויים" && ochlosiyayaad !== `עובדי מפעל/גוף מסויים`
                 && mozar !== 'מטרה אחרת' && mas !== 'מבטיח תשואה' && mozar===x && mas===y) {
-            
+            colllen=coll.length;
             coll.push({
                 mh: mhkupa, 
                 shemkupa: shemkupa, 
@@ -37,13 +37,19 @@ function fetchdata(x,y) {
                 ochlosiyayaad: ochlosiyayaad, 
                 divuach: divuach, 
                 tesuam36: Number(tesuam36), 
-                tesuam60: Number(tesuam60)
+                tesuam60: Number(tesuam60),
+                
             });
-               
-        }
-        }
 
-        return coll;  // מחזירים את המידע
+           
+        }
+        
+        
+        }
+        
+        
+
+        return coll;  
     })
     .catch(error => {
         console.error('Error:', error);
@@ -51,8 +57,47 @@ function fetchdata(x,y) {
     });
 }
 
+async function fetchnechasim(x,y){
+    return fetch('nechasim.xml')
+    .then(response => response.text()) 
+    .then(nechsimstring => {
+      const parser = new DOMParser(); 
+      const xmlNechasim = parser.parseFromString(nechsimstring, "application/xml"); 
+      const rows = xmlNechasim.getElementsByTagName("Row");
+      let colln = [];
+      for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        
+       
+        const idkup=row.getElementsByTagName("ID_KUPA")[0]?.textContent ||  '';
+        const sugneches = row.getElementsByTagName("ID_SUG_NECHES")[0]?.textContent ||  '';
+        const schumsugneches = row.getElementsByTagName("SCHUM_SUG_NECHES")[0]?.textContent ||  '';
+        const ahuzsugneches = row.getElementsByTagName("ACHUZ_SUG_NECHES")[0]?.textContent ||  '';
+        
+        
+        if(Number(idkup)===Number(x) && schumsugneches && Number(schumsugneches)>0 && Number(sugneches)===Number(y) ){
+            
+            
+            colln.push({schumsugneches:schumsugneches,ahuzsugneches:ahuzsugneches}) ; 
+            return colln;
+           }
+      
+        
+    }
+    
+   
+    
+      })
+    
+      .catch(error => console.error('Error:', error));
+  
+}
+
+
+
 
 function processData() {
+    document.getElementById('tbldo').innerHTML='';
     var maslul= document.getElementById("maslul-type").value;
     var moz=document.getElementById("product").value;
    const layeled=["חיסכון לילד -חוסכים המעדיפים סיכון מועט","חיסכון לילד -חוסכים המעדיפים סיכון בינוני",
@@ -72,10 +117,13 @@ function processData() {
     if (moz==='מרכזית לפיצויים'){mozarchoose=merkazitlepizuyim;}
        
     const lbltbldo= document.getElementById('lbltbldo');
+
      lbltbldo.style.display="block";
     
     for (let i=0; i<= mozarchoose.length-1;i++){
     fetchdata(moz,mozarchoose[i]).then(data => {
+        
+        
     if(document.getElementById("one").checked){
     data.sort((a, b) => b.tesuam - a.tesuam);
     lbltbldo.innerText="תשואה מצטברת 12 חודשים";
@@ -91,7 +139,7 @@ function processData() {
     }
     
     const table = document.createElement('table');
-    let checktesua;
+    
     
     table.id = 'myTable';
     table.className = 'tbldata';
@@ -118,10 +166,42 @@ function processData() {
             th.style.textAlign="center";
             th.textContent = 'תשואה';
             headerRow.appendChild(th);
+
+            th = document.createElement('th');
+            th.style.color='white';
+            th.style.backgroundColor='#333';
+            th.style.textAlign="center";
+            th.textContent = 'סכום מניות';
+            headerRow.appendChild(th);
+
+            th = document.createElement('th');
+            th.style.color='white';
+            th.style.backgroundColor='#333';
+            th.style.textAlign="center";
+            th.textContent = 'שיעור מניות';
+            headerRow.appendChild(th);
+
+            th = document.createElement('th');
+            th.style.color='white';
+            th.style.backgroundColor='#333';
+            th.style.textAlign="center";
+            th.textContent = 'סכום בחול';
+            headerRow.appendChild(th);
+
+            th = document.createElement('th');
+            th.style.color='white';
+            th.style.backgroundColor='#333';
+            th.style.textAlign="center";
+            th.textContent = 'שיעור בחול';
+            headerRow.appendChild(th);
+
+
+
             table.appendChild(headerRow);
             table.style.display = 'none';
             
             for (let tb=0; tb<=data.length-1;tb++){
+                
                 if (data[tb].tesuam){
                 const trm = document.createElement('tr');
                 td = document.createElement('td');
@@ -149,10 +229,75 @@ function processData() {
                 }
                 if(document.getElementById("five").checked){
                     td.textContent = data[tb].tesuam60 + "%"; 
-                }
-                    
+                }              
                 trm.appendChild(td);
+
+                 
+                fetchnechasim(data[tb].mh,4751)
+                    .then(datan=>{
                     
+                    if(datan){
+                    td = document.createElement('td');
+                    td.style.color='#333';
+                    td.style.backgroundColor='white'
+                    td.textContent =Number(datan[0].schumsugneches).toLocaleString();
+                    trm.appendChild(td); 
+                    td = document.createElement('td');
+                    td.style.color='#333';
+                    td.style.backgroundColor='white'
+                    td.textContent =Number(datan[0].ahuzsugneches)+"%";
+                    trm.appendChild(td);                 
+
+                       }
+                    else{
+                    td = document.createElement('td');
+                    td.style.color='#333';
+                    td.style.backgroundColor='white'
+                    td.textContent =0;
+                    trm.appendChild(td); 
+                    td = document.createElement('td');
+                    td.style.color='#333';
+                    td.style.backgroundColor='white'
+                    td.textContent =0+"%";
+                    trm.appendChild(td);
+                    }
+                    
+                        
+                    });
+                    fetchnechasim(data[tb].mh,4752)
+                    .then(datan=>{
+                    
+                    if(datan){
+                    td = document.createElement('td');
+                    td.style.color='#333';
+                    td.style.backgroundColor='white'
+                    td.textContent =Number(datan[0].schumsugneches).toLocaleString();
+                    trm.appendChild(td); 
+                    td = document.createElement('td');
+                    td.style.color='#333';
+                    td.style.backgroundColor='white'
+                    td.textContent =Number(datan[0].ahuzsugneches)+"%";
+                    trm.appendChild(td);                 
+
+                       }
+                    else{
+                    td = document.createElement('td');
+                    td.style.color='#333';
+                    td.style.backgroundColor='white'
+                    td.textContent =0;
+                    trm.appendChild(td); 
+                    td = document.createElement('td');
+                    td.style.color='#333';
+                    td.style.backgroundColor='white'
+                    td.textContent =0+"%";
+                    trm.appendChild(td);
+                    }
+                    
+                        
+                    });
+
+
+
                 table.appendChild(trm);
                  table.style.display = 'block';     
                 if (document.getElementById('rdbutton1').checked){
@@ -160,18 +305,14 @@ function processData() {
                       table.style.display = 'none';
                   }
                 }
+                
                 }
                 
     }
        
        
 
-
-    /*    console.log(data);  
-    data.sort((a, b) => b.tesuam36 - a.tesuam36);
-        console.log(data);  
-    data.sort((a, b) => b.tesuam60 - a.tesuam60);
-        console.log(data);*/      
+    
 
     })
     .catch(error => {
@@ -179,22 +320,3 @@ function processData() {
     });
 }
 }
-
-
-
-
-
-
-
-
-
-    
-    
-        
-    
-            
-            
-            
-            
-            
-      

@@ -232,7 +232,7 @@ function processData() {
                 }              
                 trm.appendChild(td);
 
-                 
+              /*   
                 fetchnechasim(data[tb].mh,4751)
                     .then(datan=>{
                     
@@ -296,7 +296,7 @@ function processData() {
                         
                     });
 
-
+*/
 
                 table.appendChild(trm);
                  table.style.display = 'block';     

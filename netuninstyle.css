@@ -65,6 +65,7 @@ option,select {background-color: white; color: black;}
    /*td{background-color:white;color:#333;}
     th{color:white;background-color:#333;}*/ 
     .bazeadiv, .bazea{margin-right: 20px;}
+   .tbldata{margin-right: 35px !important;}
   }
 
   @media only screen and (max-width: 480px){

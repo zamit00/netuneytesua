@@ -6,7 +6,7 @@ option,select {background-color: white; color: black;}
 .hashspecific{display: none;}
 .table3,.table5,.table12{display:none;}
 .bazea{color:rgb(89, 227, 89);margin-bottom:10px; }
-.tkofatdivuachn{color:blue;font-size:14px;margin-right:15px;}
+.tkofatdivuachn{color:blue;font-size:14px;margin-right:15px;white-space:nowrap;}
 
 .tblinfo,.trinfo{width: 95vw;border-collapse: collapse;}
 .trinfo{height: 25px;}
@@ -28,7 +28,7 @@ option,select {background-color: white; color: black;}
    select{width: 30vw;height: 35px;text-align: center;
       font-size: 25px;float: left;margin-left: 10vw;}
    .labels{margin-bottom:10px;color:blue; font-size: 25px;
-   margin-top: 10px;}
+   margin-top: 10px;white-space:nowrap;}
    h1{font-size:35px;color:rgb(89, 227, 89);}
    h2{white-space: nowrap;}
    .muzar{margin: 10px 0px ;width: 70vw;font-size: 20px;}
@@ -69,7 +69,7 @@ font-size: 40px;text-align: center;height: 45px;}
      select{width: 90vw;height: 25px;text-align: center;float: none;margin-right: 20px;
       font-size: 16px;box-sizing: border-box;}
    .labels{margin-bottom:10px;color:blue; margin-right: 30px;box-sizing: border-box;
-          font-size:14px;}
+          font-size:14px;white-space:nowrap;}
    h1{font-size:25px;color:rgb(89, 227, 89);box-sizing: border-box;}
      .muzar{margin: 10px 0px ;width: 90vw;box-sizing: border-box;
          display:flex; flex-direction:column;}

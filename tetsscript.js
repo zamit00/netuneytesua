@@ -166,7 +166,7 @@ function processData() {
             th.style.textAlign="center";
             th.textContent = 'תשואה';
             headerRow.appendChild(th);
-
+/*
             th = document.createElement('th');
             th.style.color='white';
             th.style.backgroundColor='#333';
@@ -195,7 +195,7 @@ function processData() {
             th.textContent = 'שיעור בחול';
             headerRow.appendChild(th);
 
-
+*/
 
             table.appendChild(headerRow);
             table.style.display = 'none';

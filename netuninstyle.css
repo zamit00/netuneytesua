@@ -13,15 +13,13 @@ option,select {background-color: white; color: black;}
 .thinfo{width: 40vw;height: 25px;font-size: 14px;}
 .tdinfo{width:20vw;height: 25px;font-size: 14px;}
 #lbltbldo{font-size:18px;color:blue;font-weight:bold;}
-#tbldo{margin-right 20px;}
-.kothash{text-align: center;}
 @media only screen and (min-width: 769px){
    main{width: 60vw;display: flex;flex-direction: column;align-items: center;
    }
    header{width: 70vw;height: 16vh;}
    .lblblack{background-color: white;color:#333;font-weight: bold;font-size: 28px;}
    th, td{height:35px;border:1px solid black;}
-   th{width:40vw;}
+   th{width:30vw;}
    td{width:10vw;}
    td{text-align: center;}
    th{text-align: right;padding-right: 5px;}
@@ -36,13 +34,14 @@ option,select {background-color: white; color: black;}
    .klali{width:70vw;}
    .bazea{color:rgb(89, 227, 89);margin-bottom:10px;width: 20vw; font-size: 28px;width: 30vw;
       float: left;margin-left: 10vw;}
-   .bazeadiv{width: 70vw;margin-bottom: 20px;}
+   .bazeadiv{width: 70vw;}
   #tkofatdivuachn{font-size: 25px;font-weight: bold;margin: 0px;padding: 0%;}
   #klaliHishThree{float: left;display: flex;flex-direction: column;align-items: center;}
   #klaliHishThree table{border-collapse: collapse;border: 1px solid black;}
+  #klaliHishThree{display: block;}
 }
   @media only screen and (max-width: 768px){
-   #klaliHishThree{display: none  !important;}
+   #klaliHishThree{display: none;}
    header{height:16vh}
    th{width:65vw;}
    td{width:15vw;}
@@ -66,9 +65,7 @@ option,select {background-color: white; color: black;}
    /*td{background-color:white;color:#333;}
     th{color:white;background-color:#333;}*/ 
     .bazeadiv, .bazea{margin-right: 20px;}
-   .tbldata{margin-right: 35px !important;}
-   
-   
+    .tbldata{margin-right: 35px !important;}
   }
 
   @media only screen and (max-width: 480px){

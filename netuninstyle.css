@@ -68,7 +68,8 @@ font-size: 40px;text-align: center;height: 45px;}
   .lblblack{text-align: right;margin-right: 20px;padding-right: 5px;}
      select{width: 90vw;height: 25px;text-align: center;float: none;margin-right: 20px;
       font-size: 16px;box-sizing: border-box;}
-   .labels{margin-bottom:10px;color:blue; margin-right: 30px;box-sizing: border-box;}
+   .labels{margin-bottom:10px;color:blue; margin-right: 30px;box-sizing: border-box;
+          font-size:14px;}
    h1{font-size:25px;color:rgb(89, 227, 89);box-sizing: border-box;}
      .muzar{margin: 10px 0px ;width: 90vw;box-sizing: border-box;
          display:flex; flex-direction:column;}

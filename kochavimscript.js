@@ -4,12 +4,12 @@ window.onload = function() {
     const mozkoch=['קרנות השתלמות','קופת גמל להשקעה']
     const hishtalmot=["כללי"]
     
-    
+    lbltbldo.style.display="block";
     
     
     fetchdata(mozkoch[0],hishtalmot[0]).then(data => {
     data.sort((a, b) => b.tesuam - a.tesuam);
-    console.log(data)       
+         
     
     var table;
      table = document.getElementById('klalikoch0');
@@ -47,12 +47,17 @@ window.onload = function() {
                 
     }
        
+       
+
+
+
+    })
     .catch(error => {
         console.error('Error:', error);
     });
     fetchdata(mozkoch[1],hishtalmot[0]).then(data => {
         data.sort((a, b) => b.tesuam - a.tesuam);
-        console.log(data)       
+         
         
         var table;
          table = document.getElementById('klalikoch1');
@@ -93,11 +98,6 @@ window.onload = function() {
            
     
     
-        /*    console.log(data);  
-        data.sort((a, b) => b.tesuam36 - a.tesuam36);
-            console.log(data);  
-        data.sort((a, b) => b.tesuam60 - a.tesuam60);
-            console.log(data);*/      
     
         })
         .catch(error => {

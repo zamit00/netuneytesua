@@ -166,37 +166,6 @@ function processData() {
             th.style.textAlign="center";
             th.textContent = 'תשואה';
             headerRow.appendChild(th);
-/*
-            th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgroundColor='#333';
-            th.style.textAlign="center";
-            th.textContent = 'סכום מניות';
-            headerRow.appendChild(th);
-
-            th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgroundColor='#333';
-            th.style.textAlign="center";
-            th.textContent = 'שיעור מניות';
-            headerRow.appendChild(th);
-
-            th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgroundColor='#333';
-            th.style.textAlign="center";
-            th.textContent = 'סכום בחול';
-            headerRow.appendChild(th);
-
-            th = document.createElement('th');
-            th.style.color='white';
-            th.style.backgroundColor='#333';
-            th.style.textAlign="center";
-            th.textContent = 'שיעור בחול';
-            headerRow.appendChild(th);
-
-*/
-
             table.appendChild(headerRow);
             table.style.display = 'none';
             
@@ -231,73 +200,6 @@ function processData() {
                     td.textContent = data[tb].tesuam60 + "%"; 
                 }              
                 trm.appendChild(td);
-
-              /*   
-                fetchnechasim(data[tb].mh,4751)
-                    .then(datan=>{
-                    
-                    if(datan){
-                    td = document.createElement('td');
-                    td.style.color='#333';
-                    td.style.backgroundColor='white'
-                    td.textContent =Number(datan[0].schumsugneches).toLocaleString();
-                    trm.appendChild(td); 
-                    td = document.createElement('td');
-                    td.style.color='#333';
-                    td.style.backgroundColor='white'
-                    td.textContent =Number(datan[0].ahuzsugneches)+"%";
-                    trm.appendChild(td);                 
-
-                       }
-                    else{
-                    td = document.createElement('td');
-                    td.style.color='#333';
-                    td.style.backgroundColor='white'
-                    td.textContent =0;
-                    trm.appendChild(td); 
-                    td = document.createElement('td');
-                    td.style.color='#333';
-                    td.style.backgroundColor='white'
-                    td.textContent =0+"%";
-                    trm.appendChild(td);
-                    }
-                    
-                        
-                    });
-                    fetchnechasim(data[tb].mh,4752)
-                    .then(datan=>{
-                    
-                    if(datan){
-                    td = document.createElement('td');
-                    td.style.color='#333';
-                    td.style.backgroundColor='white'
-                    td.textContent =Number(datan[0].schumsugneches).toLocaleString();
-                    trm.appendChild(td); 
-                    td = document.createElement('td');
-                    td.style.color='#333';
-                    td.style.backgroundColor='white'
-                    td.textContent =Number(datan[0].ahuzsugneches)+"%";
-                    trm.appendChild(td);                 
-
-                       }
-                    else{
-                    td = document.createElement('td');
-                    td.style.color='#333';
-                    td.style.backgroundColor='white'
-                    td.textContent =0;
-                    trm.appendChild(td); 
-                    td = document.createElement('td');
-                    td.style.color='#333';
-                    td.style.backgroundColor='white'
-                    td.textContent =0+"%";
-                    trm.appendChild(td);
-                    }
-                    
-                        
-                    });
-
-*/
-
                 table.appendChild(trm);
                  table.style.display = 'block';     
                 if (document.getElementById('rdbutton1').checked){

@@ -49,11 +49,12 @@ font-size: 40px;text-align: center;height: 45px;}
 
 }
   @media only screen and (max-width: 768px){
-   #tkofatdivuachn{margin-bottom: 15px;font-size: 20px;}
+   #tkofatdivuachn{margin-bottom: 15px;font-size: 20px;
+            width:100vw; text-align: center;}
    #klalikoch0,#klalikoch1{margin-right: 30px;}
    table{border-collapse: collapse;}
    .kotsim{width: 90vw;background-color: #333;color: white;
-      font-size: 30px;text-align: center;height: 35px;margin-right:30px ;}
+      font-size: 18px;text-align: center;height: 35px;margin-right:30px ;}
    #klaliHishThree{display: none;}
    header{height:16vh}
    th{width:65vw;}
@@ -75,11 +76,10 @@ font-size: 40px;text-align: center;height: 45px;}
          display:flex; flex-direction:column;}
    .klali{width:90vw;margin-right: 0vw;box-sizing: border-box;}
     #maslul{width:100vw;} 
-    .rdbutton{margin-right: 20px;}
-   /*td{background-color:white;color:#333;}
-    th{color:white;background-color:#333;}*/ 
+    .rdbutton{margin-right: 20px;} 
     .bazeadiv, .bazea{margin-right: 20px;}
     .tbldata{margin-right: 35px !important;}
+     
   }
 
   @media only screen and (max-width: 480px){

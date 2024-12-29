@@ -366,10 +366,10 @@ fetch('nechasim.xml')
           if(Number(sugneches)===4751){tbl3.rows[1].cells[1].textContent =Number(schumsugneches).toLocaleString();
             tbl3.rows[1].cells[2].textContent =Number(ahuzsugneches)+"%";
           }
-          if(Number(sugneches)===4752){tbl3.rows[2].cells[1].textContent =Number(schumsugneches).toLocaleString();
+          if(Number(sugneches)===4761){tbl3.rows[2].cells[1].textContent =Number(schumsugneches).toLocaleString();
             tbl3.rows[2].cells[2].textContent =Number(ahuzsugneches)+"%";
           }
-          if(Number(sugneches)===4761){tbl3.rows[3].cells[1].textContent =Number(schumsugneches).toLocaleString();
+          if(Number(sugneches)===4752){tbl3.rows[3].cells[1].textContent =Number(schumsugneches).toLocaleString();
             tbl3.rows[3].cells[2].textContent =Number(ahuzsugneches)+"%";
           }
 

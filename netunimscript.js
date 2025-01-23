@@ -1,6 +1,6 @@
 
 let newWindow = null;
-const tkokadivuach=" נכון לחודש נובמבר 2024 ";
+const tkokadivuach=" נכון לחודש דצמבר 2024 ";
  document.getElementById("tkofatdivuachn").innerText=tkokadivuach;
 
 

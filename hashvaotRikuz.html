@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>השוואת נתוני קופות</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #01579b;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .box {
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            width: 100%;
+            padding: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0073e6;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .closewindow {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #d32f2f;
+            transition: 0.2s;
+        }
+
+        .closewindow:hover {
+            color: #b71c1c;
+        }
+
+        @media screen and (max-width: 600px) {
+            .box { font-size: 1.5rem; padding: 15px; }
+        }
+
+        @media screen and (max-width: 400px) {
+            .box { font-size: 1.3rem; padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class='closewindow' onclick='hideIframe()'>X</div>
+    <h1>השוואת נתוני חברות</h1>
+    <div class="container">
+        <div class="box" onclick="navigate('hashMenahalot.html')">השוואת חברות מנהלות</div>
+        <div class="box" onclick="navigateWithMenu()">יחס תשואה סיכון - שארפ</div>
+        <div class="box" onclick="navigate('hasifotMeshulav.html')">מחולל חשיפות</div>
+        <div class="box" onclick="navigate('madadHasherut.html')">מדד השירות</div>
+        <div class="box" onclick="navigate('madadhpending.html')">מדד הפנדינג</div>
+    </div>
+
+    <script>
+        function navigate(page) {
+            hideIframe();
+            window.parent.hideAllimages();
+            window.parent.showIframe(page);
+           
+        }
+
+        function navigateWithMenu() {
+            hideIframe();
+            window.parent.toggleMenu();
+            window.parent.hideAllimages();
+            window.parent.createForm(0);
+        }
+
+        function hideIframe() {
+            window.parent.hideframe();
+            window.parent.showAllimages();
+        }
+    </script>
+</body>
+</html>

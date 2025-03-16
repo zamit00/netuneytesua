@@ -121,12 +121,12 @@ document.getElementById("closeinfo").style.display='none';
             table.innerHTML='';
             table.innerHTML=`<tr style="font-weight: bold;background-color: rgb(0,154,255);color: white;
             border:none;">						
-						<td >מה</td>
+						<td style="text-align:center;">מה</td>
             <td>שם המסלול</td>
-						<td>חודש</td>
-						<td onclick='sortTable(this)'>שנה<i class="fa fa-sort"></i></td>
-						<td onclick='sortTable(this)'>3 שנים<i class="fa fa-sort"></i></td>
-						<td onclick='sortTable(this)'>5 שנים<i class="fa fa-sort"></i></td>
+						<td style="text-align:center;" >חודש</td>
+						<td style="text-align:center;" onclick='sortTable(this)'>שנה<i class="fa fa-sort"></i></td>
+						<td style="text-align:center;" onclick='sortTable(this)'>3 שנים<i class="fa fa-sort"></i></td>
+						<td  style="text-align:center;" onclick='sortTable(this)'>5 שנים<i class="fa fa-sort"></i></td>
 					</tr>`
           if (!dataY || !Array.isArray(dataY)) {
             console.error(`Data is not valid for typamas: ${typamas}, sugmuzar: ${sugmuzar}`);

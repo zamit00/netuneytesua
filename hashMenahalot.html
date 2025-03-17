@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>השוואת חברות</title>
+    <title>פיננסינט</title>
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -513,8 +513,8 @@ padding-right:10px; padding-left: 10px;
  <option value="תגמולים ואישית לפיצויים">קופות גמל</option>
  <option value="קופת גמל להשקעה">קופת גמל להשקעה</option>
   <option value="קופת גמל להשקעה - חסכון לילד">חסכון לילד</option> 
-  <!--<option value="פוליסות חסכון">פוליסות חסכון פרט</option> 
-<option value="קרנות חדשות">קרנות פנסיה</option>  --></select>
+ <option value="פוליסות חסכון">פוליסות חסכון פרט</option> 
+<option value="קרנות חדשות">קרנות פנסיה</option></select>
 
 <label class="lblkot" for="selectShemkupa">בחר מסלול</label>
             <select class="dropdown sugsel" id="selectShemkupa" onchange='changmoz()' ></select>
@@ -729,12 +729,21 @@ document.getElementById('compareButton').addEventListener('click', async() => {
         else{
             selectedValues = [...new Set(datanetunimKlaliXb.map(company => company.shemkupa.split(" ")[0]))];
         }
+
+        
     }
+
     var databring;var selectedData
+    
     databring=await filterMaslulXa(selectedMaslul, selectedProduct);
+
+    
+
+    if(selectedProduct!=='פוליסות חסכון' && selectedProduct!=='קרנות חדשות'){
     databring=databring.filter(item=>(!item.ochlosiyayaad.includes('עובדי סקטור מסויים')
       &&  !item.ochlosiyayaad.includes('עובדי מפעל/גוף מסויים') && Number( item.tesuam)!==0)
-    && !item.menahelet.includes('סלייס'));
+    && !item.menahelet.includes('סלייס'))};
+   
     if(selectedProduct!=='פוליסות חסכון' ){
      selectedData = databring.filter(item =>
          selectedValues.some(b => item.menahelet.includes(b))
@@ -746,6 +755,7 @@ document.getElementById('compareButton').addEventListener('click', async() => {
         && item.tesuam
     ); 
     }
+    
     selectedData.sort((a, b) => b.tesuam - a.tesuam);
     updateTable(selectedData);
     updateCharts(selectedData,selectedProduct);

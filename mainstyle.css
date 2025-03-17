@@ -168,12 +168,7 @@ body {
 
 
 #closeinfo{display:none;}
-#allTheTables{display:none;
-	flex-direction: column;
-	align-items:center;
-	width:100%;max-width:100%;
-    margin:0; padding:0;
-}
+
 
 #content{
     width: 100%;
@@ -228,13 +223,21 @@ header{
     transform: translateY(-50%);
   /* animation: move 10s linear infinite;*/
 }
-@media screen and (min-width:800px) {.logo{float:right;  top:40% ;right:30px;width: 150px;
+@media screen and (min-width:850px) {.logo{float:right;  top:40% ;right:30px;width: 150px;
    transform: translateY(-30%) ;height: 46px;}
    .search-icon{float:left;font-size: 30px;left: 90px;
     top: 70%;} 
     .stripe {font-size: 22px}  
     
 }
+.klalikoch, #h2Hish {
+       width: 48vw;  
+	max-width:100%;
+    }
+    
+    .klalikoch{
+        margin-bottom: 20px;
+    }
 .svg{width:50;height:50px} 
   .menu-container {
     position: relative;
@@ -251,7 +254,7 @@ header{
     display: none;
     
 }
-.tbl{margin: 5px;}
+.tbl{margin: 5px; width:48vw;padding:0;}
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -425,7 +428,7 @@ header{
     margin: 0%;padding: 0;
    
 }
-.tblMuzarim{width: clamp(300,100%,100%);box-sizing: border-box;padding: 0%;
+.tblMuzarim{width: 100%;box-sizing: border-box;padding: 0%;
     white-space:wrap;
      overflow:auto;
      display: flex;
@@ -556,9 +559,11 @@ select:focus {
     background: #00796b;
 }
 .divTblNetunim{
-    display: flex;
+    display: flex;width:100%;
 }
+
 @media screen and (max-width:850px) {
+	.tbl{width:100%;max-width:100%;}	
     .stripe {font-size: 18px;
         bottom: 10%;}  
 

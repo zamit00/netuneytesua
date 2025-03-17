@@ -194,11 +194,11 @@ tbody tr {
     table-layout: fixed;
 }
 /* קביעת רוחב לעמודות */
-th:nth-child(1), td:nth-child(1) { width: 12vw; } /* עמודה ראשונה (חברה) */
-th:nth-child(2), td:nth-child(2) { width: 25vw; } /* עמודה שנייה (שם המסלול) */
+th:nth-child(1), td:nth-child(1) { width: 12%; } /* עמודה ראשונה (חברה) */
+th:nth-child(2), td:nth-child(2) { width: 30%; } /* עמודה שנייה (שם המסלול) */
 th:nth-child(3), td:nth-child(3),
 th:nth-child(4), td:nth-child(4),
-th:nth-child(5), td:nth-child(5) { width: 12vw; } /* יתר העמודות שוות בגודל */
+th:nth-child(5), td:nth-child(5) { width: 12%; } /* יתר העמודות שוות בגודל */
 .chart-container {
     margin-top: 20px;
     max-width: 100vw;
@@ -250,6 +250,7 @@ th:nth-child(5), td:nth-child(5) { width: 12vw; } /* יתר העמודות שו�
 @media (max-width: 500px) {
 table, th, td {
    font-size: 9px;
+   max-width: 100%;
  }
  .chart-container{ max-width:300px;}
  header{
@@ -392,12 +393,16 @@ tr:hover {
 tbody {
     display: block;
     margin-top: 30px;
+    max-width: 100%;
+    
 }
 /* שמירה על מבנה רספונסיבי */
 tbody tr {
     display: table;
     width: 100%;
+    max-width:100%;
     table-layout: fixed;
+    white-space:wrap;
 }
 #compare h4{text-decoration: underline;color: blue;
 padding-right:10px; padding-left: 10px;
@@ -776,8 +781,8 @@ function updateTable(data) {
             data.forEach(company => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                     <td  style='text-align:right;paddin-right:5px;width:17vw;white-space:wrap;'>${company.shemkupa.split(" ")[0]}</td>
-                    <td class="tdnamekupa" style='text-align:right;paddin-right:5px;width:25vw;white-space:wrap'>${company.shemkupa}</td>
+                    <td  style='text-align:right;paddin-right:5px;width:17vw;white-space:wrap;'>${company.shemkupa.split(" ")[0]}</td>
+                    <td class="tdnamekupa" style='text-align:right;paddin-right:5px;width:25vw;'>${company.shemkupa}</td>
                     <td style="width:17vw;">${Number(company.tesuam).toFixed(2)}%</td>
                     <td  style="width:17vw;">${Number(company.tesuam36).toFixed(2)}%</td>
                     <td style="width:17vw;">${Number(company.tesuam60).toFixed(2)}%</td>

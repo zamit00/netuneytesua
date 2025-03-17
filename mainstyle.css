@@ -605,8 +605,9 @@ select:focus {
         margin: 0 ;             
     }
     header{
-        width: 100%;
-        margin:0 ;
+       width: 105%;
+       max-width:105%;
+       margin:0 ;
     }
      
     

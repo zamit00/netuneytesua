@@ -425,7 +425,7 @@ header{
     margin: 0%;padding: 0;
    
 }
-.tblMuzarim{width: clamp(300,100%,1000px);box-sizing: border-box;padding: 0%;
+.tblMuzarim{width: clamp(300,100%,100%);box-sizing: border-box;padding: 0%;
     white-space:wrap;
      overflow:auto;
      display: flex;

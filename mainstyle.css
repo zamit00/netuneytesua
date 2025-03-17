@@ -426,7 +426,7 @@ header{
     max-width:100%;
     box-sizing: border-box;
     margin: 0%;padding: 0;
-   
+   overflow-x: hidden;
 }
 .tblMuzarim{width: 100%;box-sizing: border-box;padding: 0%;
     white-space:wrap;
@@ -434,6 +434,7 @@ header{
      display: flex;
      justify-content: center;
      max-width:100%;
+     overflow-x: hidden;
     }
 #allTheTables h2{
     width:100% ;
@@ -445,6 +446,7 @@ header{
     background: linear-gradient(45deg,aliceblue,lightblue);
     color: rgb(0,154,255);
     position: relative; box-sizing: border-box;
+    overflow-x: hidden;
 }
 .tbl tr:nth-child(even) {background-color: rgb(237, 229, 229);}
 h4{text-align: center;font-size: 14px;font-weight: bold;}
@@ -563,7 +565,7 @@ select:focus {
 }
 
 @media screen and (max-width:850px) {
-	.tbl{width:100%;max-width:100%;}	
+	.tbl{width:100%;max-width:100%;overflow-x: hidden;}	
     .stripe {font-size: 18px;
         bottom: 10%;}  
 
@@ -712,3 +714,4 @@ box-sizing: border-box;padding: 0%;margin: 0%};
         opcity:0;
     }
 }
+

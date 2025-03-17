@@ -233,6 +233,7 @@ header{
 .klalikoch, #h2Hish {
        width: 48vw;  
 	max-width:100%;
+	overflow-x:hidden;
     }
     
     .klalikoch{

@@ -138,6 +138,7 @@ document.getElementById("closeinfo").style.display='none';
                     // יצירת תא ראשון
                     let td = document.createElement('td');
                     td.style.color = '#333';
+		    td.style.textAlign = 'center';
                     td.className="tdmh";
                     td.style.boxSizing="border-box";
                     td.textContent = dataY[tb].mh;

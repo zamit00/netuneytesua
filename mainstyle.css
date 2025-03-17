@@ -433,7 +433,7 @@ header{
      max-width:100%;
     }
 #allTheTables h2{
-    width:clamp(300,100%,1000px) ;
+    width:100% ;
     max-width: 100%;
     text-align: center;
     line-height: 18px;

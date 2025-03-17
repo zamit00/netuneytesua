@@ -776,8 +776,8 @@ function updateTable(data) {
             data.forEach(company => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td  style='text-align:right;paddin-right:5px;width:17vw'>${company.shemkupa.split(" ")[0]}</td>
-                    <td class="tdnamekupa" style='text-align:right;paddin-right:5px;width:25vw''>${company.shemkupa}</td>
+                     <td  style='text-align:right;paddin-right:5px;width:17vw;white-space:wrap;'>${company.shemkupa.split(" ")[0]}</td>
+                    <td class="tdnamekupa" style='text-align:right;paddin-right:5px;width:25vw;white-space:wrap'>${company.shemkupa}</td>
                     <td style="width:17vw;">${Number(company.tesuam).toFixed(2)}%</td>
                     <td  style="width:17vw;">${Number(company.tesuam36).toFixed(2)}%</td>
                     <td style="width:17vw;">${Number(company.tesuam60).toFixed(2)}%</td>

@@ -1,70 +1,7 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCWjC49qctrLF9T4pUPf4eZQUHOfWRQW34",
-    authDomain: "usermanagement-cb462.firebaseapp.com",
-    projectId: "usermanagement-cb462",
-    storageBucket: "usermanagement-cb462.firebasestorage.app",
-    messagingSenderId: "346116978919",
-    appId: "1:346116978919:web:e3da8292d4148799df4a42",
-    measurementId: "G-ZWNK9VH5HF"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);  // Authentication instance
-
-  // רישום משתמש
-  document.getElementById("registerForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // מונע את ריענון הדף בעת שליחת הטופס
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("User created: ", user);
-        alert("Registration successful!");
-        window.location.href = "home.html";  // הפניה לעמוד הבית אחרי רישום
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Error: ", errorCode, errorMessage);
-        alert(errorMessage);
-      });
-  });
-
-  // התחברות משתמש
-  document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // מונע את ריענון הדף
-
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("User logged in: ", user);
-        alert("Login successful!");
-        window.location.href = "dashboard.html";  // הפניה לדף ניהול אחרי התחברות
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Error: ", errorCode, errorMessage);
-        alert(errorMessage);
-      });
-  });
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="כאן תמצאו מידע מקיף על קופות גמל, קרנות השתלמות, קרנות פנסיה ופוליסות חסכון פרט, כולל השוואת נתונים, מחשבונים פיננסיים מתקדמים ותוכן מקצועי שיעזור לכם לקבל החלטות
@@ -341,6 +278,72 @@ function hidekupainfo(){
 	<script src="HasifotMeshulav.js" defer></script> 
  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 <script src="https://cdn.userway.org/widget.js" data-account="rylh57CLUH"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCWjC49qctrLF9T4pUPf4eZQUHOfWRQW34",
+    authDomain: "usermanagement-cb462.firebaseapp.com",
+    projectId: "usermanagement-cb462",
+    storageBucket: "usermanagement-cb462.firebasestorage.app",
+    messagingSenderId: "346116978919",
+    appId: "1:346116978919:web:e3da8292d4148799df4a42",
+    measurementId: "G-ZWNK9VH5HF"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);  // Authentication instance
+
+  // רישום משתמש
+  document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // מונע את ריענון הדף בעת שליחת הטופס
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User created: ", user);
+        alert("Registration successful!");
+        window.location.href = "home.html";  // הפניה לעמוד הבית אחרי רישום
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error("Error: ", errorCode, errorMessage);
+        alert(errorMessage);
+      });
+  });
+
+  // התחברות משתמש
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // מונע את ריענון הדף
+
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User logged in: ", user);
+        alert("Login successful!");
+        window.location.href = "dashboard.html";  // הפניה לדף ניהול אחרי התחברות
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error("Error: ", errorCode, errorMessage);
+        alert(errorMessage);
+      });
+  });
+</script>
+
 </body>
 </html>
 

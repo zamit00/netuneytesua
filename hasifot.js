@@ -254,7 +254,7 @@ async function tablhasifot() {
         datfilter=datanetunimKlaliXM;
 
          }
-    else if(sugmM==='קרנות פנסיה - אישית' ){
+    else if(sugmM==='קרנות פנסיה - מקיפה' ){
         sugmM='קרנות חדשות'
         ;datfilter=datanetunimKlaliXP;
         await maslulimP(30,sugmM,0);

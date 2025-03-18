@@ -156,7 +156,7 @@ h1 {
     justify-content: center;
 }
 table {
-    width: 100%;
+    width: clamp(300px,100%,800px);
     max-width: 100%;
     border-collapse: collapse;
     direction: rtl;
@@ -190,7 +190,8 @@ tbody {
 /* שמירה על מבנה רספונסיבי */
 tbody tr {
     display: table;
-    width: 100%;
+    width: clamp(300px,100%,800px);
+    max-width: 100%;
     table-layout: fixed;
 }
 /* קביעת רוחב לעמודות */

@@ -121,12 +121,12 @@ document.getElementById("closeinfo").style.display='none';
             table.innerHTML='';
             table.innerHTML=`<tr style="font-weight: bold;background-color: rgb(0,154,255);color: white;
             border:none;">						
-						<td style="text-align:center;">מה</td>
+						<td style="text-align:center;" >מה</td>
             <td>שם המסלול</td>
 						<td style="text-align:center;" >חודש</td>
 						<td style="text-align:center;" onclick='sortTable(this)'>שנה<i class="fa fa-sort"></i></td>
 						<td style="text-align:center;" onclick='sortTable(this)'>3 שנים<i class="fa fa-sort"></i></td>
-						<td  style="text-align:center;" onclick='sortTable(this)'>5 שנים<i class="fa fa-sort"></i></td>
+						<td style="text-align:center;" onclick='sortTable(this)'>5 שנים<i class="fa fa-sort"></i></td>
 					</tr>`
           if (!dataY || !Array.isArray(dataY)) {
             console.error(`Data is not valid for typamas: ${typamas}, sugmuzar: ${sugmuzar}`);
@@ -138,7 +138,7 @@ document.getElementById("closeinfo").style.display='none';
                     // יצירת תא ראשון
                     let td = document.createElement('td');
                     td.style.color = '#333';
-		    td.style.textAlign = 'center';
+		    td.style.textAlign='center';
                     td.className="tdmh";
                     td.style.boxSizing="border-box";
                     td.textContent = dataY[tb].mh;
@@ -160,7 +160,7 @@ document.getElementById("closeinfo").style.display='none';
               trm.appendChild(td);
                     // יצירת תא שלישי עם נתון מ-fetchtuaa
                     td = document.createElement('td');
-                    td.style.color = 'darkgreen';
+                    
                     td.className="tdsmall";
                     td.style.boxSizing="border-box";
                     td.style.textAlign="center";
@@ -175,7 +175,7 @@ document.getElementById("closeinfo").style.display='none';
                     td.textContent = dataY[tb].tesuam.toFixed(2) + "%";
                     trm.appendChild(td);
                     td = document.createElement('td');
-                    td.style.color = 'green';
+                    
                     td.className="tdsmall";
                     td.style.boxSizing="border-box";
                     td.style.textAlign="center"
@@ -201,6 +201,7 @@ document.getElementById("closeinfo").style.display='none';
       let text = td.textContent.trim();
       if (text.startsWith("-")) {
           td.innerHTML = `<span style="direction: ltr; display: inline-block;">${text}</span>`;
+          td.style.color="red";
       }
       //window.scrollTo({ top: 0, behavior: "smooth" }); 
       if(t===30){document.getElementById("tkufatdivuach").scrollIntoView({ behavior: "smooth" });}   
@@ -337,13 +338,14 @@ const sortKey = selectedKey ? {
         if (data[i - 1]) {
             tds[0].textContent = data[i - 1].mh;
             if (tds[1]?.children[0]) tds[1].children[0].textContent = data[i - 1].shemkupa;
-            tds[2].textContent = data[i - 1].hodshi ? data[i - 1].hodshi + '%' : '';
-            tds[3].textContent = data[i - 1].tesuam ? data[i - 1].tesuam + '%' : '';
-            tds[4].textContent = data[i - 1].tesuam36 ? data[i - 1].tesuam36 + '%' : '';
-            tds[5].textContent = data[i - 1].tesuam60 ? data[i - 1].tesuam60 + '%' : '';
+            tds[2].textContent = data[i - 1].hodshi ? data[i - 1].hodshi.toFixed(2) + '%' : '';
+            tds[3].textContent = data[i - 1].tesuam ? data[i - 1].tesuam.toFixed(2) + '%' : '';
+            tds[4].textContent = data[i - 1].tesuam36 ? data[i - 1].tesuam36.toFixed(2) + '%' : '';
+            tds[5].textContent = data[i - 1].tesuam60 ? data[i - 1].tesuam60.toFixed(2) + '%' : '';
         }
     }
 }
+
 
 
 

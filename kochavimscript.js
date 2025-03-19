@@ -154,7 +154,6 @@ document.getElementById("closeinfo").style.display='none';
                     let link = document.createElement('a');
                     link.href = '#';
                     link.className="linktdbig";
-                    link.style.textDecoration = "none";
                     link.textContent = dataY[tb].shemkupa;
               td.appendChild(link);
               trm.appendChild(td);

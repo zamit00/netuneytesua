@@ -154,6 +154,7 @@ document.getElementById("closeinfo").style.display='none';
                     let link = document.createElement('a');
                     link.href = '#';
                     link.className="linktdbig";
+                  
                     link.textContent = dataY[tb].shemkupa;
               td.appendChild(link);
               trm.appendChild(td);
@@ -306,10 +307,10 @@ function sortTable(x) {
             data.push({
                 mh: tds[0].textContent.trim(),
                 shemkupa: tds[1]?.children[0]?.textContent.trim() || '',
-                hodshi: tds[2].textContent.trim().replace('%', ''),
-                tesuam: tds[3].textContent.trim().replace('%', ''),
-                tesuam36: tds[4].textContent.trim().replace('%', ''),
-                tesuam60: tds[5].textContent.trim().replace('%', '')
+                hodshi: cleanNumber(tds[2].textContent),
+                tesuam: cleanNumber(tds[3].textContent),
+                tesuam36: cleanNumber(tds[4].textContent),
+                tesuam60: cleanNumber(tds[5].textContent)
             });
         } else {
             console.warn(`שורה ${i} אינה מכילה מספיק עמודות.`);
@@ -318,14 +319,14 @@ function sortTable(x) {
 
     // מיון לפי הכותרת שנלחצה
     const options = ['חודשי', 'שנה', '3 שנים', '5 שנים'];
-const selectedKey = options.find(opt => x.innerHTML.includes(opt));
+    const selectedKey = options.find(opt => x.innerHTML.includes(opt));
 
-const sortKey = selectedKey ? {
-    'חודשי': 'hodshi',
-    'שנה': 'tesuam',
-    '3 שנים': 'tesuam36',
-    '5 שנים': 'tesuam60'
-}[selectedKey] : null;
+    const sortKey = selectedKey ? {
+        'חודשי': 'hodshi',
+        'שנה': 'tesuam',
+        '3 שנים': 'tesuam36',
+        '5 שנים': 'tesuam60'
+    }[selectedKey] : null;
 
     if (sortKey) {
         data.sort((a, b) => b[sortKey] - a[sortKey]);
@@ -337,12 +338,23 @@ const sortKey = selectedKey ? {
         if (data[i - 1]) {
             tds[0].textContent = data[i - 1].mh;
             if (tds[1]?.children[0]) tds[1].children[0].textContent = data[i - 1].shemkupa;
-            tds[2].textContent = data[i - 1].hodshi ? data[i - 1].hodshi.toFixed(2) + '%' : '';
-            tds[3].textContent = data[i - 1].tesuam ? data[i - 1].tesuam.toFixed(2) + '%' : '';
-            tds[4].textContent = data[i - 1].tesuam36 ? data[i - 1].tesuam36.toFixed(2) + '%' : '';
-            tds[5].textContent = data[i - 1].tesuam60 ? data[i - 1].tesuam60.toFixed(2) + '%' : '';
+            tds[2].textContent = formatNumber(data[i - 1].hodshi);
+            tds[3].textContent = formatNumber(data[i - 1].tesuam);
+            tds[4].textContent = formatNumber(data[i - 1].tesuam36);
+            tds[5].textContent = formatNumber(data[i - 1].tesuam60);
         }
     }
+}
+
+// פונקציה שמנקה את הערכים וממירה אותם למספרים
+function cleanNumber(value) {
+    let num = parseFloat(value.replace(/[^0-9.-]/g, ''));
+    return isNaN(num) ? 0 : num;
+}
+
+// פונקציה שמחזירה מספר בפורמט הנכון
+function formatNumber(value) {
+    return value.toFixed(2) + '%';
 }
 
 

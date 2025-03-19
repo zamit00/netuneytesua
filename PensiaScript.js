@@ -115,7 +115,7 @@ async function maslulimP(t,moz,hev){
                     td.className="tdsmall";
                     td.style.boxSizing="border-box";
                     td.style.textAlign="center";
-                    td.textContent = dataY[tb].tusaAharona + "%";
+                    td.textContent = dataY[tb].tusaAharona.toFixed(2) + "%";
                     trm.appendChild(td);
                     // יצירת תאים נוספים
                     td = document.createElement('td');
@@ -123,21 +123,21 @@ async function maslulimP(t,moz,hev){
                     td.className="tdsmall";
                     td.style.boxSizing="border-box";
                     td.style.textAlign="center"
-                    td.textContent = dataY[tb].tesuam + "%";
+                    td.textContent = dataY[tb].tesuam.toFixed(2) + "%";
                     trm.appendChild(td);
                     td = document.createElement('td');
                     td.style.color = '#333';
                     td.className="tdsmall";
                     td.style.boxSizing="border-box";
                     td.style.textAlign="center"
-                    if (dataY[tb].tesuam36) { td.textContent = dataY[tb].tesuam36 + "%"; }
+                    if (dataY[tb].tesuam36) { td.textContent = dataY[tb].tesuam36.toFixed(2) + "%"; }
                     trm.appendChild(td);
                     td = document.createElement('td');
                     td.style.color = '#333';
                     td.className="tdsmall";
                     td.style.boxSizing="border-box";
                     td.style.textAlign="center"
-                    if (dataY[tb].tesuam60) { td.textContent = dataY[tb].tesuam60 + "%"; }
+                    if (dataY[tb].tesuam60) { td.textContent = dataY[tb].tesuam60.toFixed(2) + "%"; }
                     trm.appendChild(td);
                     td = document.createElement('td');
                     td.style.color = '#333';

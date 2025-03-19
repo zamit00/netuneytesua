@@ -55,7 +55,7 @@ async function maslulimP(t,moz,hev){
         // שנה את הטקסט של ה-a
         a.textContent = 'חזור';
         a.className='spanHish back';
-        a.style.color="green";
+        a.style.color="#333";
         a.style.fontWeight = "bold";
     }
     } 
@@ -111,7 +111,7 @@ async function maslulimP(t,moz,hev){
                     trm.appendChild(td);
                     // יצירת תא שלישי עם נתון מ-fetchtuaa
                     td = document.createElement('td');
-                    td.style.color = 'darkgreen';
+                    td.style.color = '#333';
                     td.className="tdsmall";
                     td.style.boxSizing="border-box";
                     td.style.textAlign="center";
@@ -126,7 +126,7 @@ async function maslulimP(t,moz,hev){
                     td.textContent = dataY[tb].tesuam + "%";
                     trm.appendChild(td);
                     td = document.createElement('td');
-                    td.style.color = 'green';
+                    td.style.color = '#333';
                     td.className="tdsmall";
                     td.style.boxSizing="border-box";
                     td.style.textAlign="center"
@@ -157,6 +157,7 @@ async function maslulimP(t,moz,hev){
       let text = td.textContent.trim();
       if (text.startsWith("-")) {
           td.innerHTML = `<span style="direction: ltr; display: inline-block;">${text}</span>`;
+          td.style.color="red";
       }
   });
   if(t===30){document.getElementById("allTheTables").scrollIntoView({ behavior: "smooth" });}
@@ -298,4 +299,5 @@ const sortKey = selectedKey ? {
         }
     }
 }
+
 

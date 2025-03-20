@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="כאן תמצאו מידע מקיף על קופות גמל, קרנות השתלמות, קרנות פנסיה ופוליסות חסכון פרט, כולל השוואת נתונים, מחשבונים פיננסיים מתקדמים ותוכן מקצועי שיעזור לכם לקבל החלטות
@@ -117,6 +116,7 @@ function hidekupainfo(){
 				<li><a href="#" onclick="toggleMenu();hideframe();createForm(0)">  השוואה לפי יחס סיכון תשואה - שארפ</a></li>
 				<li><a href="#" onclick="toggleMenu();showIframe('hasifotMeshulav.html')"> מחולל לפי חשיפות - מרובה </a></li>
 				<li><a href="#"  onclick="toggleMenu();showIframe('hashMenahalot.html')">השוואת מנהלות</a></li> 
+				<li><a href="#"  onclick="toggleMenu();showIframe('VirtualInvest.html')">השוואת תיק משולב מסלולים</a></li> 
 				<li><a href="#"  onclick="toggleMenu();hideTkufa();showIframe('madadHasherut.html')">מדד השירות</a></li>
 				<li><a href="#" onclick="toggleMenu(); hideTkufa();showIframe('madadhpending.html')">מדד הפנדינג</a></li>
 			</ul>   
@@ -265,15 +265,7 @@ function hidekupainfo(){
 					האתר עשוי להכיל קישורים לאתרים חיצוניים. הקישורים ניתנים לשם נוחות המשתמש בלבד, והאתר לא אחראי לתוכן המופיע באתרים החיצוניים.
 			</div>
 		</div>
-	</footer>	
-	<!-- טופס התחברות -->
-<div id="loginFormContainer">
-  <form id="loginForm">
-    <input type="email" id="loginEmail" placeholder="כתובת מייל" required />
-    <input type="password" id="loginPassword" placeholder="סיסמה" required />
-    <button type="submit">התחבר</button>
-  </form>
-</div>
+	</footer>			
 	<script src="mainscript.js" defer></script>
 	<script src="kochavimscript.js" defer></script>
 	<script src="PensiaScript.js" defer></script>
@@ -285,115 +277,85 @@ function hidekupainfo(){
 	<script src="HasifotMeshulav.js" defer></script> 
  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 <script src="https://cdn.userway.org/widget.js" data-account="rylh57CLUH"></script>
-<!--
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCWjC49qctrLF9T4pUPf4eZQUHOfWRQW34",
-    authDomain: "usermanagement-cb462.firebaseapp.com",
-    projectId: "usermanagement-cb462",
-    storageBucket: "usermanagement-cb462.firebasestorage.app",
-    messagingSenderId: "346116978919",
-    appId: "1:346116978919:web:e3da8292d4148799df4a42",
-    measurementId: "G-ZWNK9VH5HF"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);  // Authentication instance
-
-  // רישום משתמש
-  document.getElementById("registerForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // מונע את ריענון הדף בעת שליחת הטופס
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("User created: ", user);
-        alert("Registration successful!");
-        window.location.href = "home.html";  // הפניה לעמוד הבית אחרי רישום
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Error: ", errorCode, errorMessage);
-        alert(errorMessage);
-      });
-  });
-
-  // התחברות משתמש
-  document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // מונע את ריענון הדף
-
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("User logged in: ", user);
-        alert("Login successful!");
-        window.location.href = "dashboard.html";  // הפניה לדף ניהול אחרי התחברות
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Error: ", errorCode, errorMessage);
-        alert(errorMessage);
-      });
-  });
-</script>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCWjC49qctrLF9T4pUPf4eZQUHOfWRQW34",
-    authDomain: "usermanagement-cb462.firebaseapp.com",
-    projectId: "usermanagement-cb462",
-    storageBucket: "usermanagement-cb462.firebasestorage.app",
-    messagingSenderId: "346116978919",
-    appId: "1:346116978919:web:e3da8292d4148799df4a42",
-    measurementId: "G-ZWNK9VH5HF"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);  // Authentication instance
-
-  // התחברות משתמש
-  document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // מונע את ריענון הדף
-
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("User logged in: ", user);
-        alert("Login successful!");
-        window.location.href = "dashboard.html";  // הפניה לדף ניהול אחרי התחברות
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Error: ", errorCode, errorMessage);
-        alert(errorMessage); // מציג את הודעת השגיאה
-      });
-  });
-</script>	
--->
 </body>
 </html>
+
+<!--<div class="centerHasifa">	
+			<div class="section" style="width: 50vw !important;
+			overflow-y: hidden;margin-bottom: 20px;">
+				<span class="harhev" style="float: left;margin-left:6vw;
+				color:green;font-weight: bold;"
+				onclick="harhev(this)">הרחב</span>
+				<h2>💹 חשיפה למניות</h2>
+				<div class="explainHasifa" >
+					<p>חשיפה למניות מתייחסת לחלק מהתיק המושקע בשוק המניות. השקעה זו מספקת פוטנציאל לתשואות גבוהות אך מלווה בסיכון גבוה יותר.</p>
+				</div>
+				<div class="advantages hasmenayot">
+					<strong>✔️ יתרונות:</strong>
+					<ul>
+						<li>אפשרות לרווחים גבוהים בטווח הארוך</li>
+						<li>הגנה מפני אינפלציה</li>
+						<li>השתתפות בצמיחה הכלכלית של חברות</li>
+					</ul>
+				</div>
+				<div class="risks  hasmenayot">
+					<strong>❌ סיכונים:</strong>
+					<ul>
+						<li>תנודתיות גבוהה</li>
+						<li>סיכון להפסדים במקרה של ירידות בשוק</li>
+					</ul>
+				</div>
+			</div>
+			<div class="section" style="width: 50vw !important;
+			overflow-y: hidden;margin-bottom: 20px;">
+				<span class="harhev" style="float: left;margin-left:6vw;
+				color:green;font-weight: bold;"
+				onclick="harhev(this)">הרחב</span>
+				<h2>💱 חשיפה למטבע חוץ</h2>
+				<div class="explainHasifa" >
+					<p>חשיפה למט"ח משמעותה השקעה בנכסים הנקובים במטבעות זרים, כמו הדולר, האירו והין היפני.</p>
+				</div>
+				<div class="advantages  hasmenayot">
+					<strong>✔️ יתרונות:</strong>
+					<ul>
+						<li>פיזור סיכונים ושמירה על ערך הכסף</li>
+						<li>רווחים פוטנציאליים משינויים בשערי חליפין</li>
+						<li>התאמה להשקעות בינלאומיות</li>
+					</ul>
+				</div>
+				<div class="risks  hasmenayot">
+					<strong>❌ סיכונים:</strong>
+					<ul>
+						<li>שינויים חדים בשערי חליפין עלולים לפגוע בתשואה</li>
+						<li>חשיפה לתנודות כלכליות בעולם</li>
+					</ul>
+				</div>
+			</div>
+			<div class="section" style="width: 50vw !important;
+			overflow-y: hidden;">
+				<span class="harhev" style="float: left;margin-left:6vw;
+				color:green;font-weight: bold;"
+				onclick="harhev(this)">הרחב</span>
+				<h2>🌍 חשיפה לחו"ל</h2>
+				<div class="explainHasifa" >
+					<p>חשיפה לחו"ל כוללת השקעות בשווקים מחוץ לישראל, כגון מניות, אגרות חוב וקרנות בינלאומיות.</p>
+				</div>
+				<div class="advantages  hasmenayot">
+					<strong>✔️ יתרונות:</strong>
+					<ul>
+						<li>פיזור השקעות בין כלכלות שונות</li>
+						<li>גישה לטכנולוגיות חדשניות ושווקים מתפתחים</li>
+						<li>צמצום הסיכון במקרה של משבר כלכלי מקומי</li>
+					</ul>
+				</div>
+				<div class="risks  hasmenayot">
+					<strong>❌ סיכונים:</strong>
+					<ul>
+						<li>תלות במדיניות כלכלית וממשלתית במדינות היעד</li>
+						<li>שינויים ברגולציה או במיסוי עלולים להשפיע על התשואה</li>
+					</ul>
+				</div>
+			</div>
+		</div>-->	
 
 

@@ -32,7 +32,17 @@ window.onload = async function() {
         console.error("שגיאה בטעינת הנתונים:", error);
     }
 };
+function mabaatar(x){
+    if(x.innerHTML==='מה באתר'){
+        document.getElementById('mabaatar').style.display="block";
+        x.innerHTML='סגור';
+    }
+    else{
+        document.getElementById('mabaatar').style.display="none";
+        x.innerHTML='מה באתר';  
+    }
 
+}
 function hideproductForm(){
   document.getElementById('filter').style.display='none';
 }

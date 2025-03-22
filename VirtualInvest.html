@@ -6,6 +6,8 @@
     <title>פיננסינט</title>
     <script src="data.js"></script>
     <script src="kochavimscript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script>
         function hideIframe(){
             window.parent.hideframe();
@@ -18,8 +20,9 @@
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            height: 100vh;
             margin: 0;
         }
         #ex{display:none}
@@ -31,7 +34,6 @@
             width: 90%;
             max-width: clamp(300px,100%,600px);
             border-radius: 10px;
-            max-height: 300px;
             margin-top: 30px;
             min-height:600px;
             
@@ -76,9 +78,9 @@
       .tdmaslul,#men{width:60%;}
       .tdshiur{width:30%;}
       .tdbitul{width:10%;}
-      .klalikoch,.klalikoch tr{width:clamp(300px,90%,600px) ;}
+      .klalikoch,.klalikoch tr{width:clamp(300px,95%,600px) ;}
       .klalikoch,.klalikoch tr, .klalikoch td{
-        border: 1px solid black;border-collapse: collapse;font-size: 11px;
+        border: 1px solid black;border-collapse: collapse;font-size: 10px;
       }
       .tdbig{text-align:right;padding-right: 5px;}
       .tdsmall{text-align: center;}
@@ -86,11 +88,23 @@
         align-items: center;
 
       }
-      .klalikoch .tdbig{width: 70%;}
-      .klalikoch .tdsmall{width: 30%;}
+      .klalikoch .tdbig{width: 55%;color:rgb(37, 60, 255);font-weight: bold;}
+      .klalikoch .tdsmall{width: 16%;}
+      .chart-container {
+            max-width: 100%;
+            height: 300px;
+            display: none;
+            box-sizing: border-box;
+            margin: 0%;padding: 0%;
+            overflow: visible;
+        }
+        #barchart{
+            height: 400px;  
+        }
+        
         @media screen and (max-width:600px){
            .percentage {width: clamp(150px,80%,150px);}
-           .container{max-height: 100%;min-height:600px;overflow-x: hidden;}
+           .container{min-height:600px;overflow-x: hidden;}
            .row {margin-right: 0%;}
           
            
@@ -145,13 +159,23 @@
         </div>
         
     </div>
+
     <div class="centerTbl" style="display:flex;flex-direction: column;
     align-items: center;">
     <div onclick="chngTik()" id="ex">X</div>
         <div id="shana" style="margin-top: 10px;"></div>
         <div id="shalosh" style="margin-top: 10px;"></div>
         <div id="hamesh" style="margin-top: 10px;"></div>
+        
     </div>
+    <div id="chartKot" style="width: 100%;box-sizing: border-box;max-width: 100%;
+    margin: 0%;padding: 0%;text-align: center;"></div>
+    <div style="width: 100%;box-sizing: border-box;max-width: 100%;
+    margin: 0%;padding: 0%;text-align: center;">(שנה גרף באמצעות המיון בטבלה) </div>
+    <div class="chart-container" id="chart-container">
+        <canvas id="barChart"></canvas>
+    </div> 
+    
     <script>
   const gufmosdixA = [
     'הראל פנסיה וגמל', 'כלל פנסיה וגמל',
@@ -214,78 +238,78 @@ function chngTik(){
     document.getElementById('notar').innerHTML='';
 }
 
-        async function addRow(x) {
-            const selectedProduct = document.getElementById('sugMMen').value;
-            if(!selectedProduct){alert("יש לבחור מוצר");return}
-            const inp = document.getElementById('percentage');
-            var Select = document.getElementById('selectShemkupa');
+async function addRow(x) {
+    const selectedProduct = document.getElementById('sugMMen').value;
+    if(!selectedProduct){alert("יש לבחור מוצר");return}
+    const inp = document.getElementById('percentage');
+    var Select = document.getElementById('selectShemkupa');
 
-            var rtn;
-                if(inp.value<=0 || inp.value===''){alert("יש להקליד אחוזים תקינים");rtn="back"
-                    ;inp.value='';
-                }
-
-            if(rtn==="back"){rtn="";return}
-            
-            let table = document.getElementById("tblData");
-            let tblCenter= document.getElementById("tblCenter");
-            
-            tblCenter.style.display='flex';
-            const rows=table.querySelectorAll("tr")
-            var accum=0
-
-            rows.forEach((row,index)=>{
-                if(row.children[0].innerText===Select.value){
-                    alert("מסלול  כבר קיים");rtn="back";inp.value='';return;
-                }
-               
-                if(index!==0){
-                    accum =accum+ Number(row.children[1].innerText.replace('%', ''));
-               
-                    if(accum+ Number(inp.value)>100){alert("סך השיעורים לא יכול לעלות על 100");inp.value='';accum=0; rtn="back"}}
-                    
-                });
-                accum=0;
-            if(rtn==="back"){rtn="";return}
-            
-           table.innerHTML+= `
-                <tr>
-                    <td>${Select.value}</td>
-                    <td>${inp.value}%</td> 
-                     <td><button  
-                        class="btn btn-remove" onclick="removeRow(this)"
-                        style="margin:25%">-</button></td>  
-                </tr>      
-            `;
-            updateNotar()
-           inp.value='';return;
-
-
-        }
-        function updateNotar(){
-            let table = document.getElementById("tblData");
-            const rows=table.querySelectorAll("tr")
-            var accum=0
-
-            rows.forEach((row,index)=>{
-                if(index!==0){
-                    accum =accum+ Number(row.children[1].innerText.replace('%', ''));
-                }     
-                });
-                document.getElementById('notar').innerHTML='';
-                document.getElementById('notar').innerHTML=`נותר לנצל: ${100-accum}%`;
-                
+    var rtn;
+        if(inp.value<=0 || inp.value===''){alert("יש להקליד אחוזים תקינים");rtn="back"
+            ;inp.value='';
         }
 
+    if(rtn==="back"){rtn="";return}
+    
+    let table = document.getElementById("tblData");
+    let tblCenter= document.getElementById("tblCenter");
+    
+    tblCenter.style.display='flex';
+    const rows=table.querySelectorAll("tr")
+    var accum=0
 
-        function removeRow(btn) {
+    rows.forEach((row,index)=>{
+        if(row.children[0].innerText===Select.value){
+            alert("מסלול  כבר קיים");rtn="back";inp.value='';return;
+        }
+        
+        if(index!==0){
+            accum =accum+ Number(row.children[1].innerText.replace('%', ''));
+        
+            if(accum+ Number(inp.value)>100){alert("סך השיעורים לא יכול לעלות על 100");inp.value='';accum=0; rtn="back"}}
+            
+        });
+        accum=0;
+    if(rtn==="back"){rtn="";return}
+    
+    table.innerHTML+= `
+        <tr>
+            <td>${Select.value}</td>
+            <td>${inp.value}%</td> 
+                <td><button  
+                class="btn btn-remove" onclick="removeRow(this)"
+                style="margin:25%">-</button></td>  
+        </tr>      
+    `;
+    updateNotar()
+    inp.value='';return;
+
+
+}
+function updateNotar(){
+    let table = document.getElementById("tblData");
+    const rows=table.querySelectorAll("tr")
+    var accum=0
+
+    rows.forEach((row,index)=>{
+        if(index!==0){
+            accum =accum+ Number(row.children[1].innerText.replace('%', ''));
+        }     
+        });
+        document.getElementById('notar').innerHTML='';
+        document.getElementById('notar').innerHTML=`נותר לנצל: ${100-accum}%`;
+        
+}
+
+
+function removeRow(btn) {
             btn.parentElement.parentElement.remove();
             updateNotar();
             document.getElementById('shana').innerHTML='';
             document.getElementById('shalosh').innerHTML='';
             document.getElementById('hamesh').innerHTML='';
         }
-        function validateSum() {
+function validateSum() {
             let table = document.getElementById("tblData");
             const rows=table.querySelectorAll("tr")
             var accum=0;var bt=0;
@@ -299,167 +323,151 @@ function chngTik(){
            if(accum<100) {bt=1}   
            return bt;
         }
-        async function submitForm() {
-            var bt=0;var abc;
-         document.getElementById('ex').style.display='block'
-            const selectedProduct = document.getElementById('sugMMen').value;
-            if(!selectedProduct){alert("יש לבחור מוצר");return}
-            const checkSum=validateSum();
-            if(checkSum===1){alert("נדרש להשלים ל 100%");return}
+async function submitForm() {
+    var bt=0;var abc;
+    document.getElementById('ex').style.display='block';
+    document.getElementById('chart-container').style.display='block';
+    const selectedProduct = document.getElementById('sugMMen').value;
+    if(!selectedProduct){alert("יש לבחור מוצר");return}
+    const checkSum=validateSum();
+    if(checkSum===1){alert("נדרש להשלים ל 100%");return}
 
-            if (selectedProduct === "קרנות השתלמות" || selectedProduct === "קופת גמל להשקעה" 
-                    || selectedProduct === "תגמולים ואישית לפיצויים" || selectedProduct.includes('לילד' )
-                   ) {
-                   
-            abc= await fetchdataJasonMA()
-
-            } else if (selectedProduct === "פוליסות חסכון"  ) {
-                abc= await fetchdataJasonBA()
-            } else if (selectedProduct==='קרנות חדשות' ){
-               
-            abc= await fetchdataJasonPA(); }
-            abc=abc.filter(item=>item.mozar===selectedProduct)
+    if (selectedProduct === "קרנות השתלמות" || selectedProduct === "קופת גמל להשקעה" 
+            || selectedProduct === "תגמולים ואישית לפיצויים" || selectedProduct.includes('לילד' )
+            ) {
             
-            let table = document.getElementById("tblData");
-            const rows=table.querySelectorAll("tr")
-            var accum=0;var abc1; var accum36=0;var accum60=0;
-            var accumW=0; var accum36W=0;var accum60W=0
-            var collection=[];
-        for(let i=0;i<gufmosdixA.length;i++){
-           
-            accum=0;accumW=0;accum36=0;accum36W=0;accum60=0;accum60W=0;
-            abc1=abc.filter(item=>item.menahelet.includes(gufmosdixA[i]) && item.tesuam!==0
-            && item.tesuam!==undefined)
-            var abc2;
-           for (const row of Array.from(rows).slice(1)) {
-                abc2 = await filterMaslulA(String(row.children[0].innerText), abc1,selectedProduct);
-                
-                 if(abc2.length===0){break;}
-                
-                if(Number(abc2[0].tesuam && accumW===0)){
-                accum=accum+Math.round(Number(row.children[1].innerText.replace('%', ''))*100)/10000* 
-                Math.round(Number(abc2[0].tesuam)*100)/100}
-                else{
-                    accumW=1;
-                    accum='';
-                }
-                
-                if(Number(abc2[0].tesuam36 && accum36W===0)){
-                accum36=accum36+Math.round(Number(row.children[1].innerText.replace('%', ''))*100)/10000* 
-                Math.round(Number(abc2[0].tesuam36)*100)/100}
-                else{
-                    accum36W=1;
-                    accum36='';
-                }
-             
-                if(Number(abc2[0].tesuam60 && accum60W===0)){
-                accum60=accum60+Math.round(Number(row.children[1].innerText.replace('%', ''))*100)/10000* 
-                Math.round(Number(abc2[0].tesuam60)*100)/100}
-                else{
-                    accum60W=1;
-                    accum60='';
-                } 
-                
+    abc= await fetchdataJasonMA()
 
-            };
-           
-            collection.push({
-                menah:gufmosdixA[i],
-                accum:Math.round(accum*100)/100,
-                accum36:Math.round(accum36*100)/100,
-                accum60:Math.round(accum60*100)/100
-            })
-
-        }
-       
-    
-        const shanaTable= document.getElementById('shana');
-        const shaloshTable=document.getElementById('shalosh');
-        const hameshTable=document.getElementById('hamesh');
-        document.getElementById('container').style.display='none';
-        shanaTable.innerHTML=
-        `
-		    <h4 style='color:rgb(0,154,255);margin-top:10px;'>תשואת התיק לשנה</h4>	
-		    
-            <table class="klalikoch" id="tblshana">
-                <tr>
-                    <td class="tdbig">שם גוף מוסדי</td>
-                    <td class="tdsmall">תשואת התיק</td>
-                </tr> 
-            </table>	
-	        
-        `;
-        shaloshTable.innerHTML=
-        `
-		    <h4 style='color:rgb(0,154,255);margin-top:10px;'>תשואת התיק ל 3 שנים</h4>	
-            <table class="klalikoch" id="tblshalosh">
-                <tr>
-                    <td class="tdbig">שם גוף מוסדי</td>
-                    <td class="tdsmall">תשואת התיק</td>
-                </tr> 
-            </table>	
-	        
-        `;
-        hameshTable.innerHTML=
-        `
-		    <h4 style='color:rgb(0,154,255);margin-top:10px;'>תשואת התיק ל 5 שנים</h4>	
-		    
-            <table class="klalikoch" id="tblhamesh">
-                <tr>
-                    <td class="tdbig">שם גוף מוסדי</td>
-                    <td class="tdsmall">תשואת התיק</td>
-                </tr> 
-            </table>	
-	        
-       `;
-       var td;var tr;
-       collection.sort((a, b) => b.accum - a.accum);
-        for(let i=0;i<collection.length;i++){
-             tr=document.createElement('tr')
-             td=document.createElement('td')
-            td.className='tdbig'
-            td.textContent=collection[i].menah
-            tr.appendChild(td)
-            td=document.createElement('td')
-            td.className='tdsmall'
-            td.textContent=collection[i].accum.toFixed(2)+"%";
-            tr.appendChild(td)
-            document.getElementById('tblshana').appendChild(tr)
-
-        }
-        collection.sort((a, b) => b.accum36- a.accum36);
-        for(let i=0;i<collection.length;i++){
-             tr=document.createElement('tr')
-             td=document.createElement('td')
-            td.className='tdbig'
-            td.textContent=collection[i].menah
-            tr.appendChild(td)
-            td=document.createElement('td')
-            td.className='tdsmall'
-            td.textContent=collection[i].accum36.toFixed(2)+"%";
-            tr.appendChild(td)
-            document.getElementById('tblshalosh').appendChild(tr)
-
-        }
-        collection.sort((a, b) => b.accum60 - a.accum60);
-        for(let i=0;i<collection.length;i++){
-             tr=document.createElement('tr')
-             td=document.createElement('td')
-            td.className='tdbig'
-            td.textContent=collection[i].menah
-            tr.appendChild(td)
-            td=document.createElement('td')
-            td.className='tdsmall'
-            td.textContent=collection[i].accum60.toFixed(2)+"%";
-            tr.appendChild(td)
-            document.getElementById('tblhamesh').appendChild(tr)
-
-        }
-
-
- 
+    } else if (selectedProduct === "פוליסות חסכון"  ) {
+        abc= await fetchdataJasonBA()
+    } else if (selectedProduct==='קרנות חדשות' ){
         
+    abc= await fetchdataJasonPA(); }
+    abc=abc.filter(item=>item.mozar===selectedProduct)
+    
+    let table = document.getElementById("tblData");
+    const rows=table.querySelectorAll("tr")
+
+
+    var accum=0;var abc1; var accum36=0;var accum60=0;
+    var accumW=0; var accum36W=0;var accum60W=0
+    var collection=[];var abc2;const mySet = new Set();
+
+for(let i=0;i<gufmosdixA.length;i++){
+    for (const row of Array.from(rows).slice(1)) {
+        
+        abc2 = await filterMaslulA(String(row.children[0].innerText), abc,selectedProduct); 
+        abc2 =abc2.filter(item=>item.menahelet.includes(gufmosdixA[i]) && item.tesuam!==0
+        && item.tesuam!==undefined)
+        if(abc2.length===0){accum=1};
+        
+    }
+    
+    if(Number(accum)===0){
+        mySet.add(gufmosdixA[i])   
+    }
+    else{accum=0}
+}
+for (var value of Array.from(mySet)) {
+    abc1=abc.filter(item=>item.menahelet.includes(value) && item.tesuam!==0
+    && item.tesuam!==undefined);
+    for (const row of Array.from(rows).slice(1)) {
+        abc2 = await filterMaslulA(String(row.children[0].innerText), abc1,selectedProduct);
+        abc2 =  abc2.filter(item=>item.tesuam!==undefined && item.tesuam!==0);
+        if(abc2.length!==0 && accumW===0){
+            accum=accum+Math.round(Number(row.children[1].innerText.replace('%', ''))*100)/10000* 
+            Math.round(Number(abc2[0].tesuam)*100)/100}
+        else{
+            accumW=1;
+            accum='';
         }
+        
+        abc2 = await filterMaslulA(String(row.children[0].innerText), abc1,selectedProduct);
+        abc2 = abc2.filter(item=>item.tesuam36!==undefined && item.tesuam36!==0)
+
+        if(abc2.length!==0 && accum36W===0){
+        accum36=accum36+Math.round(Number(row.children[1].innerText.replace('%', ''))*100)/10000* 
+        Math.round(Number(abc2[0].tesuam36)*100)/100}
+        else{
+            accum36W=1;
+            accum36='';
+        }
+        
+        abc2 = await filterMaslulA(String(row.children[0].innerText), abc1,selectedProduct);
+        abc2 = abc2.filter(item=>item.tesuam60!==undefined && item.tesuam60!==0)
+
+        if(abc2.length!==0 && accum60W===0){
+        accum60=accum60+Math.round(Number(row.children[1].innerText.replace('%', ''))*100)/10000* 
+        Math.round(Number(abc2[0].tesuam60)*100)/100}
+        else{
+            accum60W=1;
+            accum60='';
+        } 
+    }
+    collection.push({
+        menah:value,
+        accum:Math.round(accum*100)/100,
+        accum36:Math.round(accum36*100)/100,
+        accum60:Math.round(accum60*100)/100
+    })
+    accum=0; accum36=0; accum60=0;
+}
+
+    
+   
+
+const shanaTable= document.getElementById('shana');
+document.getElementById('container').style.display='none';
+
+shanaTable.innerHTML=
+`
+    <h4 style='color:rgb(0,154,255);margin-top:10px;'>תשואת התיק במוצר ${selectedProduct}</h4>	
+    <table class="klalikoch" id="tblshana">
+        <tr>
+            <td class="tdbig" style="background:rgb(0,154,255);color:white;">שם גוף מוסדי</td>
+            <td class="tdsmall" style="background:rgb(0,154,255);color:white;"  onclick='sortTableX(this)'>שנה <i class="fa fa-sort"></i></td>
+            <td class="tdsmall" style="background:rgb(0,154,255);color:white;" onclick='sortTableX(this)'>3 שנים <i class="fa fa-sort"></i></td>
+            <td class="tdsmall" style="background:rgb(0,154,255);color:white;" onclick='sortTableX(this)'>5 שנים <i class="fa fa-sort"></i></td>
+        </tr> 
+    </table>	
+    
+`;
+
+
+var td;var tr;
+collection.sort((a, b) => b.accum - a.accum);
+for(let i=0;i<collection.length;i++){
+    tr=document.createElement('tr')
+    td=document.createElement('td')
+    td.className='tdbig'
+    td.textContent=collection[i].menah
+    tr.appendChild(td)
+    td=document.createElement('td')
+    td.className='tdsmall'
+    if(collection[i].accum){td.textContent=collection[i].accum.toFixed(2)+"%"}
+    else{td.textContent=''}
+    tr.appendChild(td)
+    td=document.createElement('td')
+    td.className='tdsmall'
+    if(collection[i].accum36){td.textContent=collection[i].accum36.toFixed(2)+"%"}
+    else{td.textContent=''}
+    tr.appendChild(td)
+    td=document.createElement('td')
+    td.className='tdsmall'
+    if(collection[i].accum60){td.textContent=collection[i].accum60.toFixed(2)+"%"}
+    else{td.textContent=''}
+    tr.appendChild(td)
+    document.getElementById('tblshana').appendChild(tr)
+
+}
+let lbl=[];let dt=[]
+for(let i=0;i<collection.length;i++){
+    lbl.push(collection[i].menah.split(" ")[0])
+    dt.push(collection[i].accum)           
+}
+document.getElementById('chartKot').innerHTML="גרף תשואת התיק ל - 12 חודשים"
+createChart(lbl, dt);
+}
 
 async function fetchdataJasonMA() {
     try {
@@ -711,6 +719,144 @@ async function filterMaslulA(mas,datax,moza){
          return data;
           }
  }   
-    </script>
+ 
+ function sortTableX(x) {
+    var data = [];
+    const table = x.closest('table');
+    
+    if (!table) {
+        console.error('לא נמצאה טבלה.');
+        return;
+    }
+
+    const rows = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < rows.length; i++) {
+        const tds = rows[i].getElementsByTagName('td');
+
+        if (tds.length >= 4) {
+            data.push({
+                shemkupa: tds[0].textContent.trim() || '',
+                tesuam: cleanNumberX(tds[1].textContent),
+                tesuam36: cleanNumberX(tds[2].textContent),
+                tesuam60: cleanNumberX(tds[3].textContent)
+            });
+        } else {
+            console.warn(`שורה ${i} אינה מכילה מספיק עמודות.`);
+        }
+    }
+
+    // מיון לפי הכותרת שנלחצה
+    const options = [ 'שנה', '3 שנים', '5 שנים'];
+    const selectedKey = options.find(opt => x.innerHTML.includes(opt));
+   
+    const sortKey = selectedKey ? {
+        'שנה': 'tesuam',
+        '3 שנים': 'tesuam36',
+        '5 שנים': 'tesuam60'
+    }[selectedKey] : null;
+
+    if (sortKey) {
+        data.sort((a, b) => b[sortKey] - a[sortKey]);
+    }
+
+
+    // עדכון הנתונים בטבלה
+    for (let i = 1; i < rows.length; i++) {
+        const tds = rows[i].children;
+        if (data[i - 1]) {
+            tds[0].textContent = data[i - 1].shemkupa;            
+            tds[1].textContent = formatNumberX(data[i - 1].tesuam);
+            tds[2].textContent = formatNumberX(data[i - 1].tesuam36);
+            tds[3].textContent = formatNumberX(data[i - 1].tesuam60);
+        }
+    }
+    let coll=[];let lbl=[];
+    
+        for (let i = 0; i < data.length; i++) {
+            lbl.push(data[i].shemkupa.split(" ")[0])
+            if(selectedKey==='שנה'){document.getElementById('chartKot').innerHTML="גרף תשואת התיק ל - 12 חודשים"
+            ;coll.push(data[i].tesuam)}
+            if(selectedKey==='3 שנים'){coll.push(data[i].tesuam36);document.getElementById('chartKot')
+            .innerHTML="גרף תשואת התיק ל - 3 שנים"}
+            if(selectedKey==='5 שנים'){coll.push(data[i].tesuam60);document.getElementById('chartKot').
+            innerHTML="גרף תשואת התיק ל - 5 שנים"}
+}
+createChart(lbl, coll)
+ }
+// פונקציה שמנקה את הערכים וממירה אותם למספרים
+function cleanNumberX(value) {
+    let num = parseFloat(value.replace(/[^0-9.-]/g, ''));
+    return isNaN(num) ? 0 : num;
+}
+
+// פונקציה שמחזירה מספר בפורמט הנכון
+function formatNumberX(value) {
+    return value.toFixed(2) + '%';
+}
+let myChart = null;
+
+
+
+function createChart(lbl, dt) {
+    let chrt=document.getElementById("chart-container")
+    chrt.innerHTML='';
+    chrt.innerHTML=`<canvas id="barChart"></canvas> `
+    const ctx = document.getElementById('barChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: lbl,
+                datasets: [{
+                    data:dt,
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(255, 159, 64, 0.7)',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 99, 132, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 2,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                       
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                animation: {
+                    duration: 2000,
+                    easing: 'easeInOutQuart'
+                }
+            }
+        });
+   
+}
+ 
+ </script>
+ 
 </body>
 </html>

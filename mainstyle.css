@@ -282,29 +282,6 @@ header{
     background: rgb(191, 217, 234);
 }
 
-.dropdown-content {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: linear-gradient(45deg,#2c3e50,#3498db); 
-}
-
-.dropdown-content li {
-    padding: 10px;
-    border-bottom: 1px solid white;
-    margin-bottom: 0px;
-}
-
-.dropdown-content a {
-    text-decoration: none;
-    color: white;
-    display: block;
-}
-
-.dropdown-content li:hover {
-    background: linear-gradient(45deg,#193e1f,#34db7a); 
-}
 
 #mabaatar{display:none;}
 #mabaatar li{margin-right: 10%;width: 90%;}

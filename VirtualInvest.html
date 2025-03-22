@@ -125,8 +125,8 @@
                 <option value='קרנות השתלמות'>קרנות השתלמות</option>
 				<option value='תגמולים ואישית לפיצויים'>קופות גמל</option>
                 <option value='קופת גמל להשקעה'>קופת גמל להשקעה</option>
-                <!-- <option value='פוליסות חסכון'>פוליסות חסכון</option>
-                <option value='קרנות חדשות'>קרנות פנסיה</option> -->
+                <option value='פוליסות חסכון'>פוליסות חסכון</option>
+                <option value='קרנות חדשות'>קרנות פנסיה</option> 
             </select>
         </div>
         <div id="track-container">
@@ -349,6 +349,7 @@ async function submitForm() {
     } else if (selectedProduct==='קרנות חדשות' ){
         
     abc= await fetchdataJasonPA(); }
+
     abc=abc.filter(item=>item.mozar===selectedProduct)
     
     let table = document.getElementById("tblData");
@@ -362,10 +363,15 @@ async function submitForm() {
 for(let i=0;i<gufmosdixA.length;i++){
     for (const row of Array.from(rows).slice(1)) {
         
-        abc2 = await filterMaslulA(String(row.children[0].innerText), abc,selectedProduct); 
+        abc2 = await filterMaslulA(String(row.children[0].innerText), abc,selectedProduct);
+       
+        if(selectedProduct !== "פוליסות חסכון"){ 
         abc2 =abc2.filter(item=>item.menahelet.includes(gufmosdixA[i]) && item.tesuam!==0
-        && item.tesuam!==undefined)
+        && item.tesuam!==undefined)}
+        else{abc2 =abc2.filter(item=>item.shemkupa.includes(gufmosdixA[i].split(" ")[0]) && item.tesuam!==0
+            && item.tesuam!==undefined)}
         if(abc2.length===0){accum=1};
+        console.log(abc2)
         
     }
     
@@ -375,8 +381,13 @@ for(let i=0;i<gufmosdixA.length;i++){
     else{accum=0}
 }
 for (var value of Array.from(mySet)) {
+    if(selectedProduct !== "פוליסות חסכון"){
     abc1=abc.filter(item=>item.menahelet.includes(value) && item.tesuam!==0
-    && item.tesuam!==undefined);
+    && item.tesuam!==undefined)}
+    else{
+        abc1=abc.filter(item=>item.shemkupa.includes(value.split(" ")[0]) && item.tesuam!==0
+    && item.tesuam!==undefined)
+    }
     for (const row of Array.from(rows).slice(1)) {
         abc2 = await filterMaslulA(String(row.children[0].innerText), abc1,selectedProduct);
         abc2 =  abc2.filter(item=>item.tesuam!==undefined && item.tesuam!==0);

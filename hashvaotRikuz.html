@@ -105,57 +105,69 @@
     </div>
 
     <script>
-      const ctx = document.getElementById('barChart').getContext('2d');
-
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['חברה א', 'חברה ב', 'חברה ג', 'חברה ד', 'חברה ה'],
-                datasets: [{
-                    data: [7.5, 9.2, 12.3, 10.8, 14.7],
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0.7)',
-                        'rgba(75, 192, 192, 0.7)',
-                        'rgba(255, 159, 64, 0.7)',
-                        'rgba(153, 102, 255, 0.7)',
-                        'rgba(255, 99, 132, 0.7)'
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(255, 159, 64, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 99, 132, 1)'
-                    ],
-                    borderWidth: 2,
-                    borderRadius: 5
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 15,
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%';
-                            }
-                        }
+      
+function getRandomValue(min, max) {
+    return Math.random() * (max - min) + min;
+}
+const ctx = document.getElementById('barChart').getContext('2d');
+const chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['חברה א', 'חברה ב', 'חברה ג', 'חברה ד', 'חברה ה'],
+        datasets: [{
+            data: Array.from({ length: 5 }, () => getRandomValue(5, 15)),
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 99, 132, 0.7)'
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 2,
+            borderRadius: 5
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 15,
+                ticks: {
+                    callback: function(value) {
+                        return value + '%';
                     }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                animation: {
-                    duration: 2000,
-                    easing: 'easeInOutQuart'
                 }
             }
-        });
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        animation: {
+            duration: 2000,
+            easing: 'easeInOutQuart'
+        }
+    }
+});
+
+function updateChart() {
+    chart.data.datasets[0].data = Array.from({ length: 5 }, () => getRandomValue(5, 15));
+    chart.update();
+}
+
+// יצירת אנימציה מתמשכת
+setInterval(updateChart, 2000);
+
         function navigate(page) {
             hideIframe();
             window.parent.hideAllimages();

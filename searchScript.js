@@ -1,7 +1,7 @@
 const data = [
     'מחשבון ריבית דריבית', 'סימולטור הלוואות', 'מחשבון השוואת דמי ניהול',
     'השוואת חברות', 'קופות לפי חשיפות', 'שאלון סיכון',
-    'מידע מקצועי', 'מדד השירות', 'מדד הפנדינג','מחשבון אבטלה לעצמאים'];
+    'מידע מקצועי', 'מדד השירות', 'מדד הפנדינג', ];
 
 const searchBox = document.getElementById("searchBox");
 const searchResults = document.getElementById("searchResults");

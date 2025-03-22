@@ -93,33 +93,9 @@ function hidekupainfo(){
 		</div>
         <!-- תפריט צד -->
 		<nav class="menu-container" id="menu">
-			<h3 onclick="toggleDropdown('drp1','arrow1')">✍ מידע מקצועי <span class="arrow" id='arrow1' style='float:left;color:#333;transform: rotate(-90deg);'>◀</span></h3>
-			<ul class="dropdown-content" id='drp1'>
-				<li><a href="#" class="kh" onclick="toggleMenu(); hideTkufa();showIframe('hishtalmotMikzoei.html')">קרנות השתלמות</a></li>
-				<li><a href="#" onclick="toggleMenu();hideTkufa();showIframe('pensiaMikzoei.html')">קרנות פנסיה </a></li>
-				<li><a href="#" onclick="toggleMenu();hideTkufa();showIframe('hashkaaMikzoei.html')">קופות גמל להשקעה</a></li>
-				<li><a href="#" onclick="toggleMenu();hideTkufa();showIframe('kupatgemelmikzoei.html')">קופות גמל לקצבה</a></li>
-				<li><a href="#"onclick="toggleMenu();hideTkufa();showIframe('hisyeled.html')">קופות גמל חסכון לילד</a></li>
-			</ul>
-			<h3 onclick="toggleDropdown('drp2','arrow2')">📈 מחשבונים ושאלונים <span class="arrow" id='arrow2' style='float:left;color:#333;transform: rotate(-90deg);'>◀</span></h3>
-			<ul class="dropdown-content" id='drp2' >
-				<li><a href="#" onclick="toggleMenu();hideTkufa();showIframe('ribitderibit.html')">מחשבון ריבית דריבית</a></li>
-				<!-- <li><a href="#" onclick="hisht('https://zamit00.github.io/kesefTzomeach/madad.html')">מחשבון הצמדה למדד</a></li> -->
-				<li><a href="#" onclick="toggleMenu();hideTkufa();showIframe('hashDmeyNihul.html')"> מחשבון השוואת דמי ניהול</a></li>
-				<li><a href="#" onclick="toggleMenu();hideTkufa();showIframe('loan.html')"> סימולטור הלוואות</a></li>
-				
-
-			</ul>
-			<h3 onclick="toggleDropdown('drp3','arrow3')">📊 נתוני קופות גמל <span class="arrow" id='arrow3' style='float:left;color:#333;transform: rotate(-90deg);'>◀</span></h3>
-			<ul class="dropdown-content" id='drp3' >
-				<li><a href="#" onclick=" chng(document.getElementById('tafrit')); hideframe();maslulim(2,0,0)">   נתוני קופות ומסלולים </a></li>
-				<li><a href="#" onclick="toggleMenu();hideframe();createForm(0)">  השוואה לפי יחס סיכון תשואה - שארפ</a></li>
-				<li><a href="#" onclick="toggleMenu();showIframe('hasifotMeshulav.html')"> מחולל לפי חשיפות - מרובה </a></li>
-				<li><a href="#"  onclick="toggleMenu();showIframe('hashMenahalot.html')">השוואת מנהלות</a></li> 
-				<li><a href="#"  onclick="toggleMenu();hideAllimages();showIframe('VirtualInvest.html')">השוואת תיק משולב מסלולים</a></li> 
-				<li><a href="#"  onclick="toggleMenu();hideTkufa();showIframe('madadHasherut.html')">מדד השירות</a></li>
-				<li><a href="#" onclick="toggleMenu(); hideTkufa();showIframe('madadhpending.html')">מדד הפנדינג</a></li>
-			</ul>   
+			<h3 onclick="toggleMenu();hideMaBaatar();hideAllimages();showIframe('meidaMikzoei.html')">✍ מידע מקצועי</h3>
+			<h3 onclick="toggleMenu();hideMaBaatar();hideAllimages();showIframe('Machshevonim.html')">📈 מחשבונים ושאלונים</h3>
+			<h3 onclick="toggleMenu();hideMaBaatar();hideAllimages();showIframe('hashvaotRikuz.html')">📊 השוואת חברות</h3> 
 			<h3 >👨‍🔧 השרותים שלנו</h3>
 			<!--  <ul class="dropdown-content" id="drp4">
 				<li><a href="#">ייעוץ פנסיוני</a></li>
@@ -143,11 +119,11 @@ function hidekupainfo(){
     	<ul id="searchResults"></ul>
 	</div>
 	<div style="display: flex;flex-direction: column;align-items: center;width:100%;">
-	<div style="color: blue;text-decoration: underline;font-weight: bold;margin-bottom: 25px;
+	<div id="baatar" style="color: blue;text-decoration: underline;font-weight: bold;margin-bottom: 25px;
 	 " onclick="mabaatar(this)">מה באתר</div>
-		<ol class="mabaatar" id="mabaatar" style="list-style-type: circle;text-align:right;width: 100%;
+		<ol class="mabaatar" id="mabaatar" style="list-style-type: disc;text-align:right;width: 100%;
 		 z-index: 10000;">
-			<li>נתוני תשואה, לתקופות שונות, של קופות גמל, קרנות פנסיה, קרנות השתלמות ופוליסות חסכון</li>
+			<li>נתוני תשואה לתקופות שונות של קופות גמל, קרנות פנסיה, קרנות השתלמות ופוליסות חסכון</li>
 			<li>מחוללי השוואה בין חברות ביחס לתוצאות במוצרים הפנסיונים והפיננסיים, לתקופות שונות</li>
 			<li>מחוללי איתור מוצרים מתאימים ביחס לרמות סיכון וחשיפות למניות, מטבע וחול</li>
 			<li>מחשבונים פיננסיים לחישוב ערך השקעה עתידי, להלוואות ולהשוואת דמי ניהול שונים</li>
@@ -159,22 +135,22 @@ function hidekupainfo(){
 	>קטגוריות ראשיות</h3>
 	
 <div class="Imgcontainer" id='allImages'>
-		<div class="boxImg boxcalc" onclick="hideAllimages();showIframe('Machshevonim.html')" ><div class="stripe" style="text-align:center;">מחשבונים פיננסים</div></div>
-		<div class="boxImg boxdata" onclick="hideAllimages();showIframe('hashvaotRikuz.html')" ><div class="stripe" style="text-align:center;">השוואת חברות</div></div>
-		<div class="boxImg boxstud" onclick="hideAllimages();showIframe('meidaMikzoei.html')" ><div class="stripe" style="text-align:center;">מידע מקצועי</div></div>
-        <div class="boxImg boxpension" onclick=" maslulimP(30,'קרנות חדשות',0)" ><div class="stripe" style="text-align:center;" onclick=" maslulimP(30,'קרנות חדשות',0)">קרנות פנסיה</div></div>
-        <div class="boxImg boxinvest" onclick=" maslulim(30,'קופת גמל להשקעה',0)" ><div class="stripe" style="text-align:center;"> גמל להשקעה</div></div>
-        <div class="boxImg boxeducation" onclick=" maslulim(30,'קרנות השתלמות',0)" ><div class="stripe" style="text-align:center;">קרנות השתלמות</div></div>
-        <div class="boxImg boxyeled" onclick=" maslulim(30,'קופת גמל להשקעה - חסכון לילד',0)" ><div class="stripe"style="text-align:center;">חסכון לילד</div></div>
-        <div class="boxImg boxgemel" onclick=" maslulim(30,'תגמולים ואישית לפיצויים',0)"  ><div class="stripe" style="text-align:center;">קופות גמל</div></div>
-        <div class="boxImg boxsaving" onclick=" maslulim(30,'פוליסות חסכון',0)" ><div class="stripe" style="text-align:center;">פוליסות חסכון</div></div>
+		<div class="boxImg boxcalc" onclick="hideMaBaatar();hideAllimages();showIframe('Machshevonim.html')" ><div class="stripe" style="text-align:center;">מחשבונים פיננסים</div></div>
+		<div class="boxImg boxdata" onclick="hideMaBaatar();hideAllimages();showIframe('hashvaotRikuz.html')" ><div class="stripe" style="text-align:center;">השוואת חברות</div></div>
+		<div class="boxImg boxstud" onclick="hideMaBaatar();hideAllimages();showIframe('meidaMikzoei.html')" ><div class="stripe" style="text-align:center;">מידע מקצועי</div></div>
+        <div class="boxImg boxpension" onclick="hideMaBaatar(); maslulimP(30,'קרנות חדשות',0)" ><div class="stripe" style="text-align:center;" onclick=" maslulimP(30,'קרנות חדשות',0)">קרנות פנסיה</div></div>
+        <div class="boxImg boxinvest" onclick=" hideMaBaatar();maslulim(30,'קופת גמל להשקעה',0)" ><div class="stripe" style="text-align:center;"> גמל להשקעה</div></div>
+        <div class="boxImg boxeducation" onclick="hideMaBaatar();maslulim(30,'קרנות השתלמות',0)" ><div class="stripe" style="text-align:center;">קרנות השתלמות</div></div>
+        <div class="boxImg boxyeled" onclick=" hideMaBaatar();maslulim(30,'קופת גמל להשקעה - חסכון לילד',0)" ><div class="stripe"style="text-align:center;">חסכון לילד</div></div>
+        <div class="boxImg boxgemel" onclick=" hideMaBaatar();maslulim(30,'תגמולים ואישית לפיצויים',0)"  ><div class="stripe" style="text-align:center;">קופות גמל</div></div>
+        <div class="boxImg boxsaving" onclick=" hideMaBaatar();maslulim(30,'פוליסות חסכון',0)" ><div class="stripe" style="text-align:center;">פוליסות חסכון</div></div>
 </div>
 	<h6 id="tkufatdivuach"></h6>
 	<h1 id="kothasifot" style="width: 100%;text-align: center;">⚖️ חשיפות מרכזיות בהשקעות</h1>
 	<div id="filter">
 		
 		<form id="productForm">
-			<div class='closewindow' onclick='showIframe("hashvaotRikuz.html");hideproductForm()'>X</div>
+			<div class='closewindow' onclick='hideMaBaatar();showIframe("hashvaotRikuz.html");hideproductForm()'>X</div>
 			<div class="product">
 				<h3 id="meholelhasifot">⚖️ השוואה לפי מדד שארפ</h3>
 				<label class="hsf"  for="selectProduct" >בחר מוצר</label>

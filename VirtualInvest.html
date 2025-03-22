@@ -16,6 +16,13 @@
     
     </script>
     <style>
+        *{
+            box-sizing: border-box;
+            max-width: 100%;
+            margin:0%;
+            padding:0%;
+            overflow-x: hidden;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
@@ -24,21 +31,27 @@
             align-items: center;
             justify-content: center;
             margin: 0;
+            width: 100%;
+            overflow-x: hidden;
+
         }
         #ex{display:none}
         .container {
             background: aliceblue;
-            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: clamp(300px,100%,800px);
+            max-width: clamp(310px,100%,800px);
             border-radius: 10px;
+            margin:0%;padding: 5px;
             margin-top: 30px;
             min-height:600px;
+            box-sizing: border-box;
+
+
             
         }
-        .centerTbl,#shana,.chart-container{min-width: 600px;}
+        
         .row {
            
             display: flex;
@@ -79,14 +92,14 @@
       .tdmaslul,#men{width:60%;}
       .tdshiur{width:30%;}
       .tdbitul{width:10%;}
-      .klalikoch,.klalikoch tr{max-width:100%;width:clamp(300px,95%,800px) ;}
+      .klalikoch,.klalikoch tr{width:clamp(300px,95%,800px) ;}
       .klalikoch,.klalikoch tr, .klalikoch td{
         border: 1px solid black;border-collapse: collapse;font-size: 10px;
       }
       .tdbig{text-align:right;padding-right: 5px;}
       .tdsmall{text-align: center;}
       #shana,#shalosh,#hamesh{display:flex;flex-direction: column;
-        align-items: center;max-width:100%;
+        align-items: center;
 
       }
       .klalikoch .tdbig{width: 55%;color:rgb(37, 60, 255);font-weight: bold;}
@@ -104,13 +117,15 @@
         }
         
         @media screen and (max-width:600px){
-            .centerTbl,#shana,.chart-container{min-width:none;}
+            .centerTbl,#shana,.chart-container{min-width:90vw;}
            .percentage {width: clamp(150px,80%,200px);}
            .container{min-height:600px;overflow-x: hidden;}
            .row {margin-right: 0%;}
           
            
         }
+        @media screen and (min-width:600px){
+            .centerTbl,#shana,.chart-container,.klalikoch{width: clamp(550px,90%,750px)}}
     </style>
 </head>
 <body dir="rtl">
@@ -245,9 +260,11 @@ function chngTik(){
 }
 
 async function addRow(x) {
+
     const selectedProduct = document.getElementById('sugMMen').value;
     if(!selectedProduct){alert("יש לבחור מוצר");return}
     const inp = document.getElementById('percentage');
+    if(inp.value>100){alert("סך השיעורים לא יכול לעלות על 100");inp.value='';return}
     var Select = document.getElementById('selectShemkupa');
 
     var rtn;

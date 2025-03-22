@@ -166,10 +166,13 @@
     align-items: center;">
     <div onclick="chngTik()" id="ex">X</div>
         <div id="shana" style="margin-top: 10px;"></div>
+        <div style="width: 100%;box-sizing: border-box;max-width: 100%;
+    margin: 0%;padding: 0%;text-align: center;">* נתון ריק או 0 - לא משתתף בהשוואה</div>
         <div id="shalosh" style="margin-top: 10px;"></div>
         <div id="hamesh" style="margin-top: 10px;"></div>
         
     </div>
+    
     <div id="chartKot" style="width: 100%;box-sizing: border-box;max-width: 100%;
     margin: 0%;padding: 0%;text-align: center;"></div>
     <div style="width: 100%;box-sizing: border-box;max-width: 100%;
@@ -226,6 +229,7 @@ function chngTik(){
     document.getElementById('shalosh').innerHTML='';
     document.getElementById('hamesh').innerHTML='';
     document.getElementById('ex').style.display='none'
+    document.getElementById('chart-container').style.display='none'
     document.getElementById('container').style.display='block';
     let table = document.getElementById("tblData");
     let tblCenter= document.getElementById("tblCenter");

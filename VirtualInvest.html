@@ -32,12 +32,13 @@
             border-radius: 10px;
             box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: clamp(300px,100%,600px);
+            max-width: clamp(300px,100%,800px);
             border-radius: 10px;
             margin-top: 30px;
             min-height:600px;
             
         }
+        .centerTbl,#shana,.chart-container{min-width: 600px;}
         .row {
            
             display: flex;
@@ -73,12 +74,12 @@
         .btndo{width:clamp(150px,50%,150px);height: 25px;margin-top: 30px;}
       .tblData{margin-top: 15px;}
       .tblCenter{display:none;justify-content: center;}
-      .tblData,.tblData tr{width: clamp(300px,60%,600px);border-collapse: collapse;}
+      .tblData,.tblData tr{width: clamp(300px,60%,800px);border-collapse: collapse;}
       .tblData,.tblData tr,.tblData th,.tblData td{border:1px solid #333;text-align: center;}
       .tdmaslul,#men{width:60%;}
       .tdshiur{width:30%;}
       .tdbitul{width:10%;}
-      .klalikoch,.klalikoch tr{width:clamp(300px,95%,600px) ;}
+      .klalikoch,.klalikoch tr{width:clamp(300px,95%,800px) ;}
       .klalikoch,.klalikoch tr, .klalikoch td{
         border: 1px solid black;border-collapse: collapse;font-size: 10px;
       }
@@ -103,7 +104,8 @@
         }
         
         @media screen and (max-width:600px){
-           .percentage {width: clamp(150px,80%,150px);}
+            .centerTbl,#shana,.chart-container{min-width:none;}
+           .percentage {width: clamp(150px,80%,200px);}
            .container{min-height:600px;overflow-x: hidden;}
            .row {margin-right: 0%;}
           
@@ -418,9 +420,12 @@ for (var value of Array.from(mySet)) {
 
 const shanaTable= document.getElementById('shana');
 document.getElementById('container').style.display='none';
+let selectedProductA;
+if(selectedProduct==='תגמולים ואישית לפיצויים'){selectedProductA='קופות גמל'}
+else{selectedProductA=selectedProduct}
 shanaTable.innerHTML=
 `
-    <h4 style='color:rgb(0,154,255);margin-top:10px;'>תשואת התיק במוצר ${selectedProduct}</h4>	
+    <h4 style='color:rgb(0,154,255);margin-top:10px;'>תשואת התיק במוצר ${selectedProductA}</h4>	
     <table class="klalikoch" id="tblshana">
         <tr>
             <td class="tdbig" style="background:rgb(0,154,255);color:white;">שם גוף מוסדי</td>

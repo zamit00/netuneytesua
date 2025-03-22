@@ -43,6 +43,10 @@ function mabaatar(x){
     }
 
 }
+function hideMaBaatar(){
+    document.getElementById('mabaatar').style.display="none"; 
+    document.getElementById('baatar').innerHTML='מה באתר'; 
+}
 function hideproductForm(){
   document.getElementById('filter').style.display='none';
 }
@@ -204,77 +208,21 @@ const acceptBtn = document.getElementById('accept-btn');
        await maslulim(1,0,0);
        
 });
-function toggleDropdown(id,arrow) {
-    var div=document.getElementById(arrow);
-   
-    for(let i=1;i<=3;i++){
-        let dropdown = document.getElementById(`drp${i}`);
-        if (dropdown && `drp${i}`!==id ) {
-            dropdown.style.display = 'none';
-            div.style.transform="rotate(-90deg)";
-        }
-    }
-    if(document.getElementById(id).style.display==='none' || document.getElementById(id).style.display===''){
-        document.getElementById(id).style.display = 'block'; 
-        div.style.transform="rotate(+90deg)";
-    }
-    else{  
-        document.getElementById(id).style.display = 'none';
-        div.style.transform="rotate(-90deg)";
-    }
-    //document.querySelectorAll('.dropdown-content').forEach(element => {
-     // element.style.display='none';
 
-  //  });
-    //    let dropdownShow = document.getElementById(id);
-    //    let div=document.getElementById(arrow);
-    //    if(dropdownShow.style.display === "block"){dropdownShow.style.display ==="none";
-   //         div.style.transform="rotate(-90deg)";
-    //    }
-   //     else{dropdownShow.style.display === "block";
-  //          div.style.transform="rotate(+90deg)"
-  //      };
-}
 function toggleMenu() {
-    
+   hideMaBaatar(); 
   if(document.getElementById("hamb").className.includes('open')){
-    document.querySelectorAll('.dropdown-content').forEach(element => {
-      element.style.display='none';
-      for(let i=1;i<=3;i++){
-        let dropdown = document.getElementById(`arrow${i}`);
-        dropdown.style.transform="rotate(-90deg)";
-      }
-
-    });
         document.getElementById("hamb").classList.remove("open");
         document.querySelector(".menu-container").style.display='none';
         document.getElementById("menu").classList.remove("open");
   }
-  else if(document.getElementById("hamb").style.display==="block"){
-    document.querySelectorAll('.dropdown-content').forEach(element => {
-        element.style.display='none';
-        document.getElementById("hamb").className="menu-btn";
-        for(let i=1;i<=3;i++){
-            let dropdown = document.getElementById(`arrow${i}`);
-            dropdown.style.transform="rotate(-90deg)";
-          }
-      }); 
-  }
-
+  
 else{
     document.querySelector(".menu-btn").classList.add("open");
     document.querySelector(".menu-container").style.display='block';
     document.getElementById("menu").classList.add("open");
 }
-  
-  // document.getElementById("menu").classList.toggle("open");
- //  document.querySelector(".menu-btn").classList.toggle("open");
-    
-//    if(document.querySelector(".menu-btn").className.includes("open")){
-//        document.querySelector(".menu-container").style.display='block'; 
-       
- //   }
- //   else{document.querySelector(".menu-container").style.display='none'}
+
 }
 function chng(x){
     document.getElementById("filter").style.display='none';

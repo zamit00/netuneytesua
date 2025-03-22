@@ -40,16 +40,14 @@
             background: aliceblue;
             border-radius: 10px;
             box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-            width: 90%;
+            width:100%;
             max-width: clamp(310px,100%,800px);
             border-radius: 10px;
             margin:0%;padding: 5px;
             margin-top: 30px;
             min-height:600px;
             box-sizing: border-box;
-
-
-            
+           
         }
         
         .row {
@@ -58,7 +56,7 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
-            margin-right: 20%;
+            margin-right:25%;
         }
         
         select, input {
@@ -66,7 +64,9 @@
             padding: 5px;
             border-radius: 5px;
             box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
-            max-width: clamp(30px,100%,250px);
+            width: clamp(200px,85%,300px);
+            max-width: 300px;
+            margin-top: 10px;
         }
         .closewindow{color:black;position: relative;right:20px;top:5px;}
         .btn {
@@ -78,22 +78,24 @@
             border: none;
             color: white;
         }
-        .percentage {   max-width: 150px; box-sizing: border-box;text-align: center;}
-        .btn-add {  width: 30px; height: 30px;background-color: green; font-size: 20px; }
-        .btn-remove { background-color: red;font-size: 16px; width: 16px;
-            height: 16px; }
-        .btn:hover { opacity: 0.8; }
-        .error { color: red; font-size: 20px; text-align: center; }
-        .btndo{width:clamp(150px,50%,150px);height: 25px;margin-top: 30px;}
-      .tblData{margin-top: 15px;}
-      .tblCenter{display:none;justify-content: center;}
-      .tblData,.tblData tr{width: clamp(300px,60%,800px);border-collapse: collapse;}
-      .tblData,.tblData tr,.tblData th,.tblData td{border:1px solid #333;text-align: center;}
-      .tdmaslul,#men{width:60%;}
-      .tdshiur{width:30%;}
-      .tdbitul{width:10%;}
-      .klalikoch,.klalikoch tr{width:clamp(300px,95%,800px) ;}
-      .klalikoch,.klalikoch tr, .klalikoch td{
+    .percentage {   max-width: 150px; box-sizing: border-box;text-align: center;}
+    .btn-add {  width: 30px; height: 30px;background-color: green; font-size: 20px; }
+    .btn-remove { background-color: red;font-size: 16px; width: 16px;
+        height: 16px; }
+    .btn:hover { opacity: 0.8; }
+    .error { color: red; font-size: 20px; text-align: center; }
+    .btndo{width:clamp(150px,50%,150px);height: 30px;margin-top: 30px;
+    background: #3498db;color: white;font-weight: bold;border-radius: 5px;
+    font-size: 16px;}
+    .tblData{margin-top: 15px;}
+    .tblCenter{display:none;justify-content: center;}
+    .tblData,.tblData tr{width: clamp(300px,60%,800px);border-collapse: collapse;}
+    .tblData,.tblData tr,.tblData th,.tblData td{border:1px solid #333;text-align: center;}
+    .tdmaslul,#men{width:60%;}
+    .tdshiur{width:30%;}
+    .tdbitul{width:10%;}
+    .klalikoch,.klalikoch tr{width:clamp(300px,95%,800px) ;}
+    .klalikoch,.klalikoch tr, .klalikoch td{
         border: 1px solid black;border-collapse: collapse;font-size: 10px;
       }
       .tdbig{text-align:right;padding-right: 5px;}
@@ -107,7 +109,6 @@
       .chart-container {
             max-width: 100%;
             height: 300px;
-            display: none;
             box-sizing: border-box;
             margin: 0%;padding: 0%;
             overflow: visible;
@@ -115,14 +116,18 @@
         #barchart{
             height: 400px;  
         }
+        #centerTbl{display:none;}
         
         @media screen and (max-width:600px){
-            .centerTbl,#shana,.chart-container{min-width:90vw;}
+            .centerTbl,#shana,.chart-container{min-width:100%;max-width: 100%;}
            .percentage {width: clamp(150px,80%,200px);}
            .container{min-height:600px;overflow-x: hidden;}
-           .row {margin-right: 0%;}
+           .row {margin-right: 15%;}
           
            
+        }
+        @media screen and (max-width:450px){
+            .row {margin-right: 3%;margin-left: 3%;}
         }
         @media screen and (min-width:600px){
             .centerTbl,#shana,.chart-container,.klalikoch{width: clamp(550px,90%,750px)}}
@@ -146,8 +151,8 @@
         </div>
         <div id="track-container">
             <div class="row track-row">
-                <label style="margin-top: 10px;">בחר מסלול:</label>
-                <select id="selectShemkupa" class="selectShemkupa" style="margin-top: 10px;"></select>        
+                <label >בחר מסלול:</label>
+                <select id="selectShemkupa" class="selectShemkupa" ></select>        
             </div>
         </div>
         <div  class="row">
@@ -171,31 +176,31 @@
             </table>
         </div>
         <div id="notar" style="margin-top: 10px;width: 100%;text-align: center;"></div>
-        <div style="display:flex;justify-content: center;width:100%;">
-            <button class="btndo" onclick="submitForm()">הפעל</button>
+        <div id="divBtn" style="display:flex;justify-content: center;width:100%;">
+            <button class="btndo" id="btndo" onclick="submitForm()">הפעל</button>
         </div>
-        
-    </div>
-
-    <div class="centerTbl" style="display:flex;flex-direction: column;
+        <div class="centerTbl" id="centerTbl" style="flex-direction: column;
     align-items: center;">
-    <div onclick="chngTik()" id="ex">X</div>
         <div id="shana" style="margin-top: 10px;"></div>
         <div style="width: 100%;box-sizing: border-box;max-width: 100%;
     margin: 0%;padding: 0%;text-align: center;">* נתון ריק או 0 - לא משתתף בהשוואה</div>
         <div id="shalosh" style="margin-top: 10px;"></div>
         <div id="hamesh" style="margin-top: 10px;"></div>
         
+    
+    
+        <div id="chartKot" style="width: 100%;box-sizing: border-box;max-width: 100%;
+        margin: 0%;padding: 0%;text-align: center;"></div>
+        <div style="width: 100%;box-sizing: border-box;max-width: 100%;
+        margin: 0%;padding: 0%;text-align: center;">(שנה גרף באמצעות המיון בטבלה) </div>
+        <div class="chart-container" id="chart-container">
+            <canvas id="barChart"></canvas>
+        </div> 
+</div>
+        
     </div>
-    
-    <div id="chartKot" style="width: 100%;box-sizing: border-box;max-width: 100%;
-    margin: 0%;padding: 0%;text-align: center;"></div>
-    <div style="width: 100%;box-sizing: border-box;max-width: 100%;
-    margin: 0%;padding: 0%;text-align: center;">(שנה גרף באמצעות המיון בטבלה) </div>
-    <div class="chart-container" id="chart-container">
-        <canvas id="barChart"></canvas>
-    </div> 
-    
+
+
     <script>
   const gufmosdixA = [
     'הראל פנסיה וגמל', 'כלל פנסיה וגמל',
@@ -243,9 +248,8 @@ function chngTik(){
     document.getElementById('shana').innerHTML='';
     document.getElementById('shalosh').innerHTML='';
     document.getElementById('hamesh').innerHTML='';
-    document.getElementById('ex').style.display='none'
-    document.getElementById('chart-container').style.display='none'
-    document.getElementById('container').style.display='block';
+    document.getElementById('centerTbl').style.display='none'
+    document.querySelectorAll('.row').forEach(el => el.style.display = 'flex');
     let table = document.getElementById("tblData");
     let tblCenter= document.getElementById("tblCenter");
     tblCenter.style.display='none';
@@ -326,12 +330,14 @@ function updateNotar(){
 
 
 function removeRow(btn) {
-            btn.parentElement.parentElement.remove();
-            updateNotar();
-            document.getElementById('shana').innerHTML='';
-            document.getElementById('shalosh').innerHTML='';
-            document.getElementById('hamesh').innerHTML='';
-        }
+    const btnr=document.getElementById('btndo')
+    if(btnr.innerHTML==='הפעל'){
+    btn.parentElement.parentElement.remove();
+    updateNotar();
+    document.getElementById('shana').innerHTML='';
+    document.getElementById('shalosh').innerHTML='';
+    document.getElementById('hamesh').innerHTML='';}
+}
 function validateSum() {
             let table = document.getElementById("tblData");
             const rows=table.querySelectorAll("tr")
@@ -347,14 +353,18 @@ function validateSum() {
            return bt;
         }
 async function submitForm() {
+    const btn=document.getElementById('btndo')
+    if(btn.innerHTML==='הפעל'){
+
+     
     var bt=0;var abc;
-    document.getElementById('ex').style.display='block';
-    document.getElementById('chart-container').style.display='block';
+   
     const selectedProduct = document.getElementById('sugMMen').value;
     if(!selectedProduct){alert("יש לבחור מוצר");return}
     const checkSum=validateSum();
     if(checkSum===1){alert("נדרש להשלים ל 100%");return}
-
+    btn.innerHTML='חזור' ;
+    document.getElementById('centerTbl').style.display='flex';
     if (selectedProduct === "קרנות השתלמות" || selectedProduct === "קופת גמל להשקעה" 
             || selectedProduct === "תגמולים ואישית לפיצויים" || selectedProduct.includes('לילד' )
             ) {
@@ -388,7 +398,6 @@ for(let i=0;i<gufmosdixA.length;i++){
         else{abc2 =abc2.filter(item=>item.shemkupa.includes(gufmosdixA[i].split(" ")[0]) && item.tesuam!==0
             && item.tesuam!==undefined)}
         if(abc2.length===0){accum=1};
-        console.log(abc2)
         
     }
     
@@ -451,7 +460,7 @@ for (var value of Array.from(mySet)) {
    
 
 const shanaTable= document.getElementById('shana');
-document.getElementById('container').style.display='none';
+document.querySelectorAll('.row').forEach(el => el.style.display = 'none');
 let selectedProductA;
 if(selectedProduct==='תגמולים ואישית לפיצויים'){selectedProductA='קופות גמל'}
 else{selectedProductA=selectedProduct}
@@ -504,7 +513,8 @@ for(let i=0;i<collection.length;i++){
 document.getElementById('chartKot').innerHTML="גרף תשואת התיק ל - 12 חודשים"
 createChart(lbl, dt);
 }
-
+else{btn.innerHTML='הפעל';chngTik()}
+}
 async function fetchdataJasonMA() {
     try {
         const response = await fetch('dataJasonM.json'); 

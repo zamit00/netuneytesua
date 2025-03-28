@@ -72,6 +72,7 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 77, 153, 0.2);
     padding-bottom: 30px;
     box-sizing: border-box;
+    margin-top:40px;
 }
 .formDo h1{
     font-size:25px;
@@ -494,7 +495,9 @@ padding-right:10px; padding-left: 10px;
 </header> -->
 <body dir="rtl">
     
-  </div>
+ 
+  
+    
     <div class="formDo" id="formDo">
         <div class="baalrishayon" onclick="window.parent.yossi()"
         style="width: 100%;
@@ -511,8 +514,12 @@ padding-right:10px; padding-left: 10px;
         align-items: center;
         justify-content: center;
         color: white;
-        font-weight: bold;">ליצירת קשר עם בעל רישיון</div>
-        <div onclick='window.parent.showHashvaa();' style="margin-top: 15px;margin-right: 10px;"><i class="fa-solid fa-rotate-left"></i>
+        font-weight: bold;">ליצירת קשר עם בעל רישיון
+        </div>
+        <div onclick='window.parent.showHashvaa();' style="margin-top: 20px;
+       ">
+            <i class="fa-solid fa-rotate-left"></i>
+        </div>
         <h1>השוואת חברות</h1>
         
     <div class="chooseopt">
@@ -623,11 +630,13 @@ const gufmosdi = gufmosdix.sort((a, b) => a.localeCompare(b, 'he'));
     };
        function selchange(){
         if(radio1.checked){
+        
             form1.style.display='flex';
             form2.style.display='none';
             charts.style.display='block';
         }
         else{
+            
             form1.style.display='none';
             form2.style.display='flex'
             charts.style.display='none';
